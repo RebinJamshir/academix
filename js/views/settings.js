@@ -149,7 +149,60 @@ alter publication supabase_realtime add table public.academix_state;</pre>
           </details>
         </div>
 
-        <!-- Section 2: Student Profile -->
+        <!-- Section 2: AI Study Copilot & Gemini Engine -->
+        <div class="layer-card p-4 flex flex-col gap-4 border-2 border-[var(--primary)]/20 shadow-xs">
+          <div class="pb-2 border-b border-[var(--border-subtle)] flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-[var(--on-surface)] flex items-center gap-2">
+                  <span>AI Study Copilot & Gemini Engine</span>
+                  <span class="badge badge-completed text-[9px] font-mono">Gemini 3.5 Flash</span>
+                </h3>
+                <p class="text-xs text-[var(--on-surface-variant)]">Generates in-syllabus 2-mark/10-mark KTU exam answers, practice quizzes, and study guidance.</p>
+              </div>
+            </div>
+            <span class="badge badge-completed" id="ai-engine-status-badge">● Live API Ready</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+            <div class="flex flex-col gap-1.5">
+              <label class="font-medium text-[var(--on-surface)] flex items-center justify-between">
+                <span>Google Gemini API Key</span>
+                <span class="font-mono text-[10px] text-[var(--completed)]">Active & Connected</span>
+              </label>
+              <div class="relative flex items-center">
+                <input type="password" id="ai-api-key" value="${window.AIService ? window.AIService.getKey() : ''}" class="input-base font-mono text-xs pr-9 w-full" placeholder="Enter your Gemini API key..." />
+                <button type="button" id="ai-toggle-key-visibility" class="absolute right-2 text-[var(--outline)] hover:text-[var(--on-surface)]" title="Toggle visibility">
+                  <span class="material-symbols-outlined text-[16px]">visibility</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label class="font-medium text-[var(--on-surface)]">Selected AI Model</label>
+              <select id="ai-model-select" class="input-base text-xs font-mono">
+                <option value="gemini-3.5-flash" selected>gemini-3.5-flash (Fast, accurate & responsive)</option>
+                <option value="gemini-3.6-flash">gemini-3.6-flash (Latest flash)</option>
+                <option value="gemini-flash-latest">gemini-flash-latest (Dynamic latest)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <span class="text-[11px] text-[var(--on-surface-variant)] font-mono">
+              Press <kbd class="px-1.5 py-0.5 rounded bg-[var(--surface-low)] border border-[var(--border-subtle)] text-[10px]">Ctrl + J</kbd> or click <strong>AI Copilot</strong> in topbar anytime.
+            </span>
+            <button id="ai-test-key-btn" class="btn-primary h-8 px-3.5 text-xs font-mono">
+              <span class="material-symbols-outlined text-[15px]">verified</span>
+              <span>Test AI Connection</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 3: Student Profile -->
         <div class="layer-card p-4 flex flex-col gap-4">
           <div class="pb-2 border-b border-[var(--border-subtle)] flex items-center justify-between">
             <div>
@@ -393,6 +446,58 @@ alter publication supabase_realtime add table public.academix_state;`;
           alert("Supabase table is currently empty. Click 'Push State' to seed your study data to the cloud!");
         } else {
           alert("Pull failed: " + (res.error ? res.error.message : res.reason));
+        }
+      });
+    }
+
+    // AI Settings: toggle key visibility
+    const aiToggleBtn = container.querySelector("#ai-toggle-key-visibility");
+    const aiKeyInput = container.querySelector("#ai-api-key");
+    if (aiToggleBtn && aiKeyInput) {
+      aiToggleBtn.addEventListener("click", () => {
+        const isPass = aiKeyInput.type === "password";
+        aiKeyInput.type = isPass ? "text" : "password";
+        aiToggleBtn.querySelector("span").textContent = isPass ? "visibility_off" : "visibility";
+      });
+    }
+
+    // AI Settings: Test key
+    const aiTestBtn = container.querySelector("#ai-test-key-btn");
+    const aiModelSelect = container.querySelector("#ai-model-select");
+    if (aiTestBtn && window.AIService) {
+      aiTestBtn.addEventListener("click", async () => {
+        const key = (aiKeyInput.value || "").trim();
+        const model = aiModelSelect.value;
+        if (!key) {
+          alert("Please enter a Gemini API Key.");
+          return;
+        }
+
+        aiTestBtn.disabled = true;
+        aiTestBtn.innerHTML = `<span class="material-symbols-outlined text-[15px] animate-spin">sync</span><span>Testing Gemini...</span>`;
+
+        window.AIService.setKey(key);
+        window.AIService.setModel(model);
+
+        try {
+          const res = await window.AIService.generate("Respond with: GEMINI_READY");
+          aiTestBtn.disabled = false;
+          aiTestBtn.innerHTML = `<span class="material-symbols-outlined text-[15px]">verified</span><span>Test AI Connection</span>`;
+
+          if (res.success && res.text) {
+            window.App.showToast("Gemini AI API is connected and responding!");
+            const badge = container.querySelector("#ai-engine-status-badge");
+            if (badge) {
+              badge.className = "badge badge-completed";
+              badge.textContent = `● Connected (${model})`;
+            }
+          } else {
+            alert("Test response warning: " + res.text);
+          }
+        } catch (err) {
+          aiTestBtn.disabled = false;
+          aiTestBtn.innerHTML = `<span class="material-symbols-outlined text-[15px]">verified</span><span>Test AI Connection</span>`;
+          alert("Could not connect to Gemini: " + err.message);
         }
       });
     }

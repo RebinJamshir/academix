@@ -136,6 +136,11 @@
           <span class="sidebar-label truncate">Focus Timer</span>
         </a>
 
+        <button id="sidebar-ai-copilot-btn" class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-xs font-medium text-[var(--primary)] hover:bg-[var(--primary-subtle)] transition-colors w-full text-left" title="Open AI Study Assistant">
+          <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+          <span class="sidebar-label truncate font-semibold">AI Copilot</span>
+        </button>
+
         <a href="#/settings" class="nav-link flex items-center gap-2.5 px-2.5 py-2 rounded-md text-xs font-medium transition-colors" data-route="settings">
           <span class="material-symbols-outlined text-[18px]">settings</span>
           <span class="sidebar-label truncate">Settings</span>
@@ -197,6 +202,12 @@
             <span class="w-2 h-2 rounded-full bg-[var(--pending)] transition-colors" id="topbar-cloud-dot"></span>
             <span class="font-mono text-[11px]" id="topbar-cloud-text">Supabase</span>
           </a>
+
+          <!-- AI Copilot Button -->
+          <button id="topbar-ai-btn" class="flex items-center gap-1.5 h-8 px-2.5 rounded-md border border-[var(--primary)]/40 bg-[var(--primary-subtle)] hover:bg-[var(--primary)] hover:text-white text-xs font-semibold text-[var(--primary)] transition-all shadow-xs active:scale-95" title="Open AI Study Assistant">
+            <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+            <span class="hidden sm:inline font-mono text-[11px]">AI Copilot</span>
+          </button>
 
           <!-- Quick-Add (+) Button -->
           <button id="topbar-quick-add-btn" class="w-8 h-8 rounded-md bg-[var(--primary)] text-white hover:bg-[var(--primary-container)] flex items-center justify-center transition-all active:scale-95 shadow-xs" title="Quick Add">
@@ -300,9 +311,131 @@
     <span id="global-toast-text">Operation completed</span>
   </div>
 
+  <!-- AI Study Copilot Slide-over Drawer -->
+  <div id="ai-copilot-drawer" class="hidden fixed inset-0 z-50 overflow-hidden">
+    <div id="ai-drawer-backdrop" class="absolute inset-0 bg-black/30 backdrop-none transition-opacity"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <aside class="w-screen max-w-md bg-[var(--surface-lowest)] border-l border-[var(--border-subtle)] flex flex-col shadow-2xl animate-slide-in">
+        <!-- Header -->
+        <div class="h-14 px-4 border-b border-[var(--border-subtle)] flex items-center justify-between flex-shrink-0 bg-[var(--surface-lowest)]">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h3 class="font-bold text-sm text-[var(--on-surface)] leading-none">Academix AI Copilot</h3>
+                <span class="badge badge-completed text-[9px] font-mono py-0 px-1.5">Gemini 3.5</span>
+              </div>
+              <p class="text-[10px] text-[var(--on-surface-variant)] font-mono mt-0.5">KTU S5 & Backlogs Context-Aware</p>
+            </div>
+          </div>
+          <button id="ai-drawer-close" class="w-8 h-8 flex items-center justify-center rounded-md hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)] hover:text-[var(--on-surface)] transition-colors">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <!-- Quick Prompt Pills Bar -->
+        <div class="px-3 py-2 bg-[var(--surface-low)] border-b border-[var(--border-subtle)] flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+          <button class="ai-quick-pill shrink-0 px-2 py-1 rounded-full bg-[var(--surface-lowest)] border border-[var(--border-subtle)] hover:border-[var(--primary)] text-[10px] font-mono text-[var(--on-surface)] transition-colors" data-prompt="What should I focus on studying tonight before my 22:45 bedtime?">
+            🎯 Tonight's Focus
+          </button>
+          <button class="ai-quick-pill shrink-0 px-2 py-1 rounded-full bg-[var(--surface-lowest)] border border-[var(--border-subtle)] hover:border-[var(--primary)] text-[10px] font-mono text-[var(--on-surface)] transition-colors" data-prompt="Audit my exam readiness across all 14 subjects and list top 3 high-risk areas.">
+            📊 Exam Audit
+          </button>
+          <button class="ai-quick-pill shrink-0 px-2 py-1 rounded-full bg-[var(--surface-lowest)] border border-[var(--border-subtle)] hover:border-[var(--primary)] text-[10px] font-mono text-[var(--on-surface)] transition-colors" data-prompt="Explain Stop-and-Wait ARQ vs Sliding Window with 2-mark and 10-mark KTU exam answer formats.">
+            📝 ARQ Protocol
+          </button>
+          <button class="ai-quick-pill shrink-0 px-2 py-1 rounded-full bg-[var(--surface-lowest)] border border-[var(--border-subtle)] hover:border-[var(--primary)] text-[10px] font-mono text-[var(--on-surface)] transition-colors" data-prompt="Give me 3 high-yield KTU practice questions for Design and Analysis of Algorithms Module 2.">
+            ⚡ DAA Quiz
+          </button>
+        </div>
+
+        <!-- Messages Feed -->
+        <div id="ai-messages-container" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
+          <div class="p-3 rounded-lg bg-[var(--surface-low)] border border-[var(--border-subtle)] text-xs text-[var(--on-surface)] flex flex-col gap-2">
+            <div class="flex items-center gap-1.5 font-semibold text-[var(--primary)]">
+              <span class="material-symbols-outlined text-[16px]">school</span>
+              <span>Hello Rebin! I'm your KTU AI Study Mentor.</span>
+            </div>
+            <p class="text-[var(--on-surface-variant)] leading-relaxed">
+              I have full real-time awareness of your 14 subjects, 254 study timetable blocks, approaching exams, and bedtime rules. Ask me concept explanations, exam marking keys, or quick practice quizzes!
+            </p>
+          </div>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="p-3 border-t border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col gap-2 flex-shrink-0">
+          <form id="ai-chat-form" class="flex items-end gap-2">
+            <textarea id="ai-chat-input" rows="2" placeholder="Ask anything about your syllabus, exam patterns, or study schedule..." class="input-base text-xs flex-1 resize-none py-2"></textarea>
+            <button type="submit" id="ai-chat-send-btn" class="btn-primary h-9 px-3 shrink-0 flex items-center justify-center" title="Send message">
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+          </form>
+          <div class="flex items-center justify-between text-[10px] text-[var(--outline)] font-mono px-1">
+            <span>Powered by Gemini 3.5 Flash</span>
+            <span>Shift+Enter for newline</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- AI Topic Explainer / Quiz Modal -->
+  <div id="ai-topic-modal" class="modal-backdrop hidden fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-none p-4">
+    <div class="layer-modal w-full max-w-2xl rounded-xl p-5 flex flex-col gap-4 animate-fade-in shadow-2xl max-h-[85vh] overflow-hidden" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)]">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-md bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xs">
+            <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-[var(--on-surface)]" id="ai-topic-modal-title">AI Topic Assistant</h3>
+            <span class="text-[10px] text-[var(--on-surface-variant)] font-mono" id="ai-topic-modal-subject">Subject</span>
+          </div>
+        </div>
+        <button id="ai-topic-modal-close" class="text-[var(--on-surface-variant)] hover:text-[var(--on-surface)]">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <!-- Mode Selector Tabs -->
+      <div class="flex items-center gap-1 border-b border-[var(--border-subtle)] pb-2 text-xs font-mono">
+        <button class="ai-mode-tab active px-3 py-1 rounded bg-[var(--primary)] text-white font-medium" data-mode="exam">KTU Exam Format</button>
+        <button class="ai-mode-tab px-3 py-1 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)]" data-mode="simple">Intuitive Analogy</button>
+        <button class="ai-mode-tab px-3 py-1 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)]" data-mode="quiz">Practice Quiz (3 Qs)</button>
+        <button class="ai-mode-tab px-3 py-1 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)]" data-mode="flashcards">Flashcards</button>
+      </div>
+
+      <!-- Content Area -->
+      <div id="ai-topic-content" class="flex-1 overflow-y-auto pr-1 text-xs text-[var(--on-surface)] leading-relaxed">
+        <div class="flex items-center justify-center py-12 text-[var(--on-surface-variant)] gap-2">
+          <span class="material-symbols-outlined text-[20px] animate-spin text-[var(--primary)]">progress_activity</span>
+          <span>Consulting Gemini 3.5 Flash...</span>
+        </div>
+      </div>
+
+      <!-- Actions Footer -->
+      <div class="flex items-center justify-between pt-3 border-t border-[var(--border-subtle)] text-xs">
+        <span class="font-mono text-[10px] text-[var(--outline)]" id="ai-topic-status">Ready</span>
+        <div class="flex items-center gap-2">
+          <button id="ai-topic-copy-btn" class="btn-secondary h-8 px-3 font-mono text-xs">
+            <span class="material-symbols-outlined text-[15px]">content_copy</span>
+            <span>Copy</span>
+          </button>
+          <button id="ai-topic-save-notes-btn" class="btn-primary h-8 px-3.5 font-mono text-xs">
+            <span class="material-symbols-outlined text-[15px]">save</span>
+            <span>Save to Notes Vault</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ======================== APPLICATION SCRIPTS ======================== -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/data.js"></script>
+  <script src="js/ai-service.js"></script>
   <script src="js/supabase-client.js"></script>
   <script src="js/store.js"></script>
   <script src="js/views/dashboard.js"></script>

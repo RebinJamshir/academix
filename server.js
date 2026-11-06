@@ -1,6 +1,30 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const dns = require('dns');
+
+// Load local .env if present (ignored by git for secret protection)
+const envFile = path.join(__dirname, '.env');
+if (fs.existsSync(envFile)) {
+  try {
+    const envLines = fs.readFileSync(envFile, 'utf8').split('\n');
+    envLines.forEach(line => {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) return;
+      const idx = trimmed.indexOf('=');
+      if (idx !== -1) {
+        const k = trimmed.slice(0, idx).trim();
+        const v = trimmed.slice(idx + 1).trim();
+        if (!process.env[k]) process.env[k] = v;
+      }
+    });
+  } catch (e) {}
+}
+
+// Ensure IPv4 first on Windows to avoid IPv6 timeouts
+try {
+  dns.setDefaultResultOrder('ipv4first');
+} catch (e) {}
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = __dirname;
@@ -172,6 +196,53 @@ const server = http.createServer((req, res) => {
       success: true,
       message: 'Database reset to clean slate (0% progress, all markers preserved)',
       data: cleanData
+    });
+    return;
+  }
+
+  // 5. POST /api/ai/generate - Server-side Gemini API proxy (robust, fast, avoids CORS/IPv6 issues)
+  if (pathname === '/api/ai/generate' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk;
+      if (body.length > 1024 * 1024) req.destroy();
+    });
+    req.on('end', async () => {
+      try {
+        const { prompt, systemInstruction, apiKey, model } = JSON.parse(body || '{}');
+        const key = apiKey || process.env.GEMINI_API_KEY || '';
+        const targetModel = model || 'gemini-3.5-flash';
+
+        const payload = {
+          contents: [{ parts: [{ text: prompt || 'Hello' }] }]
+        };
+        if (systemInstruction) {
+          payload.systemInstruction = { parts: [{ text: systemInstruction }] };
+        }
+
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${key}`;
+        const aiRes = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await aiRes.json();
+        if (aiRes.ok && data.candidates && data.candidates[0] && data.candidates[0].content) {
+          const text = data.candidates[0].content.parts[0].text;
+          sendJSON(res, 200, { success: true, text, model: targetModel });
+        } else {
+          console.warn('[AI Proxy Warning]', data);
+          sendJSON(res, 400, {
+            success: false,
+            error: (data.error && data.error.message) || 'Gemini API Error',
+            details: data
+          });
+        }
+      } catch (err) {
+        console.error('[AI Proxy Exception]', err);
+        sendJSON(res, 500, { success: false, error: err.message });
+      }
     });
     return;
   }

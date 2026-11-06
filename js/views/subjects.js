@@ -337,8 +337,12 @@ window.SubjectsView = {
             ${
               (mod.topics || []).map(topic => `
                 <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-white flex items-center justify-between gap-3 hover:border-[var(--border-moderate)] transition-colors">
-                  <div class="min-w-0 flex-1">
-                    <span class="text-xs font-medium text-[var(--on-surface)] leading-snug block">${topic.title}</span>
+                  <div class="min-w-0 flex-1 flex items-center gap-2">
+                    <span class="text-xs font-medium text-[var(--on-surface)] leading-snug">${topic.title}</span>
+                    <button type="button" class="ai-topic-btn px-2 py-0.5 rounded hover:bg-[var(--primary-subtle)] text-[var(--primary)] text-xs flex items-center gap-1 transition-colors border border-[var(--primary)]/20" title="Ask Gemini AI for KTU Exam Answers, Quizzes & Flashcards" onclick="window.openAITopicAssistant('${sub.name.replace(/'/g, "\\'")}', '${topic.title.replace(/'/g, "\\'")}')">
+                      <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                      <span class="hidden sm:inline font-mono text-[10px] font-semibold">AI Tutor</span>
+                    </button>
                   </div>
 
                   <div class="flex items-center gap-6 flex-shrink-0">

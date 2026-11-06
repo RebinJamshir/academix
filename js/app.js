@@ -14,6 +14,8 @@ window.App = {
     this.bindSearchModal();
     this.bindNotificationsCenter();
     this.bindCloudSyncIndicator();
+    this.bindAICopilot();
+    this.bindAITopicModal();
     this.handleRoute();
 
     window.addEventListener("hashchange", () => this.handleRoute());
@@ -212,6 +214,21 @@ window.App = {
         e.preventDefault();
         self.openSearchModal();
       }
+      // ⌘J or Ctrl+J to toggle AI Copilot
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "j") {
+        e.preventDefault();
+        const drawer = document.getElementById("ai-copilot-drawer");
+        if (drawer) {
+          const isHidden = drawer.classList.contains("hidden");
+          if (isHidden) {
+            drawer.classList.remove("hidden");
+            const inp = document.getElementById("ai-chat-input");
+            if (inp) setTimeout(() => inp.focus(), 150);
+          } else {
+            drawer.classList.add("hidden");
+          }
+        }
+      }
       // N for new task
       if (!["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName)) {
         if (e.key === "n" || e.key === "N") {
@@ -225,6 +242,8 @@ window.App = {
       // Escape to close modals
       if (e.key === "Escape") {
         self.closeAllModals();
+        const drawer = document.getElementById("ai-copilot-drawer");
+        if (drawer) drawer.classList.add("hidden");
       }
     });
   },
@@ -861,6 +880,245 @@ window.App = {
     document.querySelectorAll(".modal-backdrop").forEach(m => m.classList.add("hidden"));
     const flyout = document.getElementById("notif-flyout-panel");
     if (flyout) flyout.classList.add("hidden");
+  },
+
+  bindAICopilot: function() {
+    const drawer = document.getElementById("ai-copilot-drawer");
+    const backdrop = document.getElementById("ai-drawer-backdrop");
+    const closeBtn = document.getElementById("ai-drawer-close");
+    const topbarBtn = document.getElementById("topbar-ai-btn");
+    const sidebarBtn = document.getElementById("sidebar-ai-copilot-btn");
+    const form = document.getElementById("ai-chat-form");
+    const input = document.getElementById("ai-chat-input");
+    const sendBtn = document.getElementById("ai-chat-send-btn");
+    const msgContainer = document.getElementById("ai-messages-container");
+
+    this.chatHistory = [];
+
+    const toggleDrawer = (open) => {
+      if (!drawer) return;
+      if (open) {
+        drawer.classList.remove("hidden");
+        setTimeout(() => input && input.focus(), 150);
+      } else {
+        drawer.classList.add("hidden");
+      }
+    };
+
+    if (topbarBtn) topbarBtn.addEventListener("click", () => toggleDrawer(true));
+    if (sidebarBtn) sidebarBtn.addEventListener("click", () => toggleDrawer(true));
+    if (closeBtn) closeBtn.addEventListener("click", () => toggleDrawer(false));
+    if (backdrop) backdrop.addEventListener("click", () => toggleDrawer(false));
+
+    // Quick pills
+    document.querySelectorAll(".ai-quick-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        if (!input) return;
+        input.value = pill.getAttribute("data-prompt");
+        if (form) form.dispatchEvent(new Event("submit"));
+      });
+    });
+
+    // Enter without shift submits
+    if (input) {
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          if (form) form.dispatchEvent(new Event("submit"));
+        }
+      });
+    }
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const text = (input.value || "").trim();
+        if (!text || !window.AIService || window.AIService.isGenerating) return;
+
+        // Append user bubble
+        const userBubble = document.createElement("div");
+        userBubble.className = "self-end max-w-[85%] rounded-lg p-3 bg-[var(--primary)] text-white text-xs leading-relaxed";
+        userBubble.textContent = text;
+        msgContainer.appendChild(userBubble);
+        input.value = "";
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+
+        // Append AI loading bubble
+        const aiBubble = document.createElement("div");
+        aiBubble.className = "self-start max-w-[95%] rounded-lg p-3 bg-[var(--surface-low)] border border-[var(--border-subtle)] text-xs text-[var(--on-surface)] flex flex-col gap-2";
+        aiBubble.innerHTML = `
+          <div class="flex items-center gap-2 text-[var(--primary)] font-medium">
+            <span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span>
+            <span>Gemini is thinking...</span>
+          </div>
+        `;
+        msgContainer.appendChild(aiBubble);
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+
+        if (sendBtn) sendBtn.disabled = true;
+
+        try {
+          const res = await window.AIService.askCopilot(text, this.chatHistory);
+          const formattedHtml = window.AIService.renderMarkdown(res.text);
+
+          aiBubble.innerHTML = `
+            <div class="flex items-center justify-between pb-1.5 border-b border-[var(--border-subtle)]/60 text-[10px] font-mono text-[var(--on-surface-variant)]">
+              <span class="flex items-center gap-1 text-[var(--primary)] font-semibold">
+                <span class="material-symbols-outlined text-[13px]">auto_awesome</span>
+                <span>Academix AI (${res.source === 'offline-engine' ? 'Offline Engine' : 'Gemini 3.5'})</span>
+              </span>
+              <div class="flex items-center gap-1.5">
+                <button class="ai-copy-btn hover:text-[var(--on-surface)]" title="Copy text">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                </button>
+                <button class="ai-save-note-btn text-[var(--primary)] hover:underline flex items-center gap-0.5" title="Save to Notes Vault">
+                  <span class="material-symbols-outlined text-[13px]">bookmark_add</span>
+                  <span>Save Note</span>
+                </button>
+              </div>
+            </div>
+            <div class="ai-rendered-content leading-relaxed pt-1">
+              ${formattedHtml}
+            </div>
+          `;
+
+          // Bind copy button
+          const copyBtn = aiBubble.querySelector(".ai-copy-btn");
+          if (copyBtn) {
+            copyBtn.onclick = () => {
+              navigator.clipboard.writeText(res.text).then(() => window.App.showToast("Copied to clipboard!"));
+            };
+          }
+
+          // Bind save note button
+          const saveNoteBtn = aiBubble.querySelector(".ai-save-note-btn");
+          if (saveNoteBtn) {
+            saveNoteBtn.onclick = () => {
+              window.academicStore.state.notes.unshift({
+                id: "note-ai-" + Date.now(),
+                title: "AI Study Note: " + text.slice(0, 30) + "...",
+                subjectId: "CS301",
+                content: res.text,
+                pinned: true,
+                updatedAt: new Date().toISOString()
+              });
+              window.academicStore.saveState();
+              window.App.showToast("Saved to Notes Vault (#/notes)!");
+            };
+          }
+
+          this.chatHistory.push({ role: "user", text });
+          this.chatHistory.push({ role: "model", text: res.text });
+        } catch (err) {
+          aiBubble.innerHTML = `<span class="text-[var(--error)]">Error: ${err.message || 'Could not reach AI service.'}</span>`;
+        } finally {
+          if (sendBtn) sendBtn.disabled = false;
+          msgContainer.scrollTop = msgContainer.scrollHeight;
+        }
+      });
+    }
+  },
+
+  bindAITopicModal: function() {
+    const modal = document.getElementById("ai-topic-modal");
+    if (!modal) return;
+    const closeBtn = document.getElementById("ai-topic-modal-close");
+    const copyBtn = document.getElementById("ai-topic-copy-btn");
+    const saveNoteBtn = document.getElementById("ai-topic-save-notes-btn");
+    const tabs = document.querySelectorAll(".ai-mode-tab");
+
+    if (closeBtn) closeBtn.onclick = () => modal.classList.add("hidden");
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.classList.add("hidden");
+    };
+
+    let currentSubject = "";
+    let currentTopic = "";
+    let currentMode = "exam";
+    let lastGeneratedText = "";
+
+    window.openAITopicAssistant = async (subjectName, topicTitle) => {
+      currentSubject = subjectName;
+      currentTopic = topicTitle;
+      currentMode = "exam";
+
+      document.getElementById("ai-topic-modal-title").textContent = topicTitle;
+      document.getElementById("ai-topic-modal-subject").textContent = subjectName;
+      modal.classList.remove("hidden");
+
+      // Reset tabs
+      tabs.forEach(t => {
+        if (t.dataset.mode === "exam") {
+          t.className = "ai-mode-tab active px-3 py-1 rounded bg-[var(--primary)] text-white font-medium";
+        } else {
+          t.className = "ai-mode-tab px-3 py-1 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)]";
+        }
+      });
+
+      loadContent();
+    };
+
+    const loadContent = async () => {
+      const container = document.getElementById("ai-topic-content");
+      const status = document.getElementById("ai-topic-status");
+      container.innerHTML = `
+        <div class="flex items-center justify-center py-12 text-[var(--on-surface-variant)] gap-2">
+          <span class="material-symbols-outlined text-[20px] animate-spin text-[var(--primary)]">progress_activity</span>
+          <span>Generating ${currentMode} breakdown via Gemini 3.5...</span>
+        </div>
+      `;
+      status.textContent = "Generating...";
+
+      try {
+        let res;
+        if (currentMode === "quiz") {
+          res = await window.AIService.generateQuiz(currentSubject, currentTopic, 3);
+        } else if (currentMode === "flashcards") {
+          res = await window.AIService.generateFlashcards(currentSubject, currentTopic);
+        } else {
+          res = await window.AIService.explainTopic(currentSubject, currentTopic, currentMode);
+        }
+
+        lastGeneratedText = res.text;
+        container.innerHTML = window.AIService.renderMarkdown(res.text);
+        status.textContent = `Generated via ${res.source === 'offline-engine' ? 'Academic Engine' : 'Gemini 3.5 Flash'}`;
+      } catch (e) {
+        container.innerHTML = `<span class="text-[var(--error)]">Failed to generate: ${e.message}</span>`;
+        status.textContent = "Error";
+      }
+    };
+
+    tabs.forEach(tab => {
+      tab.onclick = () => {
+        tabs.forEach(t => t.className = "ai-mode-tab px-3 py-1 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)]");
+        tab.className = "ai-mode-tab active px-3 py-1 rounded bg-[var(--primary)] text-white font-medium";
+        currentMode = tab.dataset.mode;
+        loadContent();
+      };
+    });
+
+    if (copyBtn) {
+      copyBtn.onclick = () => {
+        if (!lastGeneratedText) return;
+        navigator.clipboard.writeText(lastGeneratedText).then(() => window.App.showToast("Copied to clipboard!"));
+      };
+    }
+
+    if (saveNoteBtn) {
+      saveNoteBtn.onclick = () => {
+        if (!lastGeneratedText) return;
+        window.academicStore.state.notes.unshift({
+          id: "note-ai-" + Date.now(),
+          title: `${currentSubject}: ${currentTopic}`,
+          subjectId: "CS301",
+          content: lastGeneratedText,
+          pinned: true,
+          updatedAt: new Date().toISOString()
+        });
+        window.academicStore.saveState();
+        window.App.showToast("Saved to Notes Vault (#/notes)!");
+      };
+    }
   },
 
   jumpTo: function(hash) {

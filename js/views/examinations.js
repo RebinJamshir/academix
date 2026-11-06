@@ -41,6 +41,10 @@ window.ExaminationsView = {
           </div>
 
           <div class="flex items-center gap-2">
+            <button class="btn-primary h-9 px-3 text-xs font-mono" id="exam-ai-audit-btn" onclick="window.ExaminationsView.triggerAIAudit()">
+              <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+              <span>AI Readiness Audit</span>
+            </button>
             <button class="btn-secondary h-9 px-3 text-xs font-mono" onclick="window.App.openPlanRegenModal()">
               <span class="material-symbols-outlined text-[18px]">sync</span>
               <span>Regenerate Study Plan</span>
@@ -193,6 +197,19 @@ window.ExaminationsView = {
     window.academicStore.toggleExamChecklist(examId, itemId);
     window.App.showToast("Exam prep checklist updated.");
     this.render(document.getElementById("main-content-view"));
+  },
+
+  triggerAIAudit: function() {
+    const drawer = document.getElementById("ai-copilot-drawer");
+    const input = document.getElementById("ai-chat-input");
+    const form = document.getElementById("ai-chat-form");
+    if (drawer) {
+      drawer.classList.remove("hidden");
+      if (input && form) {
+        input.value = "Audit my exam readiness across all 14 subjects, identify the top 3 high-risk backlogs, and suggest a focused 5-day revision plan respecting my 22:45 bedtime.";
+        form.dispatchEvent(new Event("submit"));
+      }
+    }
   }
 };
 
