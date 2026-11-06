@@ -1,0 +1,368 @@
+/* Academix - Modern Academic Productivity Platform Design System */
+/* Strict design system adhering to Stitch Design Tokens & Product Specification */
+
+:root {
+  --bg-surface: #FAF9FB;
+  --bg-surface-dim: #DBD9DC;
+  --bg-surface-bright: #FAF9FB;
+  --surface-lowest: #FFFFFF;
+  --surface-low: #F5F3F5;
+  --surface-container: #EFEDF0;
+  --surface-high: #E9E8EA;
+  --surface-highest: #E3E2E4;
+  
+  --on-surface: #1B1C1E;
+  --on-surface-variant: #3F4945;
+  --outline: #6F7975;
+  --outline-variant: #BEC9C4;
+  --border-subtle: #E5E3DC;
+  --border-moderate: #D1CFC7;
+  --border-strong: #8C8F96;
+
+  /* Strict Semantic Domain Colors - NO PURPLE, NO GRADIENTS */
+  --primary: #1F6E5C;
+  --primary-hover: #175749;
+  --primary-container: #1F6E5C;
+  --on-primary: #FFFFFF;
+  --on-primary-container: #A2EDD6;
+  --primary-fixed: #A6F1DA;
+  --primary-fixed-dim: #8AD5BF;
+  
+  --secondary: #2B4C6F;
+  --secondary-container: #B4D4FE;
+  --on-secondary: #FFFFFF;
+  --secondary-fixed: #D1E4FF;
+  --secondary-fixed-dim: #A9C9F2;
+  
+  --tertiary: #B87333;
+  --tertiary-container: #945100;
+  --on-tertiary: #FFFFFF;
+  --tertiary-fixed: #FFDCC2;
+  --tertiary-fixed-dim: #FFB77A;
+
+  --error: #C94A4A;
+  --error-container: #FFDAD6;
+  --on-error: #FFFFFF;
+  --on-error-container: #93000A;
+
+  --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base resets & typography */
+html, body {
+  background-color: var(--bg-surface);
+  color: var(--on-surface);
+  font-family: var(--font-geist);
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Material Symbols font configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+/* Custom scrollbar for desktop lists */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Architectural Card Layers (Level 1 to 5) */
+.layer-flat {
+  background: var(--surface-low);
+  border: 1px solid var(--border-subtle);
+}
+
+.layer-card {
+  background: var(--surface-lowest);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.layer-card-lg {
+  background: var(--surface-lowest);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.layer-raised {
+  background: var(--surface-lowest);
+  border: 1px solid var(--border-moderate);
+  box-shadow: 0 1px 3px rgba(28, 29, 31, 0.05);
+}
+
+.layer-modal {
+  background: var(--surface-lowest);
+  border: 1px solid var(--border-moderate);
+  box-shadow: 0 8px 24px rgba(28, 29, 31, 0.12), 0 2px 6px rgba(28, 29, 31, 0.06);
+}
+
+/* Button variants */
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid #185648;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+.btn-primary:active {
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  transform: translateY(0.5px);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--on-surface);
+  border: 1px solid var(--border-moderate);
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: var(--surface-low);
+  border-color: var(--border-strong);
+}
+.btn-secondary:active {
+  background: #EAE8E1;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--on-surface-variant);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background: var(--surface-low);
+  color: var(--on-surface);
+}
+
+.btn-danger {
+  background: var(--error);
+  color: #FFFFFF;
+  border: 1px solid #B03D3D;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.btn-danger:hover {
+  background: #B03D3D;
+}
+
+/* Badges & Chips */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+
+.badge-completed {
+  background: #E7F2EC;
+  color: #1F6E5C;
+  border: 1px solid #CFE3D8;
+}
+
+.badge-pending {
+  background: #FAF0E6;
+  color: #B87333;
+  border: 1px solid #F3DEC8;
+}
+
+.badge-urgent {
+  background: #F9EBEB;
+  color: #C94A4A;
+  border: 1px solid #F2D0D0;
+}
+
+.badge-exam {
+  background: #E9F0F7;
+  color: #2B4C6F;
+  border: 1px solid #D0E0EE;
+}
+
+.badge-neutral {
+  background: #F4F3EF;
+  color: #6E7179;
+  border: 1px solid #E5E3DC;
+}
+
+/* Inputs & Form Controls */
+.input-base {
+  background: #FFFFFF;
+  border: 1px solid var(--border-moderate);
+  border-radius: 6px;
+  color: var(--on-surface);
+  font-family: var(--font-geist);
+  font-size: 13px;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.input-base:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.input-base::placeholder {
+  color: #9FA2A8;
+}
+
+/* Heatmap squares */
+.heatmap-cell {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+.heatmap-cell:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+.heatmap-0 { background: #EFEDF0; }
+.heatmap-1 { background: #D1EADE; }
+.heatmap-2 { background: #8FD1BD; }
+.heatmap-3 { background: #3FA888; }
+.heatmap-4 { background: #1F6E5C; }
+
+/* Calendar grid cell hover */
+.cal-grid-cell {
+  min-height: 84px;
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.15s ease;
+}
+.cal-grid-cell:hover {
+  background-color: #F8F7F3;
+}
+.cal-grid-cell.is-selected {
+  background-color: #F0F6F3;
+}
+.cal-grid-cell.is-today {
+  background-color: #FAF6ED;
+}
+
+/* Animations & Performance Accelerations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-timer-pulse {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Touch & Mobile Speed Optimizations */
+button, a, input, select, textarea, .btn-primary, .btn-secondary, .btn-ghost, .badge {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active:not(:disabled), .btn-primary:active, .btn-secondary:active {
+  transform: scale(0.98);
+  transition: transform 0.05s ease;
+}
+
+/* Momentum scrolling for all scroll containers */
+.overflow-y-auto, .overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Mobile Safe Area Inset Support */
+.mobile-bottom-nav {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 12.5px;
+  }
+  .cal-grid-cell {
+    min-height: 56px;
+    padding: 3px !important;
+  }
+  .layer-card {
+    padding: 12px;
+  }
+}
+
+

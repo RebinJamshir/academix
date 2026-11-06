@@ -1,0 +1,7637 @@
+/**
+ * KTU B.Tech CSE (2024 Scheme) Academic Dataset
+ * S5 + 9 Backlogs Study Management System
+ * Complete Schedule from 6 Nov 2026 to 17 Jan 2027
+ * All 14 subjects color-coded to PDF palette (zero purple, zero gradients)
+ * 100% clean initial state ready for active study.
+ */
+
+window.KTU_DATA = {
+  "profile": {
+    "id": "user-rebin",
+    "name": "Rebin",
+    "email": "rebin.student@ktu.edu.in",
+    "avatar": "",
+    "university": "APJ Abdul Kalam Technological University (KTU)",
+    "branch": "Computer Science & Engineering",
+    "scheme": "2024 Scheme",
+    "semester": "Semester 5 + 9 Backlogs",
+    "academicYear": "2026-2027",
+    "targetGoal": "Pass all 5 S5 subjects and all 9 chosen backlogs via high-yield syllabus coverage, active recall & timed practice.",
+    "timezone": "Asia/Kolkata",
+    "classHours": "09:00 - 17:00 (Mon-Fri until Nov 20)",
+    "studyLeaveStart": "2026-11-21",
+    "examPhaseDeadline": "2026-11-28 (S5 + S3 prep finished before S5 exams)"
+  },
+  "subjects": [
+    {
+      "id": "sub-cn",
+      "name": "Computer Networks",
+      "code": "PCCST501",
+      "semester": "S5",
+      "category": "Current S5 Core",
+      "credits": 4,
+      "examDate": "2026-11-23",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-11-22",
+      "color": "#1E6091",
+      "totalModules": 4,
+      "description": "Protocol layering, application layer architectures, transport protocols (TCP/UDP), network routing, data-link mechanisms, and physical transmission media.",
+      "colorBg": "#EFF6FC",
+      "colorText": "#103E60",
+      "colorBorder": "#BDD7EE"
+    },
+    {
+      "id": "sub-daa",
+      "name": "Design and Analysis of Algorithms",
+      "code": "PCCST502",
+      "semester": "S5",
+      "category": "Current S5 Core",
+      "credits": 4,
+      "examDate": "2026-11-27",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-11-26",
+      "color": "#168038",
+      "totalModules": 4,
+      "description": "Asymptotic analysis, recurrences, AVL trees, disjoint sets, graph algorithms, divide & conquer, dynamic programming, branch & bound, and NP-completeness.",
+      "colorBg": "#EDF7EE",
+      "colorText": "#0F5224",
+      "colorBorder": "#C0E4C8"
+    },
+    {
+      "id": "sub-dsa",
+      "name": "Data Structures and Algorithms",
+      "code": "PCCST303",
+      "semester": "S3",
+      "category": "S3 Backlog",
+      "credits": 4,
+      "examDate": "2026-11-30",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-11-29",
+      "color": "#C25E00",
+      "totalModules": 4,
+      "description": "Fundamental stacks, queues, expression evaluation, singly & doubly linked lists, binary search trees, heaps, graph traversals (DFS/BFS), sorting, and hashing.",
+      "colorBg": "#FEF6EE",
+      "colorText": "#7A3B00",
+      "colorBorder": "#F9D5B3"
+    },
+    {
+      "id": "sub-ml",
+      "name": "Machine Learning",
+      "code": "PCCST503",
+      "semester": "S5",
+      "category": "Current S5 Core",
+      "credits": 4,
+      "examDate": "2026-12-01",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-11-30",
+      "color": "#028090",
+      "totalModules": 4,
+      "description": "MLE/MAP, linear/logistic regression, decision trees (ID3), SVM and kernel tricks, multilayer perceptrons, backpropagation, k-means clustering, PCA, and ensemble learning.",
+      "colorBg": "#EBF6F7",
+      "colorText": "#004750",
+      "colorBorder": "#B9E3E7"
+    },
+    {
+      "id": "sub-java",
+      "name": "Object Oriented Programming (Java)",
+      "code": "PBCST304",
+      "semester": "S3",
+      "category": "S3 Backlog",
+      "credits": 4,
+      "examDate": "2026-12-02",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-01",
+      "color": "#B82A2A",
+      "totalModules": 4,
+      "description": "Java fundamentals, OOP principles, constructors, inheritance, overriding, packages, interfaces, exception handling, SOLID design principles, Swing GUI, and JDBC.",
+      "colorBg": "#FDF0F0",
+      "colorText": "#721717",
+      "colorBorder": "#F6C1C1"
+    },
+    {
+      "id": "sub-mc",
+      "name": "Microcontrollers",
+      "code": "PBCST504",
+      "semester": "S5",
+      "category": "Current S5 Core",
+      "credits": 4,
+      "examDate": "2026-12-04",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-03",
+      "color": "#2D6A4F",
+      "totalModules": 4,
+      "description": "ARM Cortex-M architecture, embedded C programming, STM32 GPIO/timer/ADC peripherals, communication protocols (USART, SPI, I2C, CAN, USB), FreeRTOS basics, and TrustZone.",
+      "colorBg": "#EEF6F2",
+      "colorText": "#183F2E",
+      "colorBorder": "#C2E2D1"
+    },
+    {
+      "id": "sub-deld",
+      "name": "Digital Electronics and Logic Design",
+      "code": "GAEST305",
+      "semester": "S3",
+      "category": "S3 Backlog",
+      "credits": 4,
+      "examDate": "2026-12-05",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-04",
+      "color": "#A67C00",
+      "totalModules": 4,
+      "description": "Number systems, Boolean algebra, K-map reduction, code converters, Verilog continuous assignment, decoders, multiplexers, adders, flip-flops, counters, shift registers, and FSM.",
+      "colorBg": "#FFF9E8",
+      "colorText": "#634A00",
+      "colorBorder": "#FFE59E"
+    },
+    {
+      "id": "sub-pe2",
+      "name": "Program Elective 2",
+      "code": "PECST52N",
+      "semester": "S5",
+      "category": "Current S5 Elective",
+      "credits": 3,
+      "examDate": "2026-12-07",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional (Elective specific title TBD: SPM/AI/Data Analytics)",
+      "examEveRevisionDate": "2026-12-06",
+      "color": "#475569",
+      "totalModules": 4,
+      "description": "S5 Elective slot PECST521-528. Editable placeholder modules until elective choice is selected by student.",
+      "colorBg": "#F1F5F9",
+      "colorText": "#1E293B",
+      "colorBorder": "#CBD5E1"
+    },
+    {
+      "id": "sub-maths",
+      "name": "Mathematics for Information Science - 1",
+      "code": "GAMAT101",
+      "semester": "S1",
+      "category": "S1 Backlog",
+      "credits": 4,
+      "examDate": "2026-12-14",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-13",
+      "color": "#2563EB",
+      "totalModules": 4,
+      "description": "Limits, continuity, chain rule, linearization, concavity, multivariable functions, partial derivatives, directional derivatives, gradient, extrema, Lagrange multipliers, and LPP.",
+      "colorBg": "#EFF6FF",
+      "colorText": "#1E40AF",
+      "colorBorder": "#BFDBFE"
+    },
+    {
+      "id": "sub-physics",
+      "name": "Physics for Information Science",
+      "code": "GAPHT121",
+      "semester": "S1",
+      "category": "S1 Backlog",
+      "credits": 4,
+      "examDate": "2026-12-17",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-16",
+      "color": "#BE185D",
+      "totalModules": 4,
+      "description": "Electrical conductivity, Fermi-Dirac statistics, superconductivity, quantum mechanics (Schrodinger equation, particle in a box), semiconductor carrier concentration, and photonic devices.",
+      "colorBg": "#FDF2F8",
+      "colorText": "#831843",
+      "colorBorder": "#FBCFE8"
+    },
+    {
+      "id": "sub-graphics",
+      "name": "Engineering Graphics & CAD",
+      "code": "GMEST103",
+      "semester": "S1",
+      "category": "S1 Backlog",
+      "credits": 3,
+      "examDate": "2026-12-29",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2026-12-28",
+      "color": "#92400E",
+      "totalModules": 4,
+      "description": "Projection of points and lines, true length and inclination, projection of solids with axis inclined, sections of solids, development of surfaces, and isometric projection.",
+      "colorBg": "#FEF8EC",
+      "colorText": "#602A08",
+      "colorBorder": "#FDE68A"
+    },
+    {
+      "id": "sub-python",
+      "name": "Algorithmic Thinking with Python",
+      "code": "UCEST105",
+      "semester": "S1",
+      "category": "S1 Backlog",
+      "credits": 4,
+      "examDate": "2027-01-05",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2027-01-04",
+      "color": "#0284C7",
+      "totalModules": 4,
+      "description": "Problem-solving strategies, pseudocode and flowcharts, Python data types, loops, sequences, functions, recursion, brute force, divide and conquer, and dynamic programming.",
+      "colorBg": "#F0F9FF",
+      "colorText": "#075985",
+      "colorBorder": "#BAE6FD"
+    },
+    {
+      "id": "sub-chem",
+      "name": "Chemistry for Information & Electrical Science",
+      "code": "GXCYT122",
+      "semester": "S2",
+      "category": "S2 Backlog",
+      "credits": 4,
+      "examDate": "2027-01-12",
+      "examDateStatus": "provisional",
+      "examDateConfidence": "Image/calendar-listed, provisional",
+      "examEveRevisionDate": "2027-01-11",
+      "color": "#059669",
+      "totalModules": 4,
+      "description": "Electrochemistry, corrosion science, electronic materials, molecular spectroscopy, analytical techniques, environmental chemistry, and electronic waste management.",
+      "colorBg": "#ECFDF5",
+      "colorText": "#065F46",
+      "colorBorder": "#A7F3D0"
+    },
+    {
+      "id": "sub-sw",
+      "name": "Software Engineering",
+      "code": "PECST411",
+      "semester": "S4",
+      "category": "S4 Backlog",
+      "credits": 3,
+      "examDate": null,
+      "examDateStatus": "tbd",
+      "examDateConfidence": "Date not shown in supplied files. Planned against 5 Jan as a safe working target.",
+      "workingTargetDate": "2027-01-05",
+      "examEveRevisionDate": null,
+      "color": "#C2410C",
+      "totalModules": 4,
+      "description": "Software process models, requirements engineering, SRS documentation, architectural styles, UML diagrams, design patterns, testing strategies, CI/CD DevOps, and COCOMO cost estimation.",
+      "colorBg": "#FFF7ED",
+      "colorText": "#7C2D12",
+      "colorBorder": "#FED7AA"
+    }
+  ],
+  "modules": [
+    {
+      "id": "mod-cn-1",
+      "subjectId": "sub-cn",
+      "moduleNumber": 1,
+      "title": "Application Layer & Protocol Layering",
+      "description": "HTTP, FTP, e-mail (SMTP/IMAP), DNS, and P2P architectures.",
+      "learnWindow": "06 Nov - 08 Nov",
+      "practiseWindow": "08 Nov - 09 Nov",
+      "topics": [
+        {
+          "id": "top-cn-1-1",
+          "title": "Protocol layering & OSI/TCP-IP models",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-1-2",
+          "title": "HTTP protocol, persistent connections & cookies",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-1-3",
+          "title": "Domain Name System (DNS) resolution & record types",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-1-4",
+          "title": "Electronic mail architecture (SMTP, POP3, IMAP)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-1-5",
+          "title": "Peer-to-Peer file distribution (BitTorrent, DHT)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-cn-2",
+      "subjectId": "sub-cn",
+      "moduleNumber": 2,
+      "title": "Transport Layer & Network Routing",
+      "description": "Transport layer (UDP, TCP) + sockets hands-on; Network layer (routing, multicast, IPv6, QoS).",
+      "learnWindow": "09 Nov - 11 Nov",
+      "practiseWindow": "11 Nov - 12 Nov",
+      "topics": [
+        {
+          "id": "top-cn-2-1",
+          "title": "UDP segment structure & checksum calculation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-2-2",
+          "title": "TCP connection management, flow control (sliding window)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-2-3",
+          "title": "TCP congestion control (AIMD, Slow Start, Fast Recovery)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-2-4",
+          "title": "Socket programming API fundamentals",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-2-5",
+          "title": "Routing algorithms: Link-State (Dijkstra) & Distance-Vector (Bellman-Ford)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-2-6",
+          "title": "IPv6 addressing, multicast & QoS principles",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-cn-3",
+      "subjectId": "sub-cn",
+      "moduleNumber": 3,
+      "title": "Data-Link Layer & Local Area Networks",
+      "description": "Data-link layer (DLC, MAC, Ethernet, wireless LAN, Mobile IP).",
+      "learnWindow": "12 Nov - 14 Nov",
+      "practiseWindow": "14 Nov",
+      "topics": [
+        {
+          "id": "top-cn-3-1",
+          "title": "Error detection & correction: CRC and Hamming code",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-3-2",
+          "title": "Multiple Access protocols: CSMA/CD and CSMA/CA",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-3-3",
+          "title": "Ethernet standard framing & MAC addressing",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-3-4",
+          "title": "Wireless LAN IEEE 802.11 architecture",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-3-5",
+          "title": "Mobile IP: Agent discovery, registration and tunneling",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-cn-4",
+      "subjectId": "sub-cn",
+      "moduleNumber": 4,
+      "title": "Physical Layer & Network Management",
+      "description": "SNMP, ASN.1; Physical layer (signals, transmission, media).",
+      "learnWindow": "14 Nov - 18 Nov",
+      "practiseWindow": "18 Nov - 19 Nov",
+      "topics": [
+        {
+          "id": "top-cn-4-1",
+          "title": "Transmission media: Guided (Twisted pair, Coaxial, Fiber) vs Unguided",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-4-2",
+          "title": "Signal impairment: Attenuation, distortion, Nyquist/Shannon capacity",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-4-3",
+          "title": "Digital transmission: Line coding (NRZ, Manchester, AMI)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-4-4",
+          "title": "Network Management: SNMP architecture & MIB structure",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-cn-4-5",
+          "title": "ASN.1 basic encoding rules",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-daa-1",
+      "subjectId": "sub-daa",
+      "moduleNumber": 1,
+      "title": "Analysis, Asymptotics & Balanced Trees",
+      "description": "Analysis, asymptotics, recurrences (Master theorem), AVL trees.",
+      "learnWindow": "06 Nov - 08 Nov",
+      "practiseWindow": "08 Nov",
+      "topics": [
+        {
+          "id": "top-daa-1-1",
+          "title": "Asymptotic notation (O, Ω, Θ) & space/time complexity",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-1-2",
+          "title": "Recurrence relations: Substitution & Recursion Tree",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-1-3",
+          "title": "Master Theorem all 3 cases with boundary conditions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-1-4",
+          "title": "AVL Tree rotations (LL, RR, LR, RL) & rebalancing",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-daa-2",
+      "subjectId": "sub-daa",
+      "moduleNumber": 2,
+      "title": "Disjoint Sets & Divide-and-Conquer",
+      "description": "Disjoint sets, graphs (BFS/DFS/SCC/topological sort), divide & conquer.",
+      "learnWindow": "08 Nov - 10 Nov",
+      "practiseWindow": "13 Nov - 15 Nov",
+      "topics": [
+        {
+          "id": "top-daa-2-1",
+          "title": "Disjoint Set Union (DSU) with union by rank and path compression",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-2-2",
+          "title": "Graph traversals: BFS & DFS classification of edges",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-2-3",
+          "title": "Strongly Connected Components (Kosaraju & Tarjan)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-2-4",
+          "title": "Topological Sort (Kahn's and DFS based)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-2-5",
+          "title": "Divide and conquer: Strassen matrix multiplication analysis",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-daa-3",
+      "subjectId": "sub-daa",
+      "moduleNumber": 3,
+      "title": "Greedy, Dynamic Programming & Backtracking",
+      "description": "Greedy (MST, Dijkstra), dynamic programming (MCM, Floyd-Warshall), backtracking.",
+      "learnWindow": "15 Nov - 17 Nov",
+      "practiseWindow": "17 Nov",
+      "topics": [
+        {
+          "id": "top-daa-3-1",
+          "title": "Greedy: Minimum Spanning Trees (Kruskal & Prim)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-3-2",
+          "title": "Dijkstra's Single Source Shortest Path with priority queues",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-3-3",
+          "title": "Dynamic Programming: Matrix Chain Multiplication (MCM)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-3-4",
+          "title": "All-pairs shortest paths: Floyd-Warshall algorithm",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-3-5",
+          "title": "Backtracking: N-Queens problem & Subset Sum",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-daa-4",
+      "subjectId": "sub-daa",
+      "moduleNumber": 4,
+      "title": "Branch & Bound, Complexity Classes & Approximation",
+      "description": "Branch & bound (TSP), P/NP classes, NP-completeness, approximation, randomized.",
+      "learnWindow": "17 Nov - 20 Nov",
+      "practiseWindow": "20 Nov - 23 Nov",
+      "topics": [
+        {
+          "id": "top-daa-4-1",
+          "title": "Branch and Bound: Traveling Salesperson Problem (TSP)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-4-2",
+          "title": "Complexity classes P, NP, NP-Hard, and NP-Complete",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-4-3",
+          "title": "Polynomial time reductions (Circuit-SAT to 3-SAT)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-4-4",
+          "title": "Vertex Cover & Clique NP-completeness proofs",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-4-5",
+          "title": "Approximation algorithms: Vertex Cover 2-approximation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-daa-4-6",
+          "title": "Randomized algorithms: Randomized QuickSort expected runtime",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-dsa-1",
+      "subjectId": "sub-dsa",
+      "moduleNumber": 1,
+      "title": "Linear Structures: Stacks, Queues & Evaluation",
+      "description": "Basic concepts, stacks, queues, expression evaluation.",
+      "learnWindow": "07 Nov",
+      "practiseWindow": "10 Nov",
+      "topics": [
+        {
+          "id": "top-dsa-1-1",
+          "title": "Stack implementation and infix to postfix conversion",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-1-2",
+          "title": "Postfix expression evaluation algorithm",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-1-3",
+          "title": "Circular queue implementation & boundary conditions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-1-4",
+          "title": "Double-ended queue (Deque) and Priority Queue basics",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-dsa-2",
+      "subjectId": "sub-dsa",
+      "moduleNumber": 2,
+      "title": "Linked Lists & Dynamic Memory Management",
+      "description": "Linked lists and memory management.",
+      "learnWindow": "10 Nov - 15 Nov",
+      "practiseWindow": "15 Nov",
+      "topics": [
+        {
+          "id": "top-dsa-2-1",
+          "title": "Singly linked lists insertion, deletion and reversal",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-2-2",
+          "title": "Doubly and circular linked list implementations",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-2-3",
+          "title": "Polynomial representation and addition using lists",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-2-4",
+          "title": "Dynamic memory allocation and free list management",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-dsa-3",
+      "subjectId": "sub-dsa",
+      "moduleNumber": 3,
+      "title": "Non-Linear Structures: Trees & Graphs",
+      "description": "Trees and graphs (BST, heaps, traversals, DFS/BFS).",
+      "learnWindow": "15 Nov - 18 Nov",
+      "practiseWindow": "18 Nov - 21 Nov",
+      "topics": [
+        {
+          "id": "top-dsa-3-1",
+          "title": "Binary tree recursive and iterative traversals",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-3-2",
+          "title": "Binary Search Tree (BST) operations and deletion cases",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-3-3",
+          "title": "Binary Heaps (Min/Max Heap) and HeapSort implementation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-3-4",
+          "title": "Graph representation: Adjacency Matrix vs Adjacency List",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-dsa-4",
+      "subjectId": "sub-dsa",
+      "moduleNumber": 4,
+      "title": "Sorting, Searching & Hashing",
+      "description": "Sorting, searching, hashing.",
+      "learnWindow": "21 Nov",
+      "practiseWindow": "25 Nov",
+      "topics": [
+        {
+          "id": "top-dsa-4-1",
+          "title": "Divide and conquer sorts: MergeSort & QuickSort analysis",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-4-2",
+          "title": "Radix Sort and counting sort time complexity",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-4-3",
+          "title": "Hash functions and collision resolution (Linear probing, Chaining)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-dsa-4-4",
+          "title": "Open addressing vs separate chaining comparison",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-ml-1",
+      "subjectId": "sub-ml",
+      "moduleNumber": 1,
+      "title": "Foundations, Estimation & Regression",
+      "description": "Intro to ML, MLE/MAP, regression, gradient descent.",
+      "learnWindow": "06 Nov - 08 Nov",
+      "practiseWindow": "08 Nov - 11 Nov",
+      "topics": [
+        {
+          "id": "top-ml-1-1",
+          "title": "Supervised vs Unsupervised vs Reinforcement learning",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-1-2",
+          "title": "Maximum Likelihood Estimation (MLE) vs MAP estimation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-1-3",
+          "title": "Linear regression with Ordinary Least Squares (OLS)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-1-4",
+          "title": "Gradient Descent: Batch, Stochastic (SGD) & Mini-batch",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-ml-2",
+      "subjectId": "sub-ml",
+      "moduleNumber": 2,
+      "title": "Classification & Model Evaluation",
+      "description": "Classification (logistic, Naive Bayes, KNN, ID3), overfitting, evaluation measures.",
+      "learnWindow": "11 Nov - 14 Nov",
+      "practiseWindow": "14 Nov",
+      "topics": [
+        {
+          "id": "top-ml-2-1",
+          "title": "Logistic Regression and cross-entropy loss function",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-2-2",
+          "title": "Naive Bayes classifier (Gaussian, Multinomial)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-2-3",
+          "title": "k-Nearest Neighbors (k-NN) distance metrics & curse of dimensionality",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-2-4",
+          "title": "Decision Trees: ID3 algorithm, Entropy and Information Gain",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-2-5",
+          "title": "Evaluation: Confusion matrix, Precision, Recall, F1, ROC-AUC",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-ml-3",
+      "subjectId": "sub-ml",
+      "moduleNumber": 3,
+      "title": "Support Vector Machines & Neural Networks",
+      "description": "SVM and kernels; neural networks, backpropagation.",
+      "learnWindow": "14 Nov - 20 Nov",
+      "practiseWindow": "20 Nov - 22 Nov",
+      "topics": [
+        {
+          "id": "top-ml-3-1",
+          "title": "SVM: Maximum margin hyperplane and soft margin formulation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-3-2",
+          "title": "Kernel trick: Polynomial, RBF/Gaussian kernel functions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-3-3",
+          "title": "Multilayer Perceptron (MLP) and activation functions (ReLU, Sigmoid)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-3-4",
+          "title": "Backpropagation algorithm step-by-step mathematical derivation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-ml-4",
+      "subjectId": "sub-ml",
+      "moduleNumber": 4,
+      "title": "Unsupervised Learning, Dimensionality & Ensembles",
+      "description": "Clustering, PCA, ensembles, resampling, bias-variance.",
+      "learnWindow": "22 Nov - 24 Nov",
+      "practiseWindow": "24 Nov",
+      "topics": [
+        {
+          "id": "top-ml-4-1",
+          "title": "k-Means clustering algorithm and elbow method for k",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-4-2",
+          "title": "Principal Component Analysis (PCA) eigenvector decomposition",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-4-3",
+          "title": "Ensemble methods: Bagging, Random Forests and AdaBoost",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-ml-4-4",
+          "title": "Bias-Variance tradeoff and k-fold cross validation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-java-1",
+      "subjectId": "sub-java",
+      "moduleNumber": 1,
+      "title": "Java Fundamentals & Class Design",
+      "description": "Java basics, OOP concepts, classes, objects, constructors.",
+      "learnWindow": "07 Nov",
+      "practiseWindow": "07 Nov - 11 Nov",
+      "topics": [
+        {
+          "id": "top-java-1-1",
+          "title": "JVM architecture, bytecode execution and garbage collection",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-1-2",
+          "title": "Classes, objects, constructors, this keyword, method overloading",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-java-2",
+      "subjectId": "sub-java",
+      "moduleNumber": 2,
+      "title": "Inheritance, Polymorphism & Inner Classes",
+      "description": "Polymorphism, static/final/inner classes, inheritance, overriding.",
+      "learnWindow": "11 Nov - 14 Nov",
+      "practiseWindow": "14 Nov - 16 Nov",
+      "topics": [
+        {
+          "id": "top-java-2-1",
+          "title": "Inheritance (super keyword, constructor chaining)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-2-2",
+          "title": "Dynamic method dispatch and runtime polymorphism",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-2-3",
+          "title": "static, final keywords and nested/inner classes",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-java-3",
+      "subjectId": "sub-java",
+      "moduleNumber": 3,
+      "title": "Packages, Interfaces & Design Patterns",
+      "description": "Packages, interfaces, exception handling, Singleton/Adapter patterns.",
+      "learnWindow": "16 Nov - 21 Nov",
+      "practiseWindow": "21 Nov",
+      "topics": [
+        {
+          "id": "top-java-3-1",
+          "title": "Packages access protection and CLASSPATH",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-3-2",
+          "title": "Interfaces, multiple inheritance of type, default methods",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-3-3",
+          "title": "Checked vs unchecked exception handling (try-catch-finally, throws)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-3-4",
+          "title": "Design patterns: Singleton and Adapter patterns",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-java-4",
+      "subjectId": "sub-java",
+      "moduleNumber": 4,
+      "title": "SOLID, GUI & Database Connectivity",
+      "description": "SOLID, Swing, event handling, JDBC.",
+      "learnWindow": "21 Nov - 24 Nov",
+      "practiseWindow": "24 Nov - 26 Nov",
+      "topics": [
+        {
+          "id": "top-java-4-1",
+          "title": "SOLID principles in object-oriented software engineering",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-4-2",
+          "title": "Java Swing GUI components and layout managers",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-4-3",
+          "title": "Delegation event model and listener interfaces",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-java-4-4",
+          "title": "JDBC architecture, DriverManager, Statement and ResultSet",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-mc-1",
+      "subjectId": "sub-mc",
+      "moduleNumber": 1,
+      "title": "ARM Cortex-M Architecture & Embedded C",
+      "description": "ARM Cortex-M architecture, embedded C.",
+      "learnWindow": "07 Nov",
+      "practiseWindow": "07 Nov - 09 Nov",
+      "topics": [
+        {
+          "id": "top-mc-1-1",
+          "title": "Cortex-M register set, operating modes and NVIC",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-1-2",
+          "title": "Embedded C pointer manipulation and bit-masking registers",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-mc-2",
+      "subjectId": "sub-mc",
+      "moduleNumber": 2,
+      "title": "STM32 Hardware Peripherals",
+      "description": "STM32 overview and peripheral programming (GPIO, ADC/DAC, interrupts, timers).",
+      "learnWindow": "09 Nov - 12 Nov",
+      "practiseWindow": "15 Nov",
+      "topics": [
+        {
+          "id": "top-mc-2-1",
+          "title": "STM32 GPIO configuration and input/output modes",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-2-2",
+          "title": "Timers, PWM generation and capture compare registers",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-2-3",
+          "title": "ADC successive approximation conversion & DAC",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-mc-3",
+      "subjectId": "sub-mc",
+      "moduleNumber": 3,
+      "title": "Serial Communication Protocols & USB",
+      "description": "Communication protocols (USART, I2C, SPI, CAN) and USB.",
+      "learnWindow": "15 Nov - 17 Nov",
+      "practiseWindow": "20 Nov",
+      "topics": [
+        {
+          "id": "top-mc-3-1",
+          "title": "USART asynchronous framing and baud-rate generation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-3-2",
+          "title": "SPI 4-wire master-slave protocol and clock polarities",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-3-3",
+          "title": "I2C 2-wire multi-master protocol and arbitration",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-3-4",
+          "title": "CAN bus differential signaling and USB device classes",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-mc-4",
+      "subjectId": "sub-mc",
+      "moduleNumber": 4,
+      "title": "IoT, RTOS & Security",
+      "description": "IoT, wireless, RTOS (FreeRTOS), TrustZone, debugging.",
+      "learnWindow": "24 Nov",
+      "practiseWindow": "24 Nov - 25 Nov",
+      "topics": [
+        {
+          "id": "top-mc-4-1",
+          "title": "FreeRTOS tasks, priorities, schedulers and semaphores",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-4-2",
+          "title": "ARM TrustZone hardware security partitions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-mc-4-3",
+          "title": "SWD/JTAG debugging and trace macrocell features",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-deld-1",
+      "subjectId": "sub-deld",
+      "moduleNumber": 1,
+      "title": "Number Systems, Logic Gates & Verilog Part 1",
+      "description": "Number systems, gates, logic levels, Verilog part 1.",
+      "learnWindow": "08 Nov",
+      "practiseWindow": "08 Nov - 12 Nov",
+      "topics": [
+        {
+          "id": "top-deld-1-1",
+          "title": "Number base conversions and 2's complement arithmetic",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-1-2",
+          "title": "Logic gates, universal gates (NAND/NOR) and noise margins",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-1-3",
+          "title": "Verilog lexical conventions, module structure, and gate primitives",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-deld-2",
+      "subjectId": "sub-deld",
+      "moduleNumber": 2,
+      "title": "Boolean Simplification & Combinational Logic",
+      "description": "Boolean algebra, SOP/POS, K-map, code converters, Verilog continuous assignment.",
+      "learnWindow": "12 Nov - 14 Nov",
+      "practiseWindow": "14 Nov - 16 Nov",
+      "topics": [
+        {
+          "id": "top-deld-2-1",
+          "title": "Boolean theorems and De Morgan's laws",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-2-2",
+          "title": "K-map 3-variable and 4-variable simplification with don't care conditions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-2-3",
+          "title": "Code converters: BCD to Excess-3 and Gray code conversion",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-2-4",
+          "title": "Verilog continuous assignment (assign statements and operators)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-deld-3",
+      "subjectId": "sub-deld",
+      "moduleNumber": 3,
+      "title": "MSI Logic & Structural Modeling",
+      "description": "MSI logic (decoders, MUX), adders, comparators, structural Verilog.",
+      "learnWindow": "16 Nov - 19 Nov",
+      "practiseWindow": "19 Nov - 22 Nov",
+      "topics": [
+        {
+          "id": "top-deld-3-1",
+          "title": "Multiplexers (MUX) and Demultiplexers logic function implementation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-3-2",
+          "title": "Decoders and priority encoders (74148)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-3-3",
+          "title": "Full adder, ripple carry adder, and 4-bit magnitude comparator",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-3-4",
+          "title": "Structural Verilog modeling and testbench creation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-deld-4",
+      "subjectId": "sub-deld",
+      "moduleNumber": 4,
+      "title": "Sequential Circuits, FSM & Verilog Part 2",
+      "description": "Latches/flip-flops, counters, shift registers, FSM, Verilog part 2.",
+      "learnWindow": "22 Nov - 25 Nov",
+      "practiseWindow": "25 Nov",
+      "topics": [
+        {
+          "id": "top-deld-4-1",
+          "title": "SR, JK, D, and T flip-flops characteristic tables and excitations",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-4-2",
+          "title": "Synchronous and asynchronous modulo counters design",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-4-3",
+          "title": "Shift registers: SISO, SIPO, PISO, PIPO and universal shift register",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-deld-4-4",
+          "title": "Finite State Machines: Mealy vs Moore state diagrams & Verilog behavioral models",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-pe2-1",
+      "subjectId": "sub-pe2",
+      "moduleNumber": 1,
+      "title": "Elective Module 1 (Placeholder)",
+      "description": "Confirm elective course (PECST521-528), then fill from syllabus.",
+      "learnWindow": "07 Nov",
+      "practiseWindow": "07 Nov - 09 Nov",
+      "topics": [
+        {
+          "id": "top-pe2-1-1",
+          "title": "Core elective foundations & syllabus review",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-pe2-1-2",
+          "title": "Foundational domain models & standards",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-pe2-2",
+      "subjectId": "sub-pe2",
+      "moduleNumber": 2,
+      "title": "Elective Module 2 (Placeholder)",
+      "description": "Elective Module 2 syllabus content.",
+      "learnWindow": "09 Nov - 13 Nov",
+      "practiseWindow": "13 Nov",
+      "topics": [
+        {
+          "id": "top-pe2-2-1",
+          "title": "Advanced algorithms / principles in elective area",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-pe2-3",
+      "subjectId": "sub-pe2",
+      "moduleNumber": 3,
+      "title": "Elective Module 3 (Placeholder)",
+      "description": "Elective Module 3 architecture and methodologies.",
+      "learnWindow": "15 Nov",
+      "practiseWindow": "18 Nov",
+      "topics": [
+        {
+          "id": "top-pe2-3-1",
+          "title": "Case studies, system frameworks & implementations",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-pe2-4",
+      "subjectId": "sub-pe2",
+      "moduleNumber": 4,
+      "title": "Elective Module 4 (Placeholder)",
+      "description": "Elective Module 4 applications and future directions.",
+      "learnWindow": "21 Nov",
+      "practiseWindow": "24 Nov",
+      "topics": [
+        {
+          "id": "top-pe2-4-1",
+          "title": "Evaluation metrics, performance optimization & deployment",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-maths-1",
+      "subjectId": "sub-maths",
+      "moduleNumber": 1,
+      "title": "Single Variable Calculus",
+      "description": "Limits, continuity, derivatives, chain rule, linearization, concavity.",
+      "learnWindow": "08 Dec",
+      "practiseWindow": "08 Dec - 09 Dec",
+      "topics": [
+        {
+          "id": "top-maths-1-1",
+          "title": "Limits, continuity and epsilon-delta definitions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-1-2",
+          "title": "Chain rule, implicit differentiation, linearization",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-1-3",
+          "title": "Concavity, points of inflection and curve sketching",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-maths-2",
+      "subjectId": "sub-maths",
+      "moduleNumber": 2,
+      "title": "Multivariable Functions & Partial Derivatives",
+      "description": "Functions of several variables, partial derivatives, mixed derivative theorem.",
+      "learnWindow": "09 Dec",
+      "practiseWindow": "09 Dec - 10 Dec",
+      "topics": [
+        {
+          "id": "top-maths-2-1",
+          "title": "Functions of several variables and limits in 2D",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-2-2",
+          "title": "Partial derivatives and Clairaut's mixed derivative theorem",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-maths-3",
+      "subjectId": "sub-maths",
+      "moduleNumber": 3,
+      "title": "Directional Derivatives & Optimization",
+      "description": "Directional derivative, gradient, local/absolute extrema of two variables.",
+      "learnWindow": "10 Dec",
+      "practiseWindow": "10 Dec",
+      "topics": [
+        {
+          "id": "top-maths-3-1",
+          "title": "Gradient vector and directional derivative calculation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-3-2",
+          "title": "Second derivative test for local extrema and saddle points",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-maths-4",
+      "subjectId": "sub-maths",
+      "moduleNumber": 4,
+      "title": "Constrained Extrema & Linear Programming",
+      "description": "Lagrange multipliers, steepest descent, LPP (graphical method).",
+      "learnWindow": "11 Dec",
+      "practiseWindow": "11 Dec - 12 Dec",
+      "topics": [
+        {
+          "id": "top-maths-4-1",
+          "title": "Lagrange multipliers method with one and two constraints",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-4-2",
+          "title": "Method of steepest descent gradient optimization",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-maths-4-3",
+          "title": "Linear Programming: Mathematical formulation & graphical solution",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-physics-1",
+      "subjectId": "sub-physics",
+      "moduleNumber": 1,
+      "title": "Conduction & Superconductivity",
+      "description": "Electrical conductivity, Fermi-Dirac, superconductivity.",
+      "learnWindow": "08 Dec",
+      "practiseWindow": "08 Dec - 09 Dec",
+      "topics": [
+        {
+          "id": "top-phys-1-1",
+          "title": "Classical free electron theory & electrical conductivity",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-1-2",
+          "title": "Fermi-Dirac distribution function and Fermi energy level",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-1-3",
+          "title": "Superconductivity: Meissner effect, Type I vs Type II, BCS theory",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-physics-2",
+      "subjectId": "sub-physics",
+      "moduleNumber": 2,
+      "title": "Quantum Mechanics",
+      "description": "Quantum mechanics (uncertainty, Schrodinger equation, particle in a box).",
+      "learnWindow": "09 Dec",
+      "practiseWindow": "10 Dec",
+      "topics": [
+        {
+          "id": "top-phys-2-1",
+          "title": "Heisenberg uncertainty principle and wave packets",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-2-2",
+          "title": "Time-independent Schrodinger wave equation in 1D",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-2-3",
+          "title": "Particle in an infinite 1D potential well (eigenvalues and wavefunctions)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-physics-3",
+      "subjectId": "sub-physics",
+      "moduleNumber": 3,
+      "title": "Semiconductor Physics",
+      "description": "Semiconductor physics (carrier concentration, p-n junction, diode equation).",
+      "learnWindow": "10 Dec - 11 Dec",
+      "practiseWindow": "11 Dec",
+      "topics": [
+        {
+          "id": "top-phys-3-1",
+          "title": "Intrinsic and extrinsic carrier concentration formulas",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-3-2",
+          "title": "p-n junction energy band diagram in equilibrium and bias",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-3-3",
+          "title": "Shockley diode equation derivation and temperature dependence",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-physics-4",
+      "subjectId": "sub-physics",
+      "moduleNumber": 4,
+      "title": "Photonic & Semiconductor Devices",
+      "description": "Semiconductor and photonic devices (rectifiers, Zener, laser, LED, solar cell).",
+      "learnWindow": "11 Dec - 12 Dec",
+      "practiseWindow": "12 Dec",
+      "topics": [
+        {
+          "id": "top-phys-4-1",
+          "title": "Zener diode breakdown and voltage regulator circuit",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-4-2",
+          "title": "Light Emitting Diode (LED) radiative recombination",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-4-3",
+          "title": "Semiconductor laser diode stimulated emission conditions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-phys-4-4",
+          "title": "Photovoltaic effect and solar cell I-V characteristic curve",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-graphics-1",
+      "subjectId": "sub-graphics",
+      "moduleNumber": 1,
+      "title": "Projection of Points & Lines",
+      "description": "Projection of points and lines (traces, true length/inclination).",
+      "learnWindow": "08 Dec",
+      "practiseWindow": "08 Dec - 11 Dec",
+      "topics": [
+        {
+          "id": "top-graph-1-1",
+          "title": "Orthographic projection principles and quadrant representation",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-1-2",
+          "title": "Projection of straight lines inclined to both reference planes",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-1-3",
+          "title": "Determining true lengths, inclinations (θ, φ) and traces (HT, VT)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-graphics-2",
+      "subjectId": "sub-graphics",
+      "moduleNumber": 2,
+      "title": "Projection of Solids",
+      "description": "Projection of solids (simple position, axis inclined).",
+      "learnWindow": "11 Dec",
+      "practiseWindow": "11 Dec - 12 Dec",
+      "topics": [
+        {
+          "id": "top-graph-2-1",
+          "title": "Projection of prisms, pyramids, cylinders and cones in simple position",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-2-2",
+          "title": "Projection with axis inclined to one plane and parallel to other",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-graphics-3",
+      "subjectId": "sub-graphics",
+      "moduleNumber": 3,
+      "title": "Sections of Solids & Development",
+      "description": "Sections of solids and development of surfaces.",
+      "learnWindow": "12 Dec - 15 Dec",
+      "practiseWindow": "15 Dec - 16 Dec",
+      "topics": [
+        {
+          "id": "top-graph-3-1",
+          "title": "Section planes perpendicular to one plane and inclined to other",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-3-2",
+          "title": "True shape of sectional views",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-3-3",
+          "title": "Development of lateral surfaces of prisms, cones and pyramids",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-graphics-4",
+      "subjectId": "sub-graphics",
+      "moduleNumber": 4,
+      "title": "Isometric Projection",
+      "description": "Isometric projection (CAD is internal only).",
+      "learnWindow": "16 Dec",
+      "practiseWindow": "18 Dec",
+      "topics": [
+        {
+          "id": "top-graph-4-1",
+          "title": "Isometric scale and isometric axes conventions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-graph-4-2",
+          "title": "Isometric view vs isometric projection of combinations of solids",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-python-1",
+      "subjectId": "sub-python",
+      "moduleNumber": 1,
+      "title": "Problem Solving & Python Fundamentals",
+      "description": "Problem-solving strategies, problem-solving process, Python essentials.",
+      "learnWindow": "09 Dec",
+      "practiseWindow": "09 Dec - 12 Dec",
+      "topics": [
+        {
+          "id": "top-py-1-1",
+          "title": "Problem solving phases: Specification, algorithm design, verification",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-py-1-2",
+          "title": "Python primitive types, expressions, precedence and formatting",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-python-2",
+      "subjectId": "sub-python",
+      "moduleNumber": 2,
+      "title": "Pseudocode, Flowcharts & Control Flow",
+      "description": "Pseudocode and flowcharts.",
+      "learnWindow": "12 Dec - 15 Dec",
+      "practiseWindow": "15 Dec",
+      "topics": [
+        {
+          "id": "top-py-2-1",
+          "title": "Standard pseudocode constructs and flowchart symbols",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-py-2-2",
+          "title": "Conditional branching (if-elif-else) and loops (while, for)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-python-3",
+      "subjectId": "sub-python",
+      "moduleNumber": 3,
+      "title": "Sequences, Functions & Recursion",
+      "description": "Selection/iteration, sequence types, functions, recursion.",
+      "learnWindow": "18 Dec",
+      "practiseWindow": "18 Dec - 19 Dec",
+      "topics": [
+        {
+          "id": "top-py-3-1",
+          "title": "Strings, lists, tuples, dictionaries and list comprehensions",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-py-3-2",
+          "title": "Function arguments, scope rules and recursion stack traces",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-python-4",
+      "subjectId": "sub-python",
+      "moduleNumber": 4,
+      "title": "Computational Paradigms in Python",
+      "description": "Computational approaches (brute force, D&C, DP, greedy, randomized).",
+      "learnWindow": "19 Dec",
+      "practiseWindow": "19 Dec - 20 Dec",
+      "topics": [
+        {
+          "id": "top-py-4-1",
+          "title": "Exhaustive search and brute force algorithms",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-py-4-2",
+          "title": "Divide and conquer recursive implementations",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-py-4-3",
+          "title": "Memoization and 1D dynamic programming problems",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-chem-1",
+      "subjectId": "sub-chem",
+      "moduleNumber": 1,
+      "title": "Electrochemistry & Corrosion",
+      "description": "Electrochemistry and corrosion science.",
+      "learnWindow": "10 Dec",
+      "practiseWindow": "10 Dec - 15 Dec",
+      "topics": [
+        {
+          "id": "top-chem-1-1",
+          "title": "Electrochemical cells, Nernst equation and reference electrodes",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-chem-1-2",
+          "title": "Electrochemical theory of corrosion and protective coating methods",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-chem-2",
+      "subjectId": "sub-chem",
+      "moduleNumber": 2,
+      "title": "Electronic Materials",
+      "description": "Materials for electronic applications.",
+      "learnWindow": "15 Dec",
+      "practiseWindow": "18 Dec",
+      "topics": [
+        {
+          "id": "top-chem-2-1",
+          "title": "Conducting polymers (Polyaniline, Polypyrrole) and OLED materials",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-chem-2-2",
+          "title": "Dielectrics and magnetic materials for data storage",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-chem-3",
+      "subjectId": "sub-chem",
+      "moduleNumber": 3,
+      "title": "Molecular Spectroscopy & Analysis",
+      "description": "Molecular spectroscopy and analytical techniques.",
+      "learnWindow": "18 Dec - 19 Dec",
+      "practiseWindow": "19 Dec",
+      "topics": [
+        {
+          "id": "top-chem-3-1",
+          "title": "Beer-Lambert Law and UV-Visible spectrophotometry",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-chem-3-2",
+          "title": "Infrared (IR) spectroscopy functional group identification",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-chem-4",
+      "subjectId": "sub-chem",
+      "moduleNumber": 4,
+      "title": "Environmental Chemistry & Waste Management",
+      "description": "Environmental chemistry and waste management.",
+      "learnWindow": "19 Dec - 20 Dec",
+      "practiseWindow": "20 Dec - 21 Dec",
+      "topics": [
+        {
+          "id": "top-chem-4-1",
+          "title": "Water quality parameters: BOD, COD, and purification methods",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-chem-4-2",
+          "title": "E-waste hazardous components and recycling protocols",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-sw-1",
+      "subjectId": "sub-sw",
+      "moduleNumber": 1,
+      "title": "Process Models & Requirements Engineering",
+      "description": "Process models, requirement engineering, SRS.",
+      "learnWindow": "08 Dec",
+      "practiseWindow": "11 Dec",
+      "topics": [
+        {
+          "id": "top-sw-1-1",
+          "title": "SDLC Waterfall, Spiral, Agile Scrum and Kanban models",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-1-2",
+          "title": "Requirements elicitation techniques, functional/non-functional requirements",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-1-3",
+          "title": "IEEE standard Software Requirements Specification (SRS) structure",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-sw-2",
+      "subjectId": "sub-sw",
+      "moduleNumber": 2,
+      "title": "Software Design, Architecture & UML",
+      "description": "Software design, architecture patterns, UML, design patterns.",
+      "learnWindow": "11 Dec - 15 Dec",
+      "practiseWindow": "15 Dec",
+      "topics": [
+        {
+          "id": "top-sw-2-1",
+          "title": "Architectural styles: Layered, Client-Server, Event-Driven, Microservices",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-2-2",
+          "title": "UML structural diagrams (Class, Component) and behavioral (Sequence, State)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-2-3",
+          "title": "Gang of Four (GoF) design patterns overview",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-sw-3",
+      "subjectId": "sub-sw",
+      "moduleNumber": 3,
+      "title": "Coding, Testing & DevOps",
+      "description": "Coding, testing, DevOps/CI-CD, maintenance.",
+      "learnWindow": "17 Dec",
+      "practiseWindow": "18 Dec",
+      "topics": [
+        {
+          "id": "top-sw-3-1",
+          "title": "Clean code principles and code review checklists",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-3-2",
+          "title": "Black-box (BVA, Equivalence partitioning) vs White-box (Cyclomatic complexity) testing",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-3-3",
+          "title": "Continuous Integration & Continuous Delivery (CI/CD) pipelines",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    },
+    {
+      "id": "mod-sw-4",
+      "subjectId": "sub-sw",
+      "moduleNumber": 4,
+      "title": "Project Management, Metrics & Cloud",
+      "description": "Project management (COCOMO, risk, SCM, quality), cloud, microservices.",
+      "learnWindow": "18 Dec - 19 Dec",
+      "practiseWindow": "19 Dec",
+      "topics": [
+        {
+          "id": "top-sw-4-1",
+          "title": "Software cost estimation: Basic and Intermediate COCOMO models",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-4-2",
+          "title": "Risk management (Identification, RMMM plan)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-4-3",
+          "title": "Software Configuration Management (Git branching, versioning)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        },
+        {
+          "id": "top-sw-4-4",
+          "title": "Software quality assurance metrics (ISO 9126 / CMMI levels)",
+          "learned": false,
+          "practiced": false,
+          "revised": false
+        }
+      ]
+    }
+  ],
+  "studySessions": [
+    {
+      "id": "sess-1",
+      "date": "2026-11-06",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "CN Learn M1: Application Layer Protocols",
+      "activityType": "Learning",
+      "topic": "Application layer, protocol layering (HTTP, FTP, e-mail, DNS, P2P)",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-2",
+      "date": "2026-11-06",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "title": "DAA Learn M1: Recurrences & Master Theorem",
+      "activityType": "Learning",
+      "topic": "Analysis, asymptotics, recurrences (Master theorem), AVL trees",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-3",
+      "date": "2026-11-06",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-1",
+      "title": "ML Learn M1: Estimation & Gradient Descent",
+      "activityType": "Learning",
+      "topic": "Intro to ML, MLE/MAP, regression, gradient descent",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-4",
+      "date": "2026-11-06",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "Error Log & Flashcards (CN, DAA, ML)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DAA, ML",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-5",
+      "date": "2026-11-07",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "PE-2 Learn & Practise M1",
+      "activityType": "Learning & Practice",
+      "topic": "Module 1 syllabus overview & questions without notes",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-6",
+      "date": "2026-11-07",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "MC Learn & Practise M1: ARM Cortex-M",
+      "activityType": "Learning & Practice",
+      "topic": "ARM Cortex-M architecture, embedded C [90m] + Practise M1 [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-7",
+      "date": "2026-11-07",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-1",
+      "title": "Java Learn & Practise M1: OOP Fundamentals",
+      "activityType": "Learning & Practice",
+      "topic": "Java basics, OOP concepts, classes, objects, constructors",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-8",
+      "date": "2026-11-07",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "title": "DSA Learn M1: Stacks & Queues",
+      "activityType": "Learning",
+      "topic": "Basic concepts, stacks, queues, expression evaluation",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-9",
+      "date": "2026-11-07",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "Error Log & Flashcards (PE-2, MC, Java, DSA)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for PE-2, MC, Java, DSA",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-10",
+      "date": "2026-11-08",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-1",
+      "title": "DELD Learn & Practise M1: Number Systems & Verilog",
+      "activityType": "Learning & Practice",
+      "topic": "Number systems, gates, logic levels, Verilog part 1 [90m + 30m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-11",
+      "date": "2026-11-08",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "CN Learn M1 (cont.) + Practise M1",
+      "activityType": "Learning & Practice",
+      "topic": "Application layer protocol layering [55m] + Practise M1 [35m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-12",
+      "date": "2026-11-08",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-2",
+      "title": "DAA Practise M1 + Learn M2: Graphs & D&C",
+      "activityType": "Practice & Learning",
+      "topic": "DAA Practise M1 [70m] + Learn M2: Disjoint sets, graphs (BFS/DFS) [40m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-13",
+      "date": "2026-11-08",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-1",
+      "title": "ML Learn M1 (cont.) + Practise M1",
+      "activityType": "Practice",
+      "topic": "MLE/MAP, regression, gradient descent [40m] + Practise M1 [50m]",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-14",
+      "date": "2026-11-08",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "Sunday Weekly Review",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, count what slipped, re-plan next week",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-15",
+      "date": "2026-11-09",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "title": "CN Practise M1 + Learn M2: Transport Layer",
+      "activityType": "Learning & Practice",
+      "topic": "CN Practise M1 [25m] + Learn M2: Transport layer (UDP, TCP) [20m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-16",
+      "date": "2026-11-09",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-2",
+      "title": "PE-2 Practise M1 + Learn M2",
+      "activityType": "Learning & Practice",
+      "topic": "PE-2 Practise M1 [30m] + Learn M2: Module 2 [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-17",
+      "date": "2026-11-09",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-2",
+      "title": "MC Practise M1 + Learn M2: STM32 Peripherals",
+      "activityType": "Learning & Practice",
+      "topic": "MC Practise M1 [30m] + Learn M2: STM32 GPIO, ADC/DAC, timers [30m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-18",
+      "date": "2026-11-09",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "title": "Error Log + Flashcards (CN, PE-2, MC)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, PE-2, MC",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-19",
+      "date": "2026-11-10",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "title": "CN Learn M2: Network Layer & Sockets",
+      "activityType": "Learning",
+      "topic": "Transport sockets hands-on; Network layer (routing, IPv6, QoS) [45m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-20",
+      "date": "2026-11-10",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-2",
+      "title": "DSA Practise M1 + Learn M2: Linked Lists",
+      "activityType": "Learning & Practice",
+      "topic": "DSA Practise M1 [70m] + Learn M2: Linked lists & memory management [20m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-21",
+      "date": "2026-11-10",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-2",
+      "title": "DAA Learn M2: Disjoint Sets & Graphs",
+      "activityType": "Learning",
+      "topic": "Disjoint sets, graphs (BFS/DFS/SCC/topological sort), divide & conquer [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-22",
+      "date": "2026-11-10",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-2",
+      "title": "Error Log + Flashcards (CN, DSA, DAA)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DSA, DAA",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-23",
+      "date": "2026-11-11",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-2",
+      "title": "Java Practise M1 + Learn M2: Polymorphism",
+      "activityType": "Learning & Practice",
+      "topic": "Java Practise M1 [40m] + Learn M2: Polymorphism, static/final/inner classes [5m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-24",
+      "date": "2026-11-11",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-2",
+      "title": "ML Practise M1 + Learn M2: Classification",
+      "activityType": "Learning & Practice",
+      "topic": "ML Practise M1 [10m] + Learn M2: Logistic, Naive Bayes, KNN, ID3 [80m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-25",
+      "date": "2026-11-11",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "title": "CN Learn M2 (cont.) + Practise M2",
+      "activityType": "Learning & Practice",
+      "topic": "Transport sockets hands-on [35m] + Practise M2 [25m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-26",
+      "date": "2026-11-11",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-2",
+      "title": "Error Log + Flashcards (Java, ML, CN)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Java, ML, CN",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-27",
+      "date": "2026-11-12",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-2",
+      "title": "DELD Practise M1 + Learn M2: Boolean Algebra",
+      "activityType": "Learning & Practice",
+      "topic": "DELD Practise M1 [40m] + Learn M2: Boolean algebra, SOP/POS, K-map [5m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-28",
+      "date": "2026-11-12",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-3",
+      "title": "CN Practise M2 + Learn M3: Data-Link Layer",
+      "activityType": "Learning & Practice",
+      "topic": "CN Practise M2 [35m] + Learn M3: DLC, MAC, Ethernet, wireless LAN [55m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-29",
+      "date": "2026-11-12",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-2",
+      "title": "MC Learn M2: STM32 Peripheral Programming",
+      "activityType": "Learning",
+      "topic": "STM32 GPIO, ADC/DAC, interrupts, timers peripheral programming [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-30",
+      "date": "2026-11-12",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-2",
+      "title": "Error Log + Flashcards (DELD, CN, MC)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for DELD, CN, MC",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-31",
+      "date": "2026-11-13",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-2",
+      "title": "DAA Practise M2: Graphs & Divide and Conquer",
+      "activityType": "Practice",
+      "topic": "Disjoint sets, graphs & divide and conquer problems without notes [45m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-32",
+      "date": "2026-11-13",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-2",
+      "title": "PE-2 Learn & Practise M2",
+      "activityType": "Learning & Practice",
+      "topic": "Module 2 theory [30m] + Practise M2 questions without notes [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-33",
+      "date": "2026-11-13",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-2",
+      "title": "DSA Learn M2: Memory Management & Lists",
+      "activityType": "Learning",
+      "topic": "Linked lists, dynamic allocation & memory management [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-34",
+      "date": "2026-11-13",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-2",
+      "title": "Error Log + Flashcards (DAA, PE-2, DSA)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for DAA, PE-2, DSA",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-35",
+      "date": "2026-11-14",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-3",
+      "title": "CN Learn M3 (cont.) + Practise M3 + Learn M4",
+      "activityType": "Learning & Practice",
+      "topic": "Data-link layer [45m] + Practise M3 [60m] + Learn M4: SNMP, ASN.1 [15m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-36",
+      "date": "2026-11-14",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-2",
+      "title": "Java Learn M2 (cont.) + Practise M2",
+      "activityType": "Learning & Practice",
+      "topic": "Polymorphism, static/final/inner classes [85m] + Practise M2 [35m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-37",
+      "date": "2026-11-14",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-3",
+      "title": "ML Learn M2 + Practise M2 + Learn M3: SVM",
+      "activityType": "Learning & Practice",
+      "topic": "Classification [20m] + Practise M2 [60m] + Learn M3: SVM, kernels [40m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-38",
+      "date": "2026-11-14",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-2",
+      "title": "DELD Learn M2 (cont.) + Practise M2",
+      "activityType": "Learning & Practice",
+      "topic": "Boolean algebra, SOP/POS, K-map, Verilog [85m] + Practise M2 [5m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-39",
+      "date": "2026-11-14",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-3",
+      "title": "Error Log + Flashcards (CN, Java, ML, DELD)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, Java, ML, DELD",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-40",
+      "date": "2026-11-15",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-3",
+      "title": "DAA Practise M2 + Learn M3: Greedy & DP",
+      "activityType": "Learning & Practice",
+      "topic": "DAA Practise M2 [25m] + Learn M3: Greedy (MST, Dijkstra), DP (MCM) [95m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-41",
+      "date": "2026-11-15",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-3",
+      "title": "MC Practise M2 + Learn M3: Protocols",
+      "activityType": "Learning & Practice",
+      "topic": "MC Practise M2 [60m] + Learn M3: USART, I2C, SPI, CAN and USB [30m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-42",
+      "date": "2026-11-15",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-3",
+      "title": "DSA Practise M2 + Learn M3: Trees & Graphs",
+      "activityType": "Learning & Practice",
+      "topic": "DSA Practise M2 [70m] + Learn M3: Trees, BST, heaps, DFS/BFS [40m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-43",
+      "date": "2026-11-15",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-3",
+      "title": "PE-2 Learn M3: Spaced Theory Pass",
+      "activityType": "Learning",
+      "topic": "Elective Module 3 syllabus topics and notes review [90m]",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-44",
+      "date": "2026-11-15",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-3",
+      "title": "Sunday Weekly Review: Calibration",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, review progress vs deadlines, re-plan week 2",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-45",
+      "date": "2026-11-16",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "CN Learn M4: Physical Layer & SNMP",
+      "activityType": "Learning",
+      "topic": "SNMP, ASN.1; Physical layer (signals, transmission, media) [45m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-46",
+      "date": "2026-11-16",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-3",
+      "title": "DELD Practise M2 + Learn M3: MSI Logic",
+      "activityType": "Learning & Practice",
+      "topic": "DELD Practise M2 [65m] + Learn M3: MSI decoders, MUX, adders, structural Verilog [25m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-47",
+      "date": "2026-11-16",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-3",
+      "title": "Java Practise M2 + Learn M3: Packages & Interfaces",
+      "activityType": "Learning & Practice",
+      "topic": "Java Practise M2 [35m] + Learn M3: Packages, interfaces, exceptions, Singleton [25m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-48",
+      "date": "2026-11-16",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "Error Log + Flashcards (CN, DELD, Java)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DELD, Java",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-49",
+      "date": "2026-11-17",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-3",
+      "title": "ML Learn M3: Neural Networks & Backprop",
+      "activityType": "Learning",
+      "topic": "SVM and kernels; neural networks, backpropagation derivations [45m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-50",
+      "date": "2026-11-17",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "title": "DAA Practise M3 + Learn M4: Branch & Bound",
+      "activityType": "Learning & Practice",
+      "topic": "DAA Practise M3 [70m] + Learn M4: Branch & bound (TSP), P/NP classes [15m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-51",
+      "date": "2026-11-17",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-3",
+      "title": "MC Learn M3: Protocol Frame Architectures",
+      "activityType": "Learning",
+      "topic": "Communication protocols (USART, I2C, SPI, CAN) and USB timing [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-52",
+      "date": "2026-11-17",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-3",
+      "title": "Error Log + Flashcards (ML, DAA, MC)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for ML, DAA, MC",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-53",
+      "date": "2026-11-18",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "CN Learn & Practise M4: Physical Layer",
+      "activityType": "Learning & Practice",
+      "topic": "Physical layer transmission media [40m] + Practise M4 questions [5m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-54",
+      "date": "2026-11-18",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-3",
+      "title": "DSA Learn & Practise M3: Trees & Graphs",
+      "activityType": "Learning & Practice",
+      "topic": "Trees and graphs traversals [50m] + Practise M3 without notes [40m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-55",
+      "date": "2026-11-18",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-3",
+      "title": "PE-2 Practise M3: Questions Without Notes",
+      "activityType": "Practice",
+      "topic": "Module 3 previous year questions under timed conditions [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-56",
+      "date": "2026-11-18",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "Error Log + Flashcards (CN, DSA, PE-2)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DSA, PE-2",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-57",
+      "date": "2026-11-19",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-3",
+      "title": "Java Learn M3: Adapter Pattern & Exception Trees",
+      "activityType": "Learning",
+      "topic": "Packages, interfaces, exception hierarchy, Singleton/Adapter patterns [45m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-58",
+      "date": "2026-11-19",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-3",
+      "title": "DELD Learn & Practise M3: Adders & Decoders",
+      "activityType": "Learning & Practice",
+      "topic": "MSI logic (decoders, MUX, adders) [65m] + Practise M3 questions [25m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-59",
+      "date": "2026-11-19",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "CN Practise M4 + Timed Model Paper Part A",
+      "activityType": "Practice & Model Paper",
+      "topic": "CN Practise M4 [55m] + Timed model paper Part A questions under time [5m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-60",
+      "date": "2026-11-19",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-3",
+      "title": "Error Log + Flashcards (Java, DELD, CN)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Java, DELD, CN",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-61",
+      "date": "2026-11-20",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-3",
+      "title": "ML Practise M3: Neural Network Calculations",
+      "activityType": "Practice",
+      "topic": "SVM and kernels; neural networks backpropagation problems [30m]",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-62",
+      "date": "2026-11-20",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "title": "DAA Learn M4: NP-Completeness Proofs",
+      "activityType": "Learning & Practice",
+      "topic": "Branch & bound (TSP), P/NP classes, NP-completeness [85m] + Practise M4 [5m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-63",
+      "date": "2026-11-20",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-3",
+      "title": "MC Practise M3: Protocol Interfacing Problems",
+      "activityType": "Practice",
+      "topic": "USART/SPI/I2C interfacing and baud rate register problems without notes [60m]",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-64",
+      "date": "2026-11-20",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-3",
+      "title": "Error Log + Flashcards (ML, DAA, MC)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for ML, DAA, MC",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-65",
+      "date": "2026-11-21",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "CN Timed Model Paper + Fix Weak Points",
+      "activityType": "Timed Model Paper",
+      "topic": "Part A + 3 Part B questions under strict time [105m] + Redo missed questions [15m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-66",
+      "date": "2026-11-21",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-4",
+      "title": "Java Practise M3 + Learn M4: SOLID & JDBC",
+      "activityType": "Learning & Practice",
+      "topic": "Java Practise M3 [70m] + Learn M4: SOLID, Swing, event handling, JDBC [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-67",
+      "date": "2026-11-21",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-4",
+      "title": "DSA Practise M3 + Learn M4: Sorting & Hashing",
+      "activityType": "Learning & Practice",
+      "topic": "DSA Practise M3 [30m] + Learn M4: Sorting, searching, hashing [90m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-68",
+      "date": "2026-11-21",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-4",
+      "title": "PE-2 Learn M4: Module 4 Complete Pass",
+      "activityType": "Learning",
+      "topic": "Elective Module 4 syllabus complete coverage and notes [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-69",
+      "date": "2026-11-21",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "title": "Error Log + Flashcards (CN, Java, DSA, PE-2)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, Java, DSA, PE-2",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-70",
+      "date": "2026-11-22",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "CN FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Definitions, formulae, protocol diagrams, standard problems, error log [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-71",
+      "date": "2026-11-22",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-3",
+      "title": "CN FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Subnetting calculations, CRC, framing, routing algorithms [90m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-72",
+      "date": "2026-11-22",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-4",
+      "title": "DELD Practise M3 + Learn M4: Sequential Circuits",
+      "activityType": "Learning & Practice",
+      "topic": "DELD Practise M3 [45m] + Learn M4: Flip-flops, counters, FSM, Verilog [75m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-73",
+      "date": "2026-11-22",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-4",
+      "title": "ML Practise M3 + Learn M4: Clustering & PCA",
+      "activityType": "Learning & Practice",
+      "topic": "ML Practise M3 [30m] + Learn M4: Clustering, PCA, ensembles, bias-variance [60m]",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-74",
+      "date": "2026-11-22",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "Sunday Weekly Review: Pre-Exam Check",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, check hall ticket, pack stationery, sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-75",
+      "date": "2026-11-23",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "title": "EXAM: Computer Networks (PCCST501)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Computer Networks (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-76",
+      "date": "2026-11-23",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "title": "DAA Practise M4 + Timed Model Paper",
+      "activityType": "Practice & Model Paper",
+      "topic": "DAA Practise M4 [65m] + Timed model paper: Part A + 3 Part B questions [25m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-77",
+      "date": "2026-11-23",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "title": "Post-Exam Rest & Hall Ticket Prep",
+      "activityType": "Rest & Organization",
+      "topic": "Pack stationery and review upcoming DAA schedule; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-78",
+      "date": "2026-11-24",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-4",
+      "title": "MC Learn & Practise M4: RTOS & TrustZone",
+      "activityType": "Learning & Practice",
+      "topic": "MC Learn M4: IoT, wireless, FreeRTOS, TrustZone [90m] + Practise M4 [30m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-79",
+      "date": "2026-11-24",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-4",
+      "title": "Java Learn & Practise M4: SOLID & JDBC",
+      "activityType": "Learning & Practice",
+      "topic": "SOLID, Swing, JDBC [60m] + Practise M4 questions without notes [60m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-80",
+      "date": "2026-11-24",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-4",
+      "title": "ML Learn & Practise M4 + Timed Paper Part A",
+      "activityType": "Learning & Practice",
+      "topic": "Clustering, PCA, resampling [40m] + Practise M4 [60m] + Timed model paper [20m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-81",
+      "date": "2026-11-24",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-4",
+      "title": "PE-2 Practise M4 + Timed Model Paper",
+      "activityType": "Practice & Model Paper",
+      "topic": "PE-2 Practise M4 [60m] + Timed model paper questions [30m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-82",
+      "date": "2026-11-24",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-4",
+      "title": "Error Log + Flashcards (MC, Java, ML, PE-2)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for MC, Java, ML, PE-2",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-83",
+      "date": "2026-11-25",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-4",
+      "title": "DSA Practise M4 + Timed Model Paper",
+      "activityType": "Practice & Model Paper",
+      "topic": "DSA Practise M4 [70m] + Timed model paper questions under time [50m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-84",
+      "date": "2026-11-25",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-4",
+      "title": "DELD Learn M4 (cont.) + Practise M4 + Timed Paper",
+      "activityType": "Learning & Practice",
+      "topic": "FSM, Verilog [15m] + Practise M4 [70m] + Timed model paper [35m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-85",
+      "date": "2026-11-25",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "title": "DAA Timed Model Paper + Fix Weak Points",
+      "activityType": "Timed Model Paper",
+      "topic": "Full timed paper [85m] + Redo missed proofs & algorithms [35m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-86",
+      "date": "2026-11-25",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-4",
+      "title": "MC Practise M4 + Timed Model Paper",
+      "activityType": "Practice & Model Paper",
+      "topic": "MC Practise M4 [30m] + Timed model paper questions [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-87",
+      "date": "2026-11-25",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-4",
+      "title": "Error Log + Flashcards (DSA, DELD, DAA, MC)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for DSA, DELD, DAA, MC",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-88",
+      "date": "2026-11-26",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "title": "DAA FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Asymptotics, Master theorem cases, AVL rotations, graph traversals, DSU [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-89",
+      "date": "2026-11-26",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-3",
+      "title": "DAA FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Greedy, Dynamic Programming tables (MCM), Branch & Bound, NP-complete reductions [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-90",
+      "date": "2026-11-26",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-4",
+      "title": "Java Practise M4 + Timed Model Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Java Practise M4 [10m] + Timed model paper under time [110m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-91",
+      "date": "2026-11-26",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-4",
+      "title": "ML Timed Model Paper + Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "ML full paper under strict exam timing [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-92",
+      "date": "2026-11-26",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "title": "Error Log + Formula Sheet for DAA",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + pack hall ticket; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-93",
+      "date": "2026-11-27",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "title": "EXAM: Design and Analysis of Algorithms (PCCST502)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: DAA (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-94",
+      "date": "2026-11-27",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-4",
+      "title": "PE-2 Timed Model Paper + Fix Weak Points",
+      "activityType": "Timed Model Paper",
+      "topic": "PE-2 Timed paper [80m] + Fix missed questions [10m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-95",
+      "date": "2026-11-27",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-4",
+      "title": "Post-Exam Rest & DSA Preparation",
+      "activityType": "Rest & Organization",
+      "topic": "Pack hall ticket and stationery; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-96",
+      "date": "2026-11-28",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-4",
+      "title": "DELD Timed Model Paper + Spaced Recall",
+      "activityType": "Timed Model Paper",
+      "topic": "DELD Timed paper [75m] + Fix lost marks [40m] + Spaced recall M1-M4 [5m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-97",
+      "date": "2026-11-28",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-4",
+      "title": "DSA Timed Model Paper + Spaced Recall",
+      "activityType": "Timed Model Paper",
+      "topic": "DSA Timed paper [60m] + Fix lost marks [40m] + Spaced recall M1-M4 [20m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-98",
+      "date": "2026-11-28",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-4",
+      "title": "MC Timed Model Paper + Spaced Recall",
+      "activityType": "Timed Model Paper",
+      "topic": "MC Timed paper [50m] + Fix lost marks [40m] + Spaced recall M1-M4 [30m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-99",
+      "date": "2026-11-28",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-4",
+      "title": "ML Fix Weak Points + Spaced Recall",
+      "activityType": "Practice & Recall",
+      "topic": "Redo missed exam questions [40m] + Blank-page recall M1-M4 [50m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-100",
+      "date": "2026-11-28",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-4",
+      "title": "Error Log + Flashcards (DELD, DSA, MC, ML)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for DELD, DSA, MC, ML",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-101",
+      "date": "2026-11-29",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "title": "DSA FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Stacks, queues, expression evaluation, linked lists, memory management [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-102",
+      "date": "2026-11-29",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-3",
+      "title": "DSA FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "BST, heaps, graph traversals (BFS/DFS), sorting, hashing [90m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-103",
+      "date": "2026-11-29",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "title": "Buffer & Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Relax, review error log, avoid learning new topics",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-104",
+      "date": "2026-11-29",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "title": "Weekly Review & DSA Formula Sheet",
+      "activityType": "Weekly Review",
+      "topic": "Pack hall ticket, one-page formula sheet, sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-105",
+      "date": "2026-11-30",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "title": "EXAM: Data Structures and Algorithms (PCCST303)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: DSA (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-106",
+      "date": "2026-11-30",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-1",
+      "title": "ML FINAL REVISION (Exam Eve)",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Definitions, formulae, loss derivations, backpropagation, error log [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-107",
+      "date": "2026-11-30",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-1",
+      "title": "ML One-Page Formula Sheet & Pack Documents",
+      "activityType": "Exam Eve Prep",
+      "topic": "Review ML hyperparameter trade-offs; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-108",
+      "date": "2026-12-01",
+      "subjectId": "sub-ml",
+      "moduleId": "mod-ml-1",
+      "title": "EXAM: Machine Learning (PCCST503)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Machine Learning (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-109",
+      "date": "2026-12-01",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-1",
+      "title": "Java FINAL REVISION (Exam Eve)",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "OOP rules, inheritance, exceptions, multithreading, JDBC, Swing [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-110",
+      "date": "2026-12-01",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-1",
+      "title": "Java One-Page Syntax Sheet & Stationery",
+      "activityType": "Exam Eve Prep",
+      "topic": "Review Java syntax nuances; pack hall ticket; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-111",
+      "date": "2026-12-02",
+      "subjectId": "sub-java",
+      "moduleId": "mod-java-1",
+      "title": "EXAM: Object Oriented Programming Java (PBCST304)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Java (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-112",
+      "date": "2026-12-02",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "Buffer & Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Rest 1 hour after exam, do not post-mortem, catch breath [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-113",
+      "date": "2026-12-02",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "Pack Stationery for Tomorrow",
+      "activityType": "Rest & Organization",
+      "topic": "Review upcoming MC schedule; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-114",
+      "date": "2026-12-03",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "MC FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "ARM Cortex-M architecture, embedded C, STM32 registers [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-115",
+      "date": "2026-12-03",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-3",
+      "title": "MC FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Protocols (USART/I2C/SPI), FreeRTOS tasks, TrustZone, debugging [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-116",
+      "date": "2026-12-03",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "Buffer / Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Relax, review error log, no new chapters [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-117",
+      "date": "2026-12-03",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "MC Error Log & Register Summary Sheet",
+      "activityType": "Error Log",
+      "topic": "Pack hall ticket and stationery; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-118",
+      "date": "2026-12-04",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "title": "EXAM: Microcontrollers (PBCST504)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Microcontrollers (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-119",
+      "date": "2026-12-04",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-1",
+      "title": "DELD FINAL REVISION (Exam Eve)",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "K-map simplification, Verilog code templates, counter excitation tables [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-120",
+      "date": "2026-12-04",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-1",
+      "title": "DELD One-Page Logic Sheet & Pack Documents",
+      "activityType": "Exam Eve Prep",
+      "topic": "Review excitation tables; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-121",
+      "date": "2026-12-05",
+      "subjectId": "sub-deld",
+      "moduleId": "mod-deld-1",
+      "title": "EXAM: Digital Electronics & Logic Design (GAEST305)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: DELD (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-122",
+      "date": "2026-12-05",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "Buffer & Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Rest after 6 consecutive exam days; prepare for PE-2 [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-123",
+      "date": "2026-12-05",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "Pack Stationery for PE-2 Exam",
+      "activityType": "Rest & Organization",
+      "topic": "Pack hall ticket; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-124",
+      "date": "2026-12-06",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "PE-2 FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Definitions, core principles, architecture diagrams, error log [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-125",
+      "date": "2026-12-06",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-3",
+      "title": "PE-2 FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Advanced topics, case studies, model paper weak points [90m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-126",
+      "date": "2026-12-06",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "Buffer / Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Relax, prepare mental stamina for final S5 exam [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-127",
+      "date": "2026-12-06",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "Weekly Review: Phase 1 Transition to S1/S2 Backlogs",
+      "activityType": "Weekly Review",
+      "topic": "S5 exams finished tomorrow; transition to Maths, Physics, Graphics [30m]",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-128",
+      "date": "2026-12-07",
+      "subjectId": "sub-pe2",
+      "moduleId": "mod-pe2-1",
+      "title": "EXAM: Program Elective 2 (PECST52N)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: PE-2 (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-129",
+      "date": "2026-12-07",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Buffer & Celebration Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "S5 is officially complete! Rest well before Phase 2 backlogs start tomorrow [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-130",
+      "date": "2026-12-07",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Organize S1 Syllabus & Formula Sheets",
+      "activityType": "Rest & Organization",
+      "topic": "Pull out Maths, Physics, Graphics notes; sleep by 22:30",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-131",
+      "date": "2026-12-08",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Maths Learn & Practise M1: Calculus & Derivatives",
+      "activityType": "Learning & Practice",
+      "topic": "Limits, continuity, chain rule, linearization, concavity [80m] + Practise M1 [40m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-132",
+      "date": "2026-12-08",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Physics Learn & Practise M1: Conductivity",
+      "activityType": "Learning & Practice",
+      "topic": "Electrical conductivity, Fermi-Dirac, superconductivity [90m] + Practise M1 [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-133",
+      "date": "2026-12-08",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Graphics Learn & Practise M1: Lines & Points",
+      "activityType": "Learning & Practice",
+      "topic": "Projection of points and lines, true length and inclinations [60m + 60m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-134",
+      "date": "2026-12-08",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-1",
+      "title": "SW Learn M1: Process Models & SRS",
+      "activityType": "Learning",
+      "topic": "Process models (waterfall, agile), requirement engineering, SRS [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-135",
+      "date": "2026-12-08",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Error Log + Flashcards (Maths, Physics, Graphics, SW)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Maths, Physics, Graphics, SW",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-136",
+      "date": "2026-12-09",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-2",
+      "title": "Maths Practise M1 + Learn M2: Multivariable",
+      "activityType": "Learning & Practice",
+      "topic": "Maths Practise M1 [60m] + Learn M2: Several variables, partial derivatives [60m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-137",
+      "date": "2026-12-09",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-2",
+      "title": "Physics Practise M1 + Learn M2: Quantum Mechanics",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M1 [30m] + Learn M2: Uncertainty, Schrodinger equation, particle in a box [90m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-138",
+      "date": "2026-12-09",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Python Learn & Practise M1: Problem Solving",
+      "activityType": "Learning & Practice",
+      "topic": "Strategies, problem-solving process, Python essentials [80m] + Practise M1 [40m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-139",
+      "date": "2026-12-09",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-2",
+      "title": "Maths Learn & Practise M2: Mixed Derivatives",
+      "activityType": "Learning & Practice",
+      "topic": "Mixed derivative theorem [20m] + Practise M2 questions without notes [70m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-140",
+      "date": "2026-12-09",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-2",
+      "title": "Error Log + Flashcards (Maths, Physics, Python)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Maths, Physics, Python",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-141",
+      "date": "2026-12-10",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-3",
+      "title": "Maths Practise M2 + Learn M3: Extrema",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M2 [30m] + Learn M3: Directional derivative, gradient, extrema [80m + 10m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-142",
+      "date": "2026-12-10",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-3",
+      "title": "Physics Practise M2 + Learn M3: Semiconductors",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M2 [60m] + Learn M3: Carrier concentration, p-n junction, diode equation [60m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-143",
+      "date": "2026-12-10",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem Learn & Practise M1: Electrochemistry",
+      "activityType": "Learning & Practice",
+      "topic": "Electrochemistry and corrosion science [90m] + Practise M1 [30m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-144",
+      "date": "2026-12-10",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-3",
+      "title": "Maths Practise M3: Gradient & Extrema Drills",
+      "activityType": "Practice",
+      "topic": "Extrema problems and Lagrange multiplier setup without notes [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-145",
+      "date": "2026-12-10",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-3",
+      "title": "Error Log + Flashcards (Maths, Physics, Chem)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Maths, Physics, Chem",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-146",
+      "date": "2026-12-11",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-4",
+      "title": "Maths Learn & Practise M4: Lagrange & LPP",
+      "activityType": "Learning & Practice",
+      "topic": "Lagrange multipliers, steepest descent, LPP graphical method [80m + 40m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-147",
+      "date": "2026-12-11",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-4",
+      "title": "Physics Practise M3 + Learn M4: Photonic Devices",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M3 [60m] + Learn M4: Rectifiers, Zener, laser, LED, solar cell [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-148",
+      "date": "2026-12-11",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-2",
+      "title": "Graphics Practise M1 + Learn M2: Solids",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M1 [50m] + Learn M2: Projection of solids (simple position & inclined) [70m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-149",
+      "date": "2026-12-11",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-2",
+      "title": "SW Practise M1 + Learn M2: Architecture Patterns",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M1 [60m] + Learn M2: Software design, architecture, UML [30m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-150",
+      "date": "2026-12-11",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-4",
+      "title": "Error Log + Flashcards (Maths, Physics, Graphics, SW)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Maths, Physics, Graphics, SW",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-151",
+      "date": "2026-12-12",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-4",
+      "title": "Maths Practise M4 + Timed Model Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Practise M4 [60m] + Timed model paper under exam conditions [60m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-152",
+      "date": "2026-12-12",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-4",
+      "title": "Physics Learn M4 (cont.) + Practise M4",
+      "activityType": "Learning & Practice",
+      "topic": "Laser, optical fiber, solar cells [60m] + Practise M4 questions [60m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-153",
+      "date": "2026-12-12",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-3",
+      "title": "Graphics Practise M2 + Learn M3: Sections of Solids",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M2 [100m] + Learn M3: Sections of solids and surface developments [20m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-154",
+      "date": "2026-12-12",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-2",
+      "title": "Python Practise M1 + Learn M2: Flowcharts",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M1 [30m] + Learn M2: Pseudocode and flowcharts algorithms [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-155",
+      "date": "2026-12-12",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-4",
+      "title": "Error Log + Flashcards (Maths, Physics, Graphics, Python)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Maths, Physics, Graphics, Python",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-156",
+      "date": "2026-12-13",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Maths FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Limits, derivatives, partial derivatives, mixed derivatives theorem [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-157",
+      "date": "2026-12-13",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-3",
+      "title": "Maths FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Gradient, extrema, Lagrange multipliers, graphical LPP [90m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-158",
+      "date": "2026-12-13",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Maths Timed Model Paper + Fix Weak Points",
+      "activityType": "Timed Model Paper",
+      "topic": "Full paper under strict time [90m] + Redo lost marks [30m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-159",
+      "date": "2026-12-13",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "Weekly Review: Formula Sheet & Sleep",
+      "activityType": "Weekly Review",
+      "topic": "Pack compass, scientific calculator, hall ticket; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-160",
+      "date": "2026-12-14",
+      "subjectId": "sub-maths",
+      "moduleId": "mod-maths-1",
+      "title": "EXAM: Mathematics for Information Science 1 (GAMAT101)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Maths (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-161",
+      "date": "2026-12-14",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Physics Timed Model Paper + Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "One full paper under strict time [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-162",
+      "date": "2026-12-14",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Pack Stationery for Physics; Sleep by 22:30",
+      "activityType": "Rest & Organization",
+      "topic": "Pack hall ticket and calculator; sleep early",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-163",
+      "date": "2026-12-15",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-3",
+      "title": "Graphics Learn M3 (cont.) + Practise M3: Surfaces",
+      "activityType": "Learning & Practice",
+      "topic": "Sections of solids and surface developments [40m] + Practise M3 [80m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-164",
+      "date": "2026-12-15",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-2",
+      "title": "SW Learn M2 (cont.) + Practise M2: UML",
+      "activityType": "Learning & Practice",
+      "topic": "Design patterns and UML diagrams [60m] + Practise M2 [60m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-165",
+      "date": "2026-12-15",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-2",
+      "title": "Chem Practise M1 + Learn M2: Electronic Materials",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M1 [30m] + Learn M2: Materials for electronic applications [90m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-166",
+      "date": "2026-12-15",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-2",
+      "title": "Python Learn M2 + Practise M2: Flowchart Logic",
+      "activityType": "Learning & Practice",
+      "topic": "Pseudocode and flowcharts [20m] + Practise M2 [70m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-167",
+      "date": "2026-12-15",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-3",
+      "title": "Error Log + Flashcards (Graphics, SW, Chem, Python)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Graphics, SW, Chem, Python",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-168",
+      "date": "2026-12-16",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Physics FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Conductivity, Fermi energy, superconductivity, Schrodinger equations [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-169",
+      "date": "2026-12-16",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-3",
+      "title": "Physics FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Semiconductors, carrier densities, laser, fiber optics, LED [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-170",
+      "date": "2026-12-16",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Physics Timed Model Paper + Spaced Recall",
+      "activityType": "Timed Model Paper",
+      "topic": "Full paper under time [60m] + Fix lost marks [40m] + Spaced recall [20m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-171",
+      "date": "2026-12-16",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-4",
+      "title": "Graphics Practise M3 + Learn M4: Isometric Projections",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M3 [30m] + Learn M4: Isometric projection fundamentals [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-172",
+      "date": "2026-12-16",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "Physics Formula Sheet & Pack Hall Ticket",
+      "activityType": "Exam Eve Prep",
+      "topic": "Review physics constants; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-173",
+      "date": "2026-12-17",
+      "subjectId": "sub-physics",
+      "moduleId": "mod-physics-1",
+      "title": "EXAM: Physics for Information Science (GAPHT121)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Physics (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-174",
+      "date": "2026-12-17",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-3",
+      "title": "SW Learn M3: DevOps & Testing",
+      "activityType": "Learning",
+      "topic": "Coding, testing strategies, DevOps/CI-CD, maintenance [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-175",
+      "date": "2026-12-17",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-3",
+      "title": "Pack Stationery; Sleep by 22:30",
+      "activityType": "Rest & Organization",
+      "topic": "Rest after Physics exam; sleep early",
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-176",
+      "date": "2026-12-18",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-3",
+      "title": "Python Learn & Practise M3: Functions & Recursion",
+      "activityType": "Learning & Practice",
+      "topic": "Selection/iteration, sequence types, recursion [80m] + Practise M3 [40m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-177",
+      "date": "2026-12-18",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-4",
+      "title": "Graphics Practise M4 + Timed Model Paper Part A",
+      "activityType": "Practice & Model Paper",
+      "topic": "Isometric drawings [110m] + Timed model paper review [10m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-178",
+      "date": "2026-12-18",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-3",
+      "title": "Chem Practise M2 + Learn M3: Spectroscopy",
+      "activityType": "Learning & Practice",
+      "topic": "Electronic materials [60m] + Molecular spectroscopy and analytical methods [60m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-179",
+      "date": "2026-12-18",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-4",
+      "title": "SW Practise M3 + Learn M4: Project Management",
+      "activityType": "Learning & Practice",
+      "topic": "Testing drills [60m] + Learn M4: COCOMO, risk, SCM, cloud [30m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-180",
+      "date": "2026-12-18",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-3",
+      "title": "Error Log + Flashcards (Python, Graphics, Chem, SW)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Python, Graphics, Chem, SW",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-181",
+      "date": "2026-12-19",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Python Practise M3 + Learn M4: Computational Algorithms",
+      "activityType": "Learning & Practice",
+      "topic": "Practise M3 [30m] + Learn M4: Brute force, D&C, DP, greedy, randomized [80m + 10m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-182",
+      "date": "2026-12-19",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Learn M3 + Practise M3 + Learn M4: Environment",
+      "activityType": "Learning & Practice",
+      "topic": "Spectroscopy [30m] + Practise M3 [60m] + Learn M4: Environmental waste [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-183",
+      "date": "2026-12-19",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-4",
+      "title": "SW Learn M4 (cont.) + Practise M4: COCOMO",
+      "activityType": "Learning & Practice",
+      "topic": "COCOMO, risk analysis [60m] + Practise M4 questions [60m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-184",
+      "date": "2026-12-19",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-4",
+      "title": "Graphics Timed Model Paper + Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "Full drawing sheet under time: isometric & lines [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-185",
+      "date": "2026-12-19",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Error Log + Flashcards (Python, Chem, SW, Graphics)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Python, Chem, SW, Graphics",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-186",
+      "date": "2026-12-20",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Python Practise M4 + Timed Model Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Practise M4 [60m] + Timed model paper under exam time [60m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-187",
+      "date": "2026-12-20",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Learn M4 (cont.) + Practise M4: Waste Treatment",
+      "activityType": "Learning & Practice",
+      "topic": "Environmental chemistry [60m] + Practise M4 questions [30m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-188",
+      "date": "2026-12-20",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-4",
+      "title": "SW Timed Model Paper: Full KTU Pattern",
+      "activityType": "Timed Model Paper",
+      "topic": "One full paper under strict time [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-189",
+      "date": "2026-12-20",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Sunday Weekly Review: Vacation Calibration",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, check Graphics & Python readiness before Christmas",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-190",
+      "date": "2026-12-21",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Practise M4 + Timed Model Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Practise M4 [30m] + Timed model paper under time [90m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-191",
+      "date": "2026-12-21",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-4",
+      "title": "Graphics Timed Model Paper + Fix Weak Points",
+      "activityType": "Timed Model Paper",
+      "topic": "Timed paper [50m] + Fix lost marks [40m] + Spaced recall [30m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-192",
+      "date": "2026-12-21",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Python Timed Model Paper + Algorithm Review",
+      "activityType": "Timed Model Paper",
+      "topic": "Timed model paper under strict exam time [90m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-193",
+      "date": "2026-12-21",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-4",
+      "title": "SW Timed Model Paper Correction",
+      "activityType": "Practice",
+      "topic": "Redo missed UML & COCOMO questions [30m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-194",
+      "date": "2026-12-21",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Error Log + Flashcards (Chem, Graphics, Python, SW)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Chem, Graphics, Python, SW",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-195",
+      "date": "2026-12-22",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Graphics Spaced Recall M1-M4 + Timed Paper 2",
+      "activityType": "Practice & Recall",
+      "topic": "Blank-page recall M1-M4 [90m] + Second timed paper part 1 [30m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-196",
+      "date": "2026-12-22",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Timed Model Paper 2 + Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "One full paper under strict time [60m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-197",
+      "date": "2026-12-22",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-2",
+      "title": "Graphics Second Timed Paper Session 2",
+      "activityType": "Timed Model Paper",
+      "topic": "Different question paper under strict time [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-198",
+      "date": "2026-12-22",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-3",
+      "title": "Graphics Second Timed Paper Session 3 & Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "Complete drawing sheet and mark gaps [60m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-199",
+      "date": "2026-12-22",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Error Log + Flashcards (Graphics, Chem)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Graphics, Chem",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-200",
+      "date": "2026-12-23",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Christmas Vacation / Backlog Catch-up Slot 1",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-201",
+      "date": "2026-12-23",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-2",
+      "title": "Christmas Vacation / Backlog Catch-up Slot 2",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-202",
+      "date": "2026-12-24",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Christmas Eve / Backlog Catch-up Slot 1",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-203",
+      "date": "2026-12-24",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-2",
+      "title": "Christmas Eve / Backlog Catch-up Slot 2",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-204",
+      "date": "2026-12-25",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Christmas Day (Protected Recovery & Rest)",
+      "activityType": "Rest & Buffer",
+      "topic": "Protected rest and family time; recharge mental energy",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-205",
+      "date": "2026-12-26",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-1",
+      "title": "SW Fix Weak Points + Spaced Recall M1-M4",
+      "activityType": "Practice & Recall",
+      "topic": "Redo missed marks [40m] + Blank-page recall M1-M4 [80m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-206",
+      "date": "2026-12-26",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Python Fix Weak Points + Spaced Recall M1-M4",
+      "activityType": "Practice & Recall",
+      "topic": "Redo lost marks [40m] + Blank-page recall M1-M4 [80m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-207",
+      "date": "2026-12-26",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-2",
+      "title": "SW Spaced Recall + Second Timed Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Recall pass [40m] + Second timed paper under strict time [80m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-208",
+      "date": "2026-12-26",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-3",
+      "title": "SW Second Timed Paper Finishing & Marking",
+      "activityType": "Timed Model Paper",
+      "topic": "Different paper under strict time; list gaps [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-209",
+      "date": "2026-12-26",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-1",
+      "title": "Error Log + Flashcards (SW, Python)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for SW, Python",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-210",
+      "date": "2026-12-27",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-sw-4",
+      "title": "SW Second Timed Paper Gaps Correction",
+      "activityType": "Practice",
+      "topic": "Different paper under strict time; fix remaining gaps [40m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-211",
+      "date": "2026-12-27",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-2",
+      "title": "Python Spaced Recall + Second Timed Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Spaced recall M1-M4 [40m] + Second timed paper [50m]",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-212",
+      "date": "2026-12-27",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-3",
+      "title": "Python Second Timed Paper Under Exam Conditions",
+      "activityType": "Timed Model Paper",
+      "topic": "Complete coding paper under time [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-213",
+      "date": "2026-12-27",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Weekly Review: Pre-Graphics Exam Readiness",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, check drawing board, minidrafter, sleep early",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-214",
+      "date": "2026-12-28",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Graphics FINAL REVISION Block 1: Points, Lines & Solids",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Traces, true length/inclination, projection of simple & inclined solids [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-215",
+      "date": "2026-12-28",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-3",
+      "title": "Graphics FINAL REVISION Block 2: Sections, Development & Isometric",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Section planes, surface development, isometric drawings [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-216",
+      "date": "2026-12-28",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-4",
+      "title": "Python Second Timed Paper Analysis",
+      "activityType": "Practice",
+      "topic": "Review algorithm complexity gaps [40m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-217",
+      "date": "2026-12-28",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "Pack Minidrafter, Drawing Instruments & Rest",
+      "activityType": "Exam Eve Prep",
+      "topic": "Pack drafter, clips, compass, 2H/HB pencils, hall ticket; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-218",
+      "date": "2026-12-29",
+      "subjectId": "sub-graphics",
+      "moduleId": "mod-graphics-1",
+      "title": "EXAM: Engineering Graphics & CAD (GMEST103)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Graphics (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-219",
+      "date": "2026-12-29",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Post-Exam Rest & Python Preparation",
+      "activityType": "Rest & Buffer",
+      "topic": "Rest after 3-hour drawing exam; sleep early",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-220",
+      "date": "2026-12-30",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "New Year Buffer & Catch-up Slot 1",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-221",
+      "date": "2026-12-30",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "New Year Buffer & Catch-up Slot 2",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-222",
+      "date": "2026-12-31",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-2",
+      "title": "New Year's Eve Buffer Slot 1",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-223",
+      "date": "2026-12-31",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-2",
+      "title": "New Year's Eve Buffer Slot 2",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot (use for anything that slipped, or rest)",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-224",
+      "date": "2027-01-01",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Happy New Year 2027: Light Review",
+      "activityType": "Rest & Buffer",
+      "topic": "Buffer / rest slot: light formula review, maintain momentum",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-225",
+      "date": "2027-01-02",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem Fix Weak Points + Spaced Recall M1-M4",
+      "activityType": "Practice & Recall",
+      "topic": "Redo lost marks [40m] + Blank-page recall M1-M4 [80m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-226",
+      "date": "2027-01-02",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-2",
+      "title": "Chem Spaced Recall + Second Timed Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Recall pass [40m] + Second timed paper under strict time [80m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-227",
+      "date": "2027-01-02",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-3",
+      "title": "Chem Second Timed Paper Part 2",
+      "activityType": "Timed Model Paper",
+      "topic": "Complete second model paper under time [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-228",
+      "date": "2027-01-02",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Marking & Gaps Correction",
+      "activityType": "Practice",
+      "topic": "Mark paper against answer key; note errors in log [10m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-229",
+      "date": "2027-01-02",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Error Log + Flashcards (Chem)",
+      "activityType": "Error Log",
+      "topic": "Re-write today's mistakes + 5 flashcards for Chem",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-230",
+      "date": "2027-01-03",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Buffer Slot: Python Code Syntax Drill",
+      "activityType": "Practice",
+      "topic": "Buffer / rest slot: functions, recursion, list comprehensions",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-231",
+      "date": "2027-01-03",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Buffer Slot: Electrochemistry & Corrosion Form",
+      "activityType": "Practice",
+      "topic": "Buffer / rest slot: Nernst equation, electrochemical cells",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-232",
+      "date": "2027-01-03",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Weekly Review: Pre-Python Exam Calibration",
+      "activityType": "Weekly Review",
+      "topic": "Update tracker, check Python exam prep; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-233",
+      "date": "2027-01-04",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Python FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Problem-solving, pseudocode, flowcharts, data types, loops [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-234",
+      "date": "2027-01-04",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-3",
+      "title": "Python FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Functions, recursion, search/sort algorithms, computational methods [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-235",
+      "date": "2027-01-04",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Buffer / Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Relax, review error log, avoid new syntax; pack hall ticket",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-236",
+      "date": "2027-01-04",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "Python Error Log & Syntax Cheat Sheet",
+      "activityType": "Error Log",
+      "topic": "Pack hall ticket and stationery; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-237",
+      "date": "2027-01-05",
+      "subjectId": "sub-python",
+      "moduleId": "mod-python-1",
+      "title": "EXAM: Algorithmic Thinking with Python (UCEST105)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Python (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-238",
+      "date": "2027-01-05",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Post-Exam Rest & Chemistry Sprint Planning",
+      "activityType": "Rest & Organization",
+      "topic": "Rest after Python exam; prepare for final backlog Chemistry",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-239",
+      "date": "2027-01-06",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem Learn & Practise M1: Nernst & Cells",
+      "activityType": "Learning & Practice",
+      "topic": "Nernst equation, reference electrodes, concentration cells [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-240",
+      "date": "2027-01-06",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-2",
+      "title": "Chem Learn & Practise M2: Polymers & Semiconductors",
+      "activityType": "Learning & Practice",
+      "topic": "Conducting polymers, OLEDs, nanomaterials [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-241",
+      "date": "2027-01-07",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-3",
+      "title": "Chem Learn & Practise M3: UV-Vis & IR Spectroscopy",
+      "activityType": "Learning & Practice",
+      "topic": "Beer-Lambert law, vibrational modes, selection rules [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-242",
+      "date": "2027-01-07",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Learn & Practise M4: COD, BOD & Water Treatment",
+      "activityType": "Learning & Practice",
+      "topic": "Hardness, reverse osmosis, sewage treatment, green chemistry [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-243",
+      "date": "2027-01-08",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem Timed Model Paper 1 (Full KTU Pattern)",
+      "activityType": "Timed Model Paper",
+      "topic": "Simulate strict 3-hour examination paper under exam timing [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-244",
+      "date": "2027-01-08",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-2",
+      "title": "Chem Model Paper 1 Marking & Weak-Point Redo",
+      "activityType": "Practice",
+      "topic": "Redo missed spectroscopy & electrochemistry numericals [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-245",
+      "date": "2027-01-09",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-3",
+      "title": "Chem Spaced Recall Pass M1-M4 (Blank Page)",
+      "activityType": "Practice & Recall",
+      "topic": "Blank-page recall of all 4 modules; re-learn unremembered reactions [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-246",
+      "date": "2027-01-09",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-4",
+      "title": "Chem Second Timed Model Paper",
+      "activityType": "Timed Model Paper",
+      "topic": "Full 3-hour simulated paper under strict time [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-247",
+      "date": "2027-01-10",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem Formula Sheet & Error Log Review",
+      "activityType": "Error Log",
+      "topic": "Consolidate all formulas: Nernst, Beer-Lambert, cell EMF [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-248",
+      "date": "2027-01-10",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Sunday Weekly Review: Pre-Chemistry Exam Check",
+      "activityType": "Weekly Review",
+      "topic": "Update final tracker; confirm exam hall ticket; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-249",
+      "date": "2027-01-11",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Chem FINAL REVISION Block 1: M1 & M2",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Electrochemistry, corrosion, electronic materials, conducting polymers [120m]",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-250",
+      "date": "2027-01-11",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-3",
+      "title": "Chem FINAL REVISION Block 2: M3 & M4",
+      "activityType": "Final Revision (Exam Eve)",
+      "topic": "Spectroscopy, Beer-Lambert, water technology, waste treatment [120m]",
+      "startTime": "11:30",
+      "endTime": "13:30",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-251",
+      "date": "2027-01-11",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Buffer & Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Relax, review error log, avoid learning new reactions [120m]",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "plannedMinutes": 120,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-252",
+      "date": "2027-01-11",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "Pack Stationery, Calculator & Hall Ticket",
+      "activityType": "Exam Eve Prep",
+      "topic": "Pack scientific calculator, hall ticket; sleep by 22:30",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-253",
+      "date": "2027-01-12",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "EXAM: Chemistry for Information & Electrical Science (GXCYT122)",
+      "activityType": "Exam Paper",
+      "topic": "KTU University Examination: Chemistry (09:00 - 12:00)",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "plannedMinutes": 180,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    },
+    {
+      "id": "sess-254",
+      "date": "2027-01-12",
+      "subjectId": "sub-chem",
+      "moduleId": "mod-chem-1",
+      "title": "ALL 14 EXAMS FINISHED! Victory Rest Slot",
+      "activityType": "Rest & Buffer",
+      "topic": "Congratulations! All 5 S5 subjects and all 9 backlogs completed [90m]",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled",
+      "notes": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Solve 5 KTU Application Layer Previous Questions (HTTP & DNS)",
+      "description": "Answer without notes: persistent vs non-persistent HTTP, DNS iterative resolution, and calculate total round trip times.",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "topic": "HTTP and DNS resolution",
+      "category": "Practice",
+      "priority": "High",
+      "status": "pending",
+      "dueDate": "2026-11-08",
+      "startTime": "11:30",
+      "endTime": "13:00",
+      "estimatedMinutes": 90,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-2",
+      "title": "Derive Master Theorem 3 cases & solve 10 recurrence exercises",
+      "description": "From Cormen / KTU 2022-24 questions: Master theorem extended cases, recursion tree for T(n)=2T(n/2)+n log n.",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "topic": "Master Theorem & Recurrence analysis",
+      "category": "Practice",
+      "priority": "Critical",
+      "status": "pending",
+      "dueDate": "2026-11-08",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "estimatedMinutes": 120,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-3",
+      "title": "Implement TCP Socket Client-Server echo program in C/Python",
+      "description": "Hands-on socket programming: socket(), bind(), listen(), accept(), connect(), send(), recv() verification.",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "topic": "Sockets hands-on & Transport layer",
+      "category": "Assignment",
+      "priority": "Medium",
+      "status": "pending",
+      "dueDate": "2026-11-10",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "estimatedMinutes": 45,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-4",
+      "title": "Complete Infix to Postfix & Postfix Evaluation C program",
+      "description": "Stack-based operator precedence and associativity parsing with parentheses test cases.",
+      "subjectId": "sub-dsa",
+      "moduleId": "mod-dsa-1",
+      "topic": "Stacks & expression evaluation",
+      "category": "Practice",
+      "priority": "High",
+      "status": "pending",
+      "dueDate": "2026-11-10",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "estimatedMinutes": 90,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-5",
+      "title": "STM32 GPIO Register Level LED Blink & Switch Press",
+      "description": "Configure RCC AHB2ENR, GPIO MODER, ODR and IDR bit masks for push button debounce.",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-2",
+      "topic": "STM32 GPIO peripheral programming",
+      "category": "Practice",
+      "priority": "Medium",
+      "status": "pending",
+      "dueDate": "2026-11-12",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "estimatedMinutes": 60,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-6",
+      "title": "Timed Model Paper 1: Computer Networks (Full KTU Pattern)",
+      "description": "Simulate strict 3-hour exam: Part A (10 x 3 marks) + Part B (5 x 14 marks). Mark immediately and record weak points in error log.",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-4",
+      "topic": "Full Syllabus Timed Paper",
+      "category": "Timed Model Paper",
+      "priority": "Critical",
+      "status": "pending",
+      "dueDate": "2026-11-21",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "estimatedMinutes": 120,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-7",
+      "title": "Timed Model Paper 1: Design and Analysis of Algorithms",
+      "description": "Simulate strict 3-hour exam under time: Algorithms, time complexity proofs, dynamic programming tables.",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-4",
+      "topic": "Full Syllabus Timed Paper",
+      "category": "Timed Model Paper",
+      "priority": "Critical",
+      "status": "pending",
+      "dueDate": "2026-11-25",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "estimatedMinutes": 120,
+      "actualMinutes": 0
+    },
+    {
+      "id": "task-8",
+      "title": "Weekly Review & Timetable Re-calibration",
+      "description": "Check actual minutes logged against planned hours; adjust week 2 targets for any pending backlogs.",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-1",
+      "topic": "Sunday Productivity Review",
+      "category": "Review",
+      "priority": "High",
+      "status": "pending",
+      "dueDate": "2026-11-15",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "estimatedMinutes": 30,
+      "actualMinutes": 0
+    }
+  ],
+  "examinations": [
+    {
+      "id": "exam-cn",
+      "subjectId": "sub-cn",
+      "subjectName": "Computer Networks",
+      "subjectCode": "PCCST501",
+      "semester": "S5",
+      "examDate": "2026-11-23",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional (13 Oct KTU calendar)",
+      "eveRevisionDate": "2026-11-22",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Application layer, protocols)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (5 KTU past questions, errors logged)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & 5 flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (TCP, UDP, sockets, routing, QoS)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Socket code, subnetting, Dijkstra)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Data-link, CRC, CSMA, 802.11)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (CRC calculation & frame formats)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Physical layer media, SNMP, ASN.1)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (Line coding diagrams, MIB structure)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (Simulate strict 3-hour KTU paper)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction (Redo lost mark questions)",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (22 Nov: formula sheet, definitions)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-daa",
+      "subjectId": "sub-daa",
+      "subjectName": "Design and Analysis of Algorithms",
+      "subjectCode": "PCCST502",
+      "semester": "S5",
+      "examDate": "2026-11-27",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-11-26",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Asymptotics, Master theorem, AVL)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (10 recurrence problems)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Disjoint sets, DSU, BFS/DFS, SCC)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Tarjan & Strassen multiplication)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Greedy, MST, Dijkstra, MCM, Floyd)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (MCM table fill & N-Queens trace)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Branch & Bound, P/NP, 3-SAT reduction)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (TSP state tree & Vertex Cover proof)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (Full paper under strict time)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction (Redo missed proofs)",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (26 Nov: no new chapters)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-dsa",
+      "subjectId": "sub-dsa",
+      "subjectName": "Data Structures and Algorithms",
+      "subjectCode": "PCCST303",
+      "semester": "S3 Backlog",
+      "examDate": "2026-11-30",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-11-29",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Stacks, queues, postfix conversion)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (Evaluation algorithm drills)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Linked lists, memory management)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (List reversal & polynomial addition)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Trees, BST, Heaps, traversals)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (BST deletion & Heapify steps)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Sorting algorithms & Hashing tables)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (QuickSort trace & hash collision drills)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (3-hour full syllabus simulation)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (29 Nov: formula & algorithm sheet)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-ml",
+      "subjectId": "sub-ml",
+      "subjectName": "Machine Learning",
+      "subjectCode": "PCCST503",
+      "semester": "S5",
+      "examDate": "2026-12-01",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-11-30",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (MLE/MAP, Linear regression, GD)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (Gradient derivation & loss curves)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Logistic, Naive Bayes, ID3 trees)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Entropy & Information Gain calculations)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (SVM kernels, MLP backpropagation)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (Dual problem & backprop matrix steps)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (k-Means, PCA, Random Forest, AdaBoost)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (Eigenvector projection & bias-variance)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (3-hour full KTU paper)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (30 Nov)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-java",
+      "subjectId": "sub-java",
+      "subjectName": "Object Oriented Programming (Java)",
+      "subjectCode": "PBCST304",
+      "semester": "S3 Backlog",
+      "examDate": "2026-12-02",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-01",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Classes, objects, constructors, overloading)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (Writing constructors & method overloads)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Inheritance, polymorphism, inner classes)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Dynamic method dispatch traces)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Interfaces, exceptions, Singleton pattern)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (Custom exception classes & Adapter)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (SOLID, Swing GUI, event handling, JDBC)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (JDBC PreparedStatement & ActionListener)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (Strict timed paper)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (01 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-mc",
+      "subjectId": "sub-mc",
+      "subjectName": "Microcontrollers",
+      "subjectCode": "PBCST504",
+      "semester": "S5",
+      "examDate": "2026-12-04",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-03",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (ARM Cortex-M, embedded C)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (Register bit manipulation drills)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (STM32 GPIO, ADC/DAC, timers)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Timer PWM calculation & ADC ISR)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (USART, I2C, SPI, CAN, USB)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (SPI clock polarity & CAN frames)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (FreeRTOS, TrustZone, SWD)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (Semaphore synchronization problem)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (03 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-deld",
+      "subjectId": "sub-deld",
+      "subjectName": "Digital Electronics & Logic Design",
+      "subjectCode": "GAEST305",
+      "semester": "S3 Backlog",
+      "examDate": "2026-12-05",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-04",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Number systems, gates, Verilog part 1)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (2's complement arithmetic problems)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Boolean algebra, K-map, converters)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (4-variable K-map don't care loops)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (MSI logic, MUX, decoders, adders)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (Function implementation using MUX 8:1)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Flip-flops, counters, FSM, Verilog 2)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (Mod-6 counter excitation table & state graph)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision (Recall pass & flashcards)",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (04 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-pe2",
+      "subjectId": "sub-pe2",
+      "subjectName": "Program Elective 2",
+      "subjectCode": "PECST52N",
+      "semester": "S5",
+      "examDate": "2026-12-07",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional (Elective name TBD)",
+      "eveRevisionDate": "2026-12-06",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Confirm elective, fill syllabus)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (06 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-maths",
+      "subjectId": "sub-maths",
+      "subjectName": "Mathematics for Information Science - 1",
+      "subjectCode": "GAMAT101",
+      "semester": "S1 Backlog",
+      "examDate": "2026-12-14",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-13",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Calculus, chain rule, concavity)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (Linearization drills)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Partial derivatives, Clairaut)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Gradients, directional derivatives)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Lagrange multipliers, LPP)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (13 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-physics",
+      "subjectId": "sub-physics",
+      "subjectName": "Physics for Information Science",
+      "subjectCode": "GAPHT121",
+      "semester": "S1 Backlog",
+      "examDate": "2026-12-17",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-16",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Conductivity, Fermi-Dirac)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Schrodinger equation, 1D well)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Semiconductor physics, p-n junction)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Zener, LED, Laser, Solar cell)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (16 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-graphics",
+      "subjectId": "sub-graphics",
+      "subjectName": "Engineering Graphics & CAD",
+      "subjectCode": "GMEST103",
+      "semester": "S1 Backlog",
+      "examDate": "2026-12-29",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2026-12-28",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Projection of points & lines, true length)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Projection of solids inclined)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Sections & development of surfaces)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Isometric projection)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (28 Dec)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-python",
+      "subjectId": "sub-python",
+      "subjectName": "Algorithmic Thinking with Python",
+      "subjectCode": "UCEST105",
+      "semester": "S1 Backlog",
+      "examDate": "2027-01-05",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2027-01-04",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Problem solving process, types)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Pseudocode, flowcharts, loops)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Sequences, functions, recursion)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Brute force, D&C, DP approach)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (04 Jan)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-chem",
+      "subjectId": "sub-chem",
+      "subjectName": "Chemistry for Info & Electrical Science",
+      "subjectCode": "GXCYT122",
+      "semester": "S2 Backlog",
+      "examDate": "2027-01-12",
+      "examDateStatus": "provisional",
+      "confidenceNote": "Image/calendar-listed, provisional",
+      "eveRevisionDate": "2027-01-11",
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Electrochemistry & corrosion)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Electronic materials, polymers)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Molecular spectroscopy, UV/IR)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (Environmental chemistry & E-waste)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision on exam eve (11 Jan)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "exam-sw",
+      "subjectId": "sub-sw",
+      "subjectName": "Software Engineering",
+      "subjectCode": "PECST411",
+      "semester": "S4 Backlog",
+      "examDate": null,
+      "examDateStatus": "tbd",
+      "confidenceNote": "Date not shown in supplied files. Planned against 5 Jan as a safe working target.",
+      "workingTargetDate": "2027-01-05",
+      "eveRevisionDate": null,
+      "totalChecklistItems": 15,
+      "completedChecklistItems": 0,
+      "modelPaperCompleted": false,
+      "finalRevisionCompleted": false,
+      "checklist": [
+        {
+          "id": "c1",
+          "label": "Module 1 learning (Process models, SRS standards)",
+          "done": false
+        },
+        {
+          "id": "c2",
+          "label": "Module 1 practice (SRS functional requirements)",
+          "done": false
+        },
+        {
+          "id": "c3",
+          "label": "Module 1 revision",
+          "done": false
+        },
+        {
+          "id": "c4",
+          "label": "Module 2 learning (Architectures, UML diagrams, patterns)",
+          "done": false
+        },
+        {
+          "id": "c5",
+          "label": "Module 2 practice (Sequence & class diagrams)",
+          "done": false
+        },
+        {
+          "id": "c6",
+          "label": "Module 2 revision",
+          "done": false
+        },
+        {
+          "id": "c7",
+          "label": "Module 3 learning (Testing, CI/CD, DevOps)",
+          "done": false
+        },
+        {
+          "id": "c8",
+          "label": "Module 3 practice (Cyclomatic complexity calculations)",
+          "done": false
+        },
+        {
+          "id": "c9",
+          "label": "Module 3 revision",
+          "done": false
+        },
+        {
+          "id": "c10",
+          "label": "Module 4 learning (COCOMO, risk management, SCM)",
+          "done": false
+        },
+        {
+          "id": "c11",
+          "label": "Module 4 practice (Effort and duration formula problems)",
+          "done": false
+        },
+        {
+          "id": "c12",
+          "label": "Module 4 revision",
+          "done": false
+        },
+        {
+          "id": "c13",
+          "label": "Timed model paper (Full 3-hour practice)",
+          "done": false
+        },
+        {
+          "id": "c14",
+          "label": "Marking & weak-point correction",
+          "done": false
+        },
+        {
+          "id": "c15",
+          "label": "Final revision once exact exam date is published",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-1",
+      "title": "Master Theorem Reference & Edge Cases",
+      "subjectId": "sub-daa",
+      "moduleId": "mod-daa-1",
+      "topic": "Recurrence Relations",
+      "tags": [
+        "Asymptotics",
+        "Formulas",
+        "KTU-Core"
+      ],
+      "pinned": true,
+      "createdAt": "2026-11-06T19:30:00",
+      "content": "For recurrence T(n) = a*T(n/b) + f(n):\nCompare f(n) with n^(log_b a):\n1. If f(n) = O(n^(log_b a - ε)) for ε > 0, then T(n) = Θ(n^(log_b a)).\n2. If f(n) = Θ(n^(log_b a) * log^k n) for k ≥ 0, then T(n) = Θ(n^(log_b a) * log^(k+1) n).\n3. If f(n) = Ω(n^(log_b a + ε)) for ε > 0, and regularity condition a*f(n/b) ≤ c*f(n) holds for c < 1, then T(n) = Θ(f(n)).\n\n*KTU Trap*: Watch out for polynomial vs polylogarithmic gaps where Master theorem does not apply!"
+    },
+    {
+      "id": "note-2",
+      "title": "TCP Congestion Control & 3-Way Handshake",
+      "subjectId": "sub-cn",
+      "moduleId": "mod-cn-2",
+      "topic": "Transport Layer",
+      "tags": [
+        "Networking",
+        "Protocols",
+        "Exam-High-Yield"
+      ],
+      "pinned": true,
+      "createdAt": "2026-11-06T07:10:00",
+      "content": "Three-way handshake:\n1. Client -> Server: SYN (seq = x)\n2. Server -> Client: SYN-ACK (seq = y, ack = x+1)\n3. Client -> Server: ACK (ack = y+1)\n\nCongestion Control States:\n- Slow Start: cwnd starts at 1 MSS, doubles every RTT (exponential growth) until ssthresh.\n- Congestion Avoidance: cwnd increases by 1 MSS per RTT (linear growth).\n- Triple Duplicate ACK: Fast Retransmit + Fast Recovery (ssthresh = cwnd/2, cwnd = ssthresh + 3 MSS).\n- Timeout: Severe drop: ssthresh = cwnd/2, cwnd resets to 1 MSS (re-enter Slow Start)."
+    },
+    {
+      "id": "note-3",
+      "title": "ARM Cortex-M Stacks & Register Architecture",
+      "subjectId": "sub-mc",
+      "moduleId": "mod-mc-1",
+      "topic": "Architecture",
+      "tags": [
+        "Hardware",
+        "Registers",
+        "Embedded"
+      ],
+      "pinned": false,
+      "createdAt": "2026-11-07T12:45:00",
+      "content": "Core Registers:\n- R0 - R12: General purpose registers\n- R13: Stack Pointer (MSP for OS/Handler mode, PSP for Thread mode)\n- R14: Link Register (LR) holds return address\n- R15: Program Counter (PC)\n- xPSR: Program Status Register (APSR, IPSR, EPSR)\n\nNVIC features:\n- 1 to 240 interrupts, nested vectoring with 8 to 256 priority levels.\n- Hardware auto-stacking of R0-R3, R12, LR, PC, xPSR on exception entry in 12 clock cycles."
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "type": "exam",
+      "title": "Computer Networks Exam in 17 Days",
+      "message": "Provisional date: Mon 23 Nov 2026. Target: finish Module 2 & 3 practice by 14 Nov.",
+      "isRead": false,
+      "createdAt": "2026-11-06T06:00:00"
+    },
+    {
+      "id": "notif-2",
+      "type": "reminder",
+      "title": "S5 + S3 Revision Phase Active",
+      "message": "Daily schedule active: 06:30 morning block and 18:30 main study block.",
+      "isRead": false,
+      "createdAt": "2026-11-06T06:30:00"
+    },
+    {
+      "id": "notif-3",
+      "type": "task",
+      "title": "Upcoming Session: CN Transport Layer",
+      "message": "Scheduled for Monday 06:30 AM. Sockets hands-on and UDP vs TCP.",
+      "isRead": true,
+      "createdAt": "2026-11-05T20:00:00"
+    }
+  ],
+  "timetableTemplates": {
+    "weekday": {
+      "title": "Class day (Monday–Friday)",
+      "note": "Classes 9:00-17:00, study leave begins Sat 21 Nov",
+      "blocks": [
+        {
+          "time": "06:30–07:15",
+          "duration": "45 min",
+          "activity": "Morning study block",
+          "type": "study"
+        },
+        {
+          "time": "09:00–17:00",
+          "duration": "8 hrs",
+          "activity": "College classes & labs",
+          "type": "college"
+        },
+        {
+          "time": "17:00–18:30",
+          "duration": "90 min",
+          "activity": "Travel, meal & rest (protected)",
+          "type": "rest"
+        },
+        {
+          "time": "18:30–20:00",
+          "duration": "90 min",
+          "activity": "Main study block",
+          "type": "study"
+        },
+        {
+          "time": "20:00–20:30",
+          "duration": "30 min",
+          "activity": "Dinner & break",
+          "type": "rest"
+        },
+        {
+          "time": "20:30–21:30",
+          "duration": "60 min",
+          "activity": "Second study block",
+          "type": "study"
+        },
+        {
+          "time": "21:30–21:50",
+          "duration": "20 min",
+          "activity": "Error log + 5 flashcards",
+          "type": "review"
+        },
+        {
+          "time": "22:45",
+          "duration": "Night",
+          "activity": "Sleep (protected - never cut for study)",
+          "type": "sleep"
+        }
+      ]
+    },
+    "saturday": {
+      "title": "Saturday / Free Weekday",
+      "note": "Full study availability (4 core blocks)",
+      "blocks": [
+        {
+          "time": "09:00–11:00",
+          "duration": "120 min",
+          "activity": "Study block 1",
+          "type": "study"
+        },
+        {
+          "time": "11:30–13:30",
+          "duration": "120 min",
+          "activity": "Study block 2",
+          "type": "study"
+        },
+        {
+          "time": "13:30–15:00",
+          "duration": "90 min",
+          "activity": "Lunch and rest",
+          "type": "rest"
+        },
+        {
+          "time": "15:00–17:00",
+          "duration": "120 min",
+          "activity": "Study block 3",
+          "type": "study"
+        },
+        {
+          "time": "18:30–20:00",
+          "duration": "90 min",
+          "activity": "Study block 4",
+          "type": "study"
+        },
+        {
+          "time": "20:00–20:30",
+          "duration": "30 min",
+          "activity": "Error log + flashcards",
+          "type": "review"
+        },
+        {
+          "time": "22:45",
+          "duration": "Night",
+          "activity": "Sleep",
+          "type": "sleep"
+        }
+      ]
+    },
+    "sunday": {
+      "title": "Sunday Routine",
+      "note": "High-yield backlog slots + weekly review",
+      "blocks": [
+        {
+          "time": "09:00–11:00",
+          "duration": "120 min",
+          "activity": "Study block 1",
+          "type": "study"
+        },
+        {
+          "time": "11:30–13:00",
+          "duration": "90 min",
+          "activity": "Backlog study block",
+          "type": "study"
+        },
+        {
+          "time": "13:00–15:00",
+          "duration": "120 min",
+          "activity": "Lunch and rest",
+          "type": "rest"
+        },
+        {
+          "time": "15:00–17:00",
+          "duration": "120 min",
+          "activity": "Study block 2",
+          "type": "study"
+        },
+        {
+          "time": "17:30–19:00",
+          "duration": "90 min",
+          "activity": "Extra block (8, 15, 22 Nov only)",
+          "type": "study"
+        },
+        {
+          "time": "19:00 onward",
+          "duration": "Evening",
+          "activity": "Recovery / free time",
+          "type": "rest"
+        },
+        {
+          "time": "20:00–20:30",
+          "duration": "30 min",
+          "activity": "Weekly review: update tracker, count what slipped, re-plan",
+          "type": "review"
+        },
+        {
+          "time": "22:45",
+          "duration": "Night",
+          "activity": "Sleep",
+          "type": "sleep"
+        }
+      ]
+    }
+  }
+};

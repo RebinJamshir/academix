@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Local Environment & Secrets
+.env
+.env.local
+*.local
+
+# System & Editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Agent skills cache
+.agents/
+skills-lock.json
+pdf_text_dump.txt
