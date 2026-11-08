@@ -1,9 +1,9 @@
 /**
  * KTU B.Tech CSE (2024 Scheme) Academic Dataset
- * S5 + 9 Backlogs Study Management System
- * Complete Schedule from 6 Nov 2026 to 17 Jan 2027
- * All 14 subjects color-coded to PDF palette (zero purple, zero gradients)
- * 100% clean initial state ready for active study.
+ * Updated with KTU Study Timetable Revision (6 Nov - 17 Jan 2027)
+ * - Fri 6 Nov & Sat 7 Nov marked as MISSED
+ * - 11 EXTRA Catch-up blocks added across Sun 8 Nov to Fri 13 Nov
+ * - Page 22 Weekly Progress Tracker table included
  */
 
 window.KTU_DATA = {
@@ -40,7 +40,12 @@ window.KTU_DATA = {
       "description": "Protocol layering, application layer architectures, transport protocols (TCP/UDP), network routing, data-link mechanisms, and physical transmission media.",
       "colorBg": "#EFF6FC",
       "colorText": "#103E60",
-      "colorBorder": "#BDD7EE"
+      "colorBorder": "#BDD7EE",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-daa",
@@ -58,7 +63,12 @@ window.KTU_DATA = {
       "description": "Asymptotic analysis, recurrences, AVL trees, disjoint sets, graph algorithms, divide & conquer, dynamic programming, branch & bound, and NP-completeness.",
       "colorBg": "#EDF7EE",
       "colorText": "#0F5224",
-      "colorBorder": "#C0E4C8"
+      "colorBorder": "#C0E4C8",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-dsa",
@@ -76,7 +86,12 @@ window.KTU_DATA = {
       "description": "Fundamental stacks, queues, expression evaluation, singly & doubly linked lists, binary search trees, heaps, graph traversals (DFS/BFS), sorting, and hashing.",
       "colorBg": "#FEF6EE",
       "colorText": "#7A3B00",
-      "colorBorder": "#F9D5B3"
+      "colorBorder": "#F9D5B3",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-ml",
@@ -94,7 +109,12 @@ window.KTU_DATA = {
       "description": "MLE/MAP, linear/logistic regression, decision trees (ID3), SVM and kernel tricks, multilayer perceptrons, backpropagation, k-means clustering, PCA, and ensemble learning.",
       "colorBg": "#EBF6F7",
       "colorText": "#004750",
-      "colorBorder": "#B9E3E7"
+      "colorBorder": "#B9E3E7",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-java",
@@ -112,7 +132,12 @@ window.KTU_DATA = {
       "description": "Java fundamentals, OOP principles, constructors, inheritance, overriding, packages, interfaces, exception handling, SOLID design principles, Swing GUI, and JDBC.",
       "colorBg": "#FDF0F0",
       "colorText": "#721717",
-      "colorBorder": "#F6C1C1"
+      "colorBorder": "#F6C1C1",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-mc",
@@ -130,7 +155,12 @@ window.KTU_DATA = {
       "description": "ARM Cortex-M architecture, embedded C programming, STM32 GPIO/timer/ADC peripherals, communication protocols (USART, SPI, I2C, CAN, USB), FreeRTOS basics, and TrustZone.",
       "colorBg": "#EEF6F2",
       "colorText": "#183F2E",
-      "colorBorder": "#C2E2D1"
+      "colorBorder": "#C2E2D1",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-deld",
@@ -148,7 +178,12 @@ window.KTU_DATA = {
       "description": "Number systems, Boolean algebra, K-map reduction, code converters, Verilog continuous assignment, decoders, multiplexers, adders, flip-flops, counters, shift registers, and FSM.",
       "colorBg": "#FFF9E8",
       "colorText": "#634A00",
-      "colorBorder": "#FFE59E"
+      "colorBorder": "#FFE59E",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-pe2",
@@ -166,7 +201,12 @@ window.KTU_DATA = {
       "description": "S5 Elective slot PECST521-528. Editable placeholder modules until elective choice is selected by student.",
       "colorBg": "#F1F5F9",
       "colorText": "#1E293B",
-      "colorBorder": "#CBD5E1"
+      "colorBorder": "#CBD5E1",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-maths",
@@ -184,7 +224,12 @@ window.KTU_DATA = {
       "description": "Limits, continuity, chain rule, linearization, concavity, multivariable functions, partial derivatives, directional derivatives, gradient, extrema, Lagrange multipliers, and LPP.",
       "colorBg": "#EFF6FF",
       "colorText": "#1E40AF",
-      "colorBorder": "#BFDBFE"
+      "colorBorder": "#BFDBFE",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-physics",
@@ -202,7 +247,12 @@ window.KTU_DATA = {
       "description": "Electrical conductivity, Fermi-Dirac statistics, superconductivity, quantum mechanics (Schrodinger equation, particle in a box), semiconductor carrier concentration, and photonic devices.",
       "colorBg": "#FDF2F8",
       "colorText": "#831843",
-      "colorBorder": "#FBCFE8"
+      "colorBorder": "#FBCFE8",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-graphics",
@@ -220,7 +270,12 @@ window.KTU_DATA = {
       "description": "Projection of points and lines, true length and inclination, projection of solids with axis inclined, sections of solids, development of surfaces, and isometric projection.",
       "colorBg": "#FEF8EC",
       "colorText": "#602A08",
-      "colorBorder": "#FDE68A"
+      "colorBorder": "#FDE68A",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-python",
@@ -238,7 +293,12 @@ window.KTU_DATA = {
       "description": "Problem-solving strategies, pseudocode and flowcharts, Python data types, loops, sequences, functions, recursion, brute force, divide and conquer, and dynamic programming.",
       "colorBg": "#F0F9FF",
       "colorText": "#075985",
-      "colorBorder": "#BAE6FD"
+      "colorBorder": "#BAE6FD",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-chem",
@@ -256,7 +316,12 @@ window.KTU_DATA = {
       "description": "Electrochemistry, corrosion science, electronic materials, molecular spectroscopy, analytical techniques, environmental chemistry, and electronic waste management.",
       "colorBg": "#ECFDF5",
       "colorText": "#065F46",
-      "colorBorder": "#A7F3D0"
+      "colorBorder": "#A7F3D0",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     },
     {
       "id": "sub-sw",
@@ -275,7 +340,12 @@ window.KTU_DATA = {
       "description": "Software process models, requirements engineering, SRS documentation, architectural styles, UML diagrams, design patterns, testing strategies, CI/CD DevOps, and COCOMO cost estimation.",
       "colorBg": "#FFF7ED",
       "colorText": "#7C2D12",
-      "colorBorder": "#FED7AA"
+      "colorBorder": "#FED7AA",
+      "learningCoverage": 0,
+      "practiceCoverage": 0,
+      "revisionCoverage": 0,
+      "syllabusProgress": 0,
+      "completedModulesCount": 0
     }
   ],
   "modules": [
@@ -323,7 +393,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-cn-2",
@@ -376,7 +448,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-cn-3",
@@ -422,7 +496,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-cn-4",
@@ -468,7 +544,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-daa-1",
@@ -507,7 +585,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-daa-2",
@@ -553,7 +633,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-daa-3",
@@ -599,7 +681,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-daa-4",
@@ -652,7 +736,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-dsa-1",
@@ -691,7 +777,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-dsa-2",
@@ -730,7 +818,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-dsa-3",
@@ -769,7 +859,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-dsa-4",
@@ -808,7 +900,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-ml-1",
@@ -847,7 +941,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-ml-2",
@@ -893,7 +989,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-ml-3",
@@ -932,7 +1030,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-ml-4",
@@ -971,7 +1071,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-java-1",
@@ -996,7 +1098,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-java-2",
@@ -1028,7 +1132,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-java-3",
@@ -1067,7 +1173,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-java-4",
@@ -1106,7 +1214,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-mc-1",
@@ -1131,7 +1241,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-mc-2",
@@ -1163,7 +1275,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-mc-3",
@@ -1202,7 +1316,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-mc-4",
@@ -1234,7 +1350,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-deld-1",
@@ -1266,7 +1384,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-deld-2",
@@ -1305,7 +1425,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-deld-3",
@@ -1344,7 +1466,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-deld-4",
@@ -1383,7 +1507,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-pe2-1",
@@ -1408,7 +1534,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-pe2-2",
@@ -1426,7 +1554,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-pe2-3",
@@ -1444,7 +1574,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-pe2-4",
@@ -1462,7 +1594,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-maths-1",
@@ -1494,7 +1628,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-maths-2",
@@ -1519,7 +1655,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-maths-3",
@@ -1544,7 +1682,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-maths-4",
@@ -1576,7 +1716,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-physics-1",
@@ -1608,7 +1750,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-physics-2",
@@ -1640,7 +1784,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-physics-3",
@@ -1672,7 +1818,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-physics-4",
@@ -1711,7 +1859,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-graphics-1",
@@ -1743,7 +1893,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-graphics-2",
@@ -1768,7 +1920,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-graphics-3",
@@ -1800,7 +1954,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-graphics-4",
@@ -1825,7 +1981,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-python-1",
@@ -1850,7 +2008,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-python-2",
@@ -1875,7 +2035,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-python-3",
@@ -1900,7 +2062,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-python-4",
@@ -1932,7 +2096,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-chem-1",
@@ -1957,7 +2123,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-chem-2",
@@ -1982,7 +2150,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-chem-3",
@@ -2007,7 +2177,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-chem-4",
@@ -2032,7 +2204,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-sw-1",
@@ -2064,7 +2238,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-sw-2",
@@ -2096,7 +2272,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-sw-3",
@@ -2128,7 +2306,9 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     },
     {
       "id": "mod-sw-4",
@@ -2167,519 +2347,771 @@ window.KTU_DATA = {
           "practiced": false,
           "revised": false
         }
-      ]
+      ],
+      "progressPercent": 0,
+      "isCompleted": false
     }
   ],
   "studySessions": [
     {
-      "id": "sess-1",
+      "id": "sess-20261106-1",
       "date": "2026-11-06",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-1",
-      "title": "CN Learn M1: Application Layer Protocols",
-      "activityType": "Learning",
-      "topic": "Application layer, protocol layering (HTTP, FTP, e-mail, DNS, P2P)",
+      "dayOfWeek": "Friday",
       "startTime": "06:30",
       "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "Application layer, protocol layering (HTTP, FTP, e-mail, DNS, P2P)",
+      "title": "CN Learn M1: Application Layer Protocols",
+      "activityType": "Learn",
       "plannedMinutes": 45,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA block on Wed 11 Nov (07:30-08:15)"
     },
     {
-      "id": "sess-2",
+      "id": "sess-20261106-2",
       "date": "2026-11-06",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-1",
-      "title": "DAA Learn M1: Recurrences & Master Theorem",
-      "activityType": "Learning",
-      "topic": "Analysis, asymptotics, recurrences (Master theorem), AVL trees",
+      "dayOfWeek": "Friday",
       "startTime": "18:30",
       "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS303",
+      "moduleNumber": 1,
+      "topic": "Analysis, asymptotics, recurrences (Master theorem), AVL trees",
+      "title": "DAA Learn M1: Recurrences & Master Theorem",
+      "activityType": "Learn",
       "plannedMinutes": 90,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA block on Thu 12 & Fri 13 Nov"
     },
     {
-      "id": "sess-3",
+      "id": "sess-20261106-3",
       "date": "2026-11-06",
-      "subjectId": "sub-ml",
-      "moduleId": "mod-ml-1",
-      "title": "ML Learn M1: Estimation & Gradient Descent",
-      "activityType": "Learning",
-      "topic": "Intro to ML, MLE/MAP, regression, gradient descent",
+      "dayOfWeek": "Friday",
       "startTime": "20:30",
       "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS305",
+      "moduleNumber": 1,
+      "topic": "Intro to ML, MLE/MAP, regression, gradient descent",
+      "title": "ML Learn M1: Estimation & Gradient Descent",
+      "activityType": "Learn",
       "plannedMinutes": 60,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA block on Mon 9 Nov (21:45-22:45)"
     },
     {
-      "id": "sess-4",
+      "id": "sess-20261106-4",
       "date": "2026-11-06",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-1",
-      "title": "Error Log & Flashcards (CN, DAA, ML)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for CN, DAA, ML",
+      "dayOfWeek": "Friday",
       "startTime": "21:30",
       "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DAA, ML",
+      "title": "Error Log & Flashcards (CN, DAA, ML)",
+      "activityType": "Review",
       "plannedMinutes": 20,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped"
     },
     {
-      "id": "sess-5",
+      "id": "sess-20261107-1",
       "date": "2026-11-07",
-      "subjectId": "sub-pe2",
-      "moduleId": "mod-pe2-1",
-      "title": "PE-2 Learn & Practise M1",
-      "activityType": "Learning & Practice",
-      "topic": "Module 1 syllabus overview & questions without notes",
+      "dayOfWeek": "Saturday",
       "startTime": "09:00",
       "endTime": "11:00",
+      "timeSlot": "09:00 - 11:00",
+      "subjectId": "CS308",
+      "moduleNumber": 1,
+      "topic": "Module 1 (confirm elective, then fill from its syllabus) [90 min] + Practise M1: questions without notes, log errors [30 min]",
+      "title": "PE-2 Learn & Practise M1",
+      "activityType": "Learn",
       "plannedMinutes": 120,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA on Sun 8 Nov (13:30) & Wed 11 Nov (21:45)"
     },
     {
-      "id": "sess-6",
+      "id": "sess-20261107-2",
       "date": "2026-11-07",
-      "subjectId": "sub-mc",
-      "moduleId": "mod-mc-1",
-      "title": "MC Learn & Practise M1: ARM Cortex-M",
-      "activityType": "Learning & Practice",
-      "topic": "ARM Cortex-M architecture, embedded C [90m] + Practise M1 [30m]",
+      "dayOfWeek": "Saturday",
       "startTime": "11:30",
       "endTime": "13:30",
+      "timeSlot": "11:30 - 13:30",
+      "subjectId": "CS307",
+      "moduleNumber": 1,
+      "topic": "ARM Cortex-M architecture, embedded C [90 min] + Practise M1: questions without notes, log errors [30 min]",
+      "title": "MC Learn & Practise M1: ARM Cortex-M",
+      "activityType": "Learn",
       "plannedMinutes": 120,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA on Sun 8 Nov (19:30) & Wed 11 Nov (21:45)"
     },
     {
-      "id": "sess-7",
+      "id": "sess-20261107-3",
       "date": "2026-11-07",
-      "subjectId": "sub-java",
-      "moduleId": "mod-java-1",
-      "title": "Java Learn & Practise M1: OOP Fundamentals",
-      "activityType": "Learning & Practice",
-      "topic": "Java basics, OOP concepts, classes, objects, constructors",
+      "dayOfWeek": "Saturday",
       "startTime": "15:00",
       "endTime": "17:00",
+      "timeSlot": "15:00 - 17:00",
+      "subjectId": "CS206",
+      "moduleNumber": 1,
+      "topic": "Java basics, OOP concepts, classes, objects, constructors [90 min] + Practise M1: questions without notes, log errors [30 min]",
+      "title": "Java Learn & Practise M1: OOP Fundamentals",
+      "activityType": "Learn",
       "plannedMinutes": 120,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA on Sun 8 Nov (21:15) & Tue 10 Nov (21:45)"
     },
     {
-      "id": "sess-8",
+      "id": "sess-20261107-4",
       "date": "2026-11-07",
-      "subjectId": "sub-dsa",
-      "moduleId": "mod-dsa-1",
-      "title": "DSA Learn M1: Stacks & Queues",
-      "activityType": "Learning",
-      "topic": "Basic concepts, stacks, queues, expression evaluation",
+      "dayOfWeek": "Saturday",
       "startTime": "18:30",
       "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS201",
+      "moduleNumber": 1,
+      "topic": "Basic concepts, stacks, queues, expression evaluation [90 min]",
+      "title": "DSA Learn M1: Basic Concepts & Stacks",
+      "activityType": "Learn",
       "plannedMinutes": 90,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped - work re-added as EXTRA on Mon 9 Nov (07:30) & Tue 10 Nov (07:30)"
     },
     {
-      "id": "sess-9",
+      "id": "sess-20261107-5",
       "date": "2026-11-07",
-      "subjectId": "sub-pe2",
-      "moduleId": "mod-pe2-1",
-      "title": "Error Log & Flashcards (PE-2, MC, Java, DSA)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for PE-2, MC, Java, DSA",
+      "dayOfWeek": "Saturday",
       "startTime": "20:00",
       "endTime": "20:30",
+      "timeSlot": "20:00 - 20:30",
+      "subjectId": "CS308",
+      "moduleNumber": 1,
+      "topic": "Re-write today's mistakes + 5 flashcards for PE-2, MC, Java, DSA",
+      "title": "Error Log & Flashcards (PE-2, MC, Java, DSA)",
+      "activityType": "Review",
       "plannedMinutes": 30,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "missed",
+      "isMissed": true,
+      "missedReason": "Skipped"
     },
     {
-      "id": "sess-10",
+      "id": "sess-20261108-1",
       "date": "2026-11-08",
-      "subjectId": "sub-deld",
-      "moduleId": "mod-deld-1",
-      "title": "DELD Learn & Practise M1: Number Systems & Verilog",
-      "activityType": "Learning & Practice",
-      "topic": "Number systems, gates, logic levels, Verilog part 1 [90m + 30m]",
+      "dayOfWeek": "Sunday",
       "startTime": "09:00",
       "endTime": "11:00",
+      "timeSlot": "09:00 - 11:00",
+      "subjectId": "EC207",
+      "moduleNumber": 1,
+      "topic": "Number systems, gates, logic levels, Verilog part 1 [90 min] + Practise M1: questions without notes, log errors [30 min]",
+      "title": "DELD Learn M1 & Practise M1",
+      "activityType": "Learn",
       "plannedMinutes": 120,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-11",
+      "id": "sess-20261108-2",
       "date": "2026-11-08",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-1",
-      "title": "CN Learn M1 (cont.) + Practise M1",
-      "activityType": "Learning & Practice",
-      "topic": "Application layer protocol layering [55m] + Practise M1 [35m]",
+      "dayOfWeek": "Sunday",
       "startTime": "11:30",
       "endTime": "13:00",
+      "timeSlot": "11:30 - 13:00",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "Application layer, protocol layering (HTTP, FTP, e-mail, DNS, P2P) [55 min] + Practise M1: questions without notes, log errors [35 min]",
+      "title": "CN Learn M1 (cont.) + Practise M1",
+      "activityType": "Practice",
       "plannedMinutes": 90,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-12",
+      "id": "sess-20261108-extra1",
       "date": "2026-11-08",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-2",
-      "title": "DAA Practise M1 + Learn M2: Graphs & D&C",
-      "activityType": "Practice & Learning",
-      "topic": "DAA Practise M1 [70m] + Learn M2: Disjoint sets, graphs (BFS/DFS) [40m]",
+      "dayOfWeek": "Sunday",
+      "startTime": "13:30",
+      "endTime": "15:00",
+      "timeSlot": "13:30 - 15:00",
+      "subjectId": "CS308",
+      "moduleNumber": 1,
+      "topic": "PE-2 Learn M1 (missed 6-7 Nov catch-up)",
+      "title": "PE-2 EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261108-3",
+      "date": "2026-11-08",
+      "dayOfWeek": "Sunday",
       "startTime": "15:00",
       "endTime": "17:00",
+      "timeSlot": "15:00 - 17:00",
+      "subjectId": "CS303",
+      "moduleNumber": 1,
+      "topic": "Analysis, asymptotics, recurrences (Master theorem), AVL trees [10 min] + Practise M1: questions without notes, log errors [70 min] + Learn M2: Disjoint sets, graphs (BFS/DFS/SCC/topological sort), divide & conquer [40 min]",
+      "title": "DAA Learn M1 (cont.) + Practise M1 + Learn M2",
+      "activityType": "Practice",
       "plannedMinutes": 120,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-13",
+      "id": "sess-20261108-4",
       "date": "2026-11-08",
-      "subjectId": "sub-ml",
-      "moduleId": "mod-ml-1",
-      "title": "ML Learn M1 (cont.) + Practise M1",
-      "activityType": "Practice",
-      "topic": "MLE/MAP, regression, gradient descent [40m] + Practise M1 [50m]",
+      "dayOfWeek": "Sunday",
       "startTime": "17:30",
       "endTime": "19:00",
+      "timeSlot": "17:30 - 19:00",
+      "subjectId": "CS305",
+      "moduleNumber": 1,
+      "topic": "Intro to ML, MLE/MAP, regression, gradient descent [40 min] + Practise M1: questions without notes, log errors [50 min]",
+      "title": "ML Learn M1 (cont.) + Practise M1",
+      "activityType": "Practice",
       "plannedMinutes": 90,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-14",
+      "id": "sess-20261108-extra2",
       "date": "2026-11-08",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-1",
-      "title": "Sunday Weekly Review",
-      "activityType": "Weekly Review",
-      "topic": "Update tracker, count what slipped, re-plan next week",
+      "dayOfWeek": "Sunday",
+      "startTime": "19:30",
+      "endTime": "21:00",
+      "timeSlot": "19:30 - 21:00",
+      "subjectId": "CS307",
+      "moduleNumber": 1,
+      "topic": "MC Learn M1 (missed 6-7 Nov catch-up)",
+      "title": "MC EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261108-5",
+      "date": "2026-11-08",
+      "dayOfWeek": "Sunday",
       "startTime": "20:00",
       "endTime": "20:30",
+      "timeSlot": "20:00 - 20:30",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "Update the tracker, count what slipped, re-plan next week (do not just shift tasks)",
+      "title": "Weekly Review: Update Tracker & Re-plan",
+      "activityType": "Review",
       "plannedMinutes": 30,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-15",
-      "date": "2026-11-09",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-2",
-      "title": "CN Practise M1 + Learn M2: Transport Layer",
-      "activityType": "Learning & Practice",
-      "topic": "CN Practise M1 [25m] + Learn M2: Transport layer (UDP, TCP) [20m]",
-      "startTime": "06:30",
-      "endTime": "07:15",
-      "plannedMinutes": 45,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-16",
-      "date": "2026-11-09",
-      "subjectId": "sub-pe2",
-      "moduleId": "mod-pe2-2",
-      "title": "PE-2 Practise M1 + Learn M2",
-      "activityType": "Learning & Practice",
-      "topic": "PE-2 Practise M1 [30m] + Learn M2: Module 2 [60m]",
-      "startTime": "18:30",
-      "endTime": "20:00",
-      "plannedMinutes": 90,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-17",
-      "date": "2026-11-09",
-      "subjectId": "sub-mc",
-      "moduleId": "mod-mc-2",
-      "title": "MC Practise M1 + Learn M2: STM32 Peripherals",
-      "activityType": "Learning & Practice",
-      "topic": "MC Practise M1 [30m] + Learn M2: STM32 GPIO, ADC/DAC, timers [30m]",
-      "startTime": "20:30",
-      "endTime": "21:30",
+      "id": "sess-20261108-extra3",
+      "date": "2026-11-08",
+      "dayOfWeek": "Sunday",
+      "startTime": "21:15",
+      "endTime": "22:15",
+      "timeSlot": "21:15 - 22:15",
+      "subjectId": "CS206",
+      "moduleNumber": 1,
+      "topic": "Java Learn M1 (missed 6-7 Nov catch-up)",
+      "title": "Java EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
       "plannedMinutes": 60,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-18",
+      "id": "sess-20261109-1",
       "date": "2026-11-09",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-2",
-      "title": "Error Log + Flashcards (CN, PE-2, MC)",
-      "activityType": "Error Log",
+      "dayOfWeek": "Monday",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [25 min] + Learn M2: Transport layer (UDP, TCP) + sockets hands-on; Network layer (routing, multicast, IPv6, QoS) [20 min]",
+      "title": "CN Practise M1 (cont.) + Learn M2",
+      "activityType": "Learn",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261109-extra1",
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "startTime": "07:30",
+      "endTime": "08:15",
+      "timeSlot": "07:30 - 08:15",
+      "subjectId": "CS201",
+      "moduleNumber": 1,
+      "topic": "DSA Learn M1 (part 1) [45 min]",
+      "title": "DSA EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261109-2",
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS308",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [30 min] + Learn M2: Module 2 [60 min]",
+      "title": "PE-2 Practise M1 (cont.) + Learn M2",
+      "activityType": "Learn",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261109-3",
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS307",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [30 min] + Learn M2: STM32 overview and peripheral programming (GPIO, ADC/DAC, interrupts, timers) [30 min]",
+      "title": "MC Practise M1 (cont.) + Learn M2",
+      "activityType": "Learn",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261109-4",
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
       "topic": "Re-write today's mistakes + 5 flashcards for CN, PE-2, MC",
-      "startTime": "21:30",
-      "endTime": "21:50",
+      "title": "Error Log + 5 Flashcards (CN, PE-2, MC)",
+      "activityType": "Review",
       "plannedMinutes": 20,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-19",
+      "id": "sess-20261109-extra2",
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "startTime": "21:45",
+      "endTime": "22:45",
+      "timeSlot": "21:45 - 22:45",
+      "subjectId": "CS305",
+      "moduleNumber": 1,
+      "topic": "ML Learn M1 [60 min]",
+      "title": "ML EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261110-1",
       "date": "2026-11-10",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-2",
-      "title": "CN Learn M2: Network Layer & Sockets",
-      "activityType": "Learning",
-      "topic": "Transport sockets hands-on; Network layer (routing, IPv6, QoS) [45m]",
+      "dayOfWeek": "Tuesday",
       "startTime": "06:30",
       "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "CS301",
+      "moduleNumber": 2,
+      "topic": "Transport layer (UDP, TCP) + sockets hands-on; Network layer (routing, multicast, IPv6, QoS) [45 min]",
+      "title": "CN Learn M2 (cont.): Transport & Network Layer",
+      "activityType": "Learn",
       "plannedMinutes": 45,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-20",
+      "id": "sess-20261110-extra1",
       "date": "2026-11-10",
-      "subjectId": "sub-dsa",
-      "moduleId": "mod-dsa-2",
+      "dayOfWeek": "Tuesday",
+      "startTime": "07:30",
+      "endTime": "08:15",
+      "timeSlot": "07:30 - 08:15",
+      "subjectId": "CS201",
+      "moduleNumber": 1,
+      "topic": "DSA Learn M1 (part 2) [45 min]",
+      "title": "DSA EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261110-2",
+      "date": "2026-11-10",
+      "dayOfWeek": "Tuesday",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS201",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [70 min] + Learn M2: Linked lists and memory management [20 min]",
       "title": "DSA Practise M1 + Learn M2: Linked Lists",
-      "activityType": "Learning & Practice",
-      "topic": "DSA Practise M1 [70m] + Learn M2: Linked lists & memory management [20m]",
-      "startTime": "18:30",
-      "endTime": "20:00",
-      "plannedMinutes": 90,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-21",
-      "date": "2026-11-10",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-2",
-      "title": "DAA Learn M2: Disjoint Sets & Graphs",
-      "activityType": "Learning",
-      "topic": "Disjoint sets, graphs (BFS/DFS/SCC/topological sort), divide & conquer [60m]",
-      "startTime": "20:30",
-      "endTime": "21:30",
-      "plannedMinutes": 60,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-22",
-      "date": "2026-11-10",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-2",
-      "title": "Error Log + Flashcards (CN, DSA, DAA)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for CN, DSA, DAA",
-      "startTime": "21:30",
-      "endTime": "21:50",
-      "plannedMinutes": 20,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-23",
-      "date": "2026-11-11",
-      "subjectId": "sub-java",
-      "moduleId": "mod-java-2",
-      "title": "Java Practise M1 + Learn M2: Polymorphism",
-      "activityType": "Learning & Practice",
-      "topic": "Java Practise M1 [40m] + Learn M2: Polymorphism, static/final/inner classes [5m]",
-      "startTime": "06:30",
-      "endTime": "07:15",
-      "plannedMinutes": 45,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-24",
-      "date": "2026-11-11",
-      "subjectId": "sub-ml",
-      "moduleId": "mod-ml-2",
-      "title": "ML Practise M1 + Learn M2: Classification",
-      "activityType": "Learning & Practice",
-      "topic": "ML Practise M1 [10m] + Learn M2: Logistic, Naive Bayes, KNN, ID3 [80m]",
-      "startTime": "18:30",
-      "endTime": "20:00",
-      "plannedMinutes": 90,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-25",
-      "date": "2026-11-11",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-2",
-      "title": "CN Learn M2 (cont.) + Practise M2",
-      "activityType": "Learning & Practice",
-      "topic": "Transport sockets hands-on [35m] + Practise M2 [25m]",
-      "startTime": "20:30",
-      "endTime": "21:30",
-      "plannedMinutes": 60,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-26",
-      "date": "2026-11-11",
-      "subjectId": "sub-java",
-      "moduleId": "mod-java-2",
-      "title": "Error Log + Flashcards (Java, ML, CN)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for Java, ML, CN",
-      "startTime": "21:30",
-      "endTime": "21:50",
-      "plannedMinutes": 20,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-27",
-      "date": "2026-11-12",
-      "subjectId": "sub-deld",
-      "moduleId": "mod-deld-2",
-      "title": "DELD Practise M1 + Learn M2: Boolean Algebra",
-      "activityType": "Learning & Practice",
-      "topic": "DELD Practise M1 [40m] + Learn M2: Boolean algebra, SOP/POS, K-map [5m]",
-      "startTime": "06:30",
-      "endTime": "07:15",
-      "plannedMinutes": 45,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-28",
-      "date": "2026-11-12",
-      "subjectId": "sub-cn",
-      "moduleId": "mod-cn-3",
-      "title": "CN Practise M2 + Learn M3: Data-Link Layer",
-      "activityType": "Learning & Practice",
-      "topic": "CN Practise M2 [35m] + Learn M3: DLC, MAC, Ethernet, wireless LAN [55m]",
-      "startTime": "18:30",
-      "endTime": "20:00",
-      "plannedMinutes": 90,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-29",
-      "date": "2026-11-12",
-      "subjectId": "sub-mc",
-      "moduleId": "mod-mc-2",
-      "title": "MC Learn M2: STM32 Peripheral Programming",
-      "activityType": "Learning",
-      "topic": "STM32 GPIO, ADC/DAC, interrupts, timers peripheral programming [60m]",
-      "startTime": "20:30",
-      "endTime": "21:30",
-      "plannedMinutes": 60,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-30",
-      "date": "2026-11-12",
-      "subjectId": "sub-deld",
-      "moduleId": "mod-deld-2",
-      "title": "Error Log + Flashcards (DELD, CN, MC)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for DELD, CN, MC",
-      "startTime": "21:30",
-      "endTime": "21:50",
-      "plannedMinutes": 20,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-31",
-      "date": "2026-11-13",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-2",
-      "title": "DAA Practise M2: Graphs & Divide and Conquer",
       "activityType": "Practice",
-      "topic": "Disjoint sets, graphs & divide and conquer problems without notes [45m]",
-      "startTime": "06:30",
-      "endTime": "07:15",
-      "plannedMinutes": 45,
-      "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
-    },
-    {
-      "id": "sess-32",
-      "date": "2026-11-13",
-      "subjectId": "sub-pe2",
-      "moduleId": "mod-pe2-2",
-      "title": "PE-2 Learn & Practise M2",
-      "activityType": "Learning & Practice",
-      "topic": "Module 2 theory [30m] + Practise M2 questions without notes [60m]",
-      "startTime": "18:30",
-      "endTime": "20:00",
       "plannedMinutes": 90,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-33",
-      "date": "2026-11-13",
-      "subjectId": "sub-dsa",
-      "moduleId": "mod-dsa-2",
-      "title": "DSA Learn M2: Memory Management & Lists",
-      "activityType": "Learning",
-      "topic": "Linked lists, dynamic allocation & memory management [60m]",
+      "id": "sess-20261110-3",
+      "date": "2026-11-10",
+      "dayOfWeek": "Tuesday",
       "startTime": "20:30",
       "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS303",
+      "moduleNumber": 2,
+      "topic": "Disjoint sets, graphs (BFS/DFS/SCC/topological sort), divide & conquer [60 min]",
+      "title": "DAA Learn M2 (cont.): Disjoint Sets & Graphs",
+      "activityType": "Learn",
       "plannedMinutes": 60,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
     },
     {
-      "id": "sess-34",
-      "date": "2026-11-13",
-      "subjectId": "sub-daa",
-      "moduleId": "mod-daa-2",
-      "title": "Error Log + Flashcards (DAA, PE-2, DSA)",
-      "activityType": "Error Log",
-      "topic": "Re-write today's mistakes + 5 flashcards for DAA, PE-2, DSA",
+      "id": "sess-20261110-4",
+      "date": "2026-11-10",
+      "dayOfWeek": "Tuesday",
       "startTime": "21:30",
       "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "CS301",
+      "moduleNumber": 2,
+      "topic": "Re-write today's mistakes + 5 flashcards for CN, DSA, DAA",
+      "title": "Error Log + 5 Flashcards (CN, DSA, DAA)",
+      "activityType": "Review",
       "plannedMinutes": 20,
       "actualMinutes": 0,
-      "status": "scheduled",
-      "notes": ""
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261110-extra2",
+      "date": "2026-11-10",
+      "dayOfWeek": "Tuesday",
+      "startTime": "21:45",
+      "endTime": "22:45",
+      "timeSlot": "21:45 - 22:45",
+      "subjectId": "CS206",
+      "moduleNumber": 1,
+      "topic": "Java Practise M1 [60 min]",
+      "title": "Java EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-1",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "CS206",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [40 min] + Learn M2: Polymorphism, static/final/inner classes, inheritance, overriding [5 min]",
+      "title": "Java Practise M1 (cont.) + Learn M2",
+      "activityType": "Learn",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-extra1",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "07:30",
+      "endTime": "08:15",
+      "timeSlot": "07:30 - 08:15",
+      "subjectId": "CS301",
+      "moduleNumber": 1,
+      "topic": "CN Learn M1 [45 min]",
+      "title": "CN EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-2",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS305",
+      "moduleNumber": 2,
+      "topic": "Questions without notes, log errors [10 min] + Learn M2: Classification (logistic, Naive Bayes, KNN, ID3), overfitting, evaluation measures [80 min]",
+      "title": "ML Practise M1 (cont.) + Learn M2: Classification",
+      "activityType": "Practice",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-3",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS301",
+      "moduleNumber": 2,
+      "topic": "Transport layer (UDP, TCP) + sockets hands-on; Network layer (routing, multicast, IPv6, QoS) [35 min] + Practise M2: questions without notes, log errors [25 min]",
+      "title": "CN Learn M2 (cont.) + Practise M2",
+      "activityType": "Practice",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-4",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "CS305",
+      "moduleNumber": 2,
+      "topic": "Re-write today's mistakes + 5 flashcards for Java, ML, CN",
+      "title": "Error Log + 5 Flashcards (Java, ML, CN)",
+      "activityType": "Review",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261111-extra2",
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "startTime": "21:45",
+      "endTime": "22:45",
+      "timeSlot": "21:45 - 22:45",
+      "subjectId": "CS307",
+      "moduleNumber": 1,
+      "topic": "MC + PE-2 Practise M1 (30 min each) [60 min]",
+      "title": "MC & PE-2 EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261112-1",
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "EC207",
+      "moduleNumber": 1,
+      "topic": "Questions without notes, log errors [40 min] + Learn M2: Boolean algebra, SOP/POS, K-map, code converters, Verilog continuous assignment [5 min]",
+      "title": "DELD Practise M1 (cont.) + Learn M2",
+      "activityType": "Learn",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261112-2",
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS301",
+      "moduleNumber": 2,
+      "topic": "Questions without notes, log errors [35 min] + Learn M3: Data-link layer (DLC, MAC, Ethernet, wireless LAN, Mobile IP) [55 min]",
+      "title": "CN Practise M2 (cont.) + Learn M3",
+      "activityType": "Practice",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261112-3",
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS307",
+      "moduleNumber": 2,
+      "topic": "STM32 overview and peripheral programming (GPIO, ADC/DAC, interrupts, timers) [60 min]",
+      "title": "MC Learn M2: STM32 Peripheral Programming",
+      "activityType": "Learn",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261112-4",
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "EC207",
+      "moduleNumber": 1,
+      "topic": "Re-write today's mistakes + 5 flashcards for DELD, CN, MC",
+      "title": "Error Log + 5 Flashcards (DELD, CN, MC)",
+      "activityType": "Review",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261112-extra1",
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "startTime": "21:45",
+      "endTime": "22:45",
+      "timeSlot": "21:45 - 22:45",
+      "subjectId": "CS303",
+      "moduleNumber": 1,
+      "topic": "DAA Learn M1 (part 1) [60 min]",
+      "title": "DAA EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261113-1",
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "startTime": "06:30",
+      "endTime": "07:15",
+      "timeSlot": "06:30 - 07:15",
+      "subjectId": "CS303",
+      "moduleNumber": 2,
+      "topic": "Questions without notes, log errors [45 min]",
+      "title": "DAA Practise M2: Questions & Error Log",
+      "activityType": "Practice",
+      "plannedMinutes": 45,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261113-2",
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "timeSlot": "18:30 - 20:00",
+      "subjectId": "CS308",
+      "moduleNumber": 2,
+      "topic": "Module 2 [30 min] + Practise M2: questions without notes, log errors [60 min]",
+      "title": "PE-2 Learn M2 (cont.) + Practise M2",
+      "activityType": "Practice",
+      "plannedMinutes": 90,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261113-3",
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "startTime": "20:30",
+      "endTime": "21:30",
+      "timeSlot": "20:30 - 21:30",
+      "subjectId": "CS201",
+      "moduleNumber": 2,
+      "topic": "Linked lists and memory management [60 min]",
+      "title": "DSA Learn M2: Linked Lists & Memory",
+      "activityType": "Learn",
+      "plannedMinutes": 60,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261113-4",
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "startTime": "21:30",
+      "endTime": "21:50",
+      "timeSlot": "21:30 - 21:50",
+      "subjectId": "CS303",
+      "moduleNumber": 2,
+      "topic": "Re-write today's mistakes + 5 flashcards for DAA, PE-2, DSA",
+      "title": "Error Log + 5 Flashcards (DAA, PE-2, DSA)",
+      "activityType": "Review",
+      "plannedMinutes": 20,
+      "actualMinutes": 0,
+      "status": "scheduled"
+    },
+    {
+      "id": "sess-20261113-extra1",
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "startTime": "21:45",
+      "endTime": "22:15",
+      "timeSlot": "21:45 - 22:15",
+      "subjectId": "CS303",
+      "moduleNumber": 1,
+      "topic": "DAA Learn M1 (part 2) [30 min]",
+      "title": "DAA EXTRA (missed 6-7 Nov catch-up)",
+      "activityType": "EXTRA Catch-up",
+      "isExtra": true,
+      "extraCatchup": "missed 6-7 Nov",
+      "plannedMinutes": 30,
+      "actualMinutes": 0,
+      "status": "scheduled"
     },
     {
       "id": "sess-35",
@@ -6203,7 +6635,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (22 Nov: formula sheet, definitions)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 17,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-daa",
@@ -6295,7 +6730,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (26 Nov: no new chapters)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 21,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-dsa",
@@ -6387,7 +6825,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (29 Nov: formula & algorithm sheet)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 24,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-ml",
@@ -6479,7 +6920,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (30 Nov)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 25,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-java",
@@ -6571,7 +7015,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (01 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 26,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-mc",
@@ -6663,7 +7110,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (03 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 28,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-deld",
@@ -6755,7 +7205,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (04 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 29,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-pe2",
@@ -6847,7 +7300,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (06 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 31,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-maths",
@@ -6939,7 +7395,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (13 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 38,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-physics",
@@ -7031,7 +7490,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (16 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 41,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-graphics",
@@ -7123,7 +7585,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (28 Dec)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 53,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-python",
@@ -7215,7 +7680,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (04 Jan)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 60,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-chem",
@@ -7307,7 +7775,10 @@ window.KTU_DATA = {
           "label": "Final revision on exam eve (11 Jan)",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": 67,
+      "isPast": false,
+      "preparationPercent": 0
     },
     {
       "id": "exam-sw",
@@ -7400,7 +7871,10 @@ window.KTU_DATA = {
           "label": "Final revision once exact exam date is published",
           "done": false
         }
-      ]
+      ],
+      "daysLeft": null,
+      "isPast": false,
+      "preparationPercent": 0
     }
   ],
   "notes": [
@@ -7633,5 +8107,133 @@ window.KTU_DATA = {
         }
       ]
     }
-  }
+  },
+  "weeklyProgressTracker": [
+    {
+      "code": "PCCST501",
+      "name": "CN Computer Networks",
+      "examDateStatus": "Mon 23 Nov (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Learn M1 & M2, complete catch-up session on 11 Nov"
+    },
+    {
+      "code": "PCCST502",
+      "name": "DAA Design and Analysis of Algorithms",
+      "examDateStatus": "Fri 27 Nov (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Catch-up Learn M1 parts on 12-13 Nov, M2 practice"
+    },
+    {
+      "code": "PCCST303",
+      "name": "DSA Data Structures and Algorithms",
+      "examDateStatus": "Mon 30 Nov (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Catch-up M1 parts on 9-10 Nov morning blocks"
+    },
+    {
+      "code": "PCCST503",
+      "name": "ML Machine Learning",
+      "examDateStatus": "Tue 1 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Catch-up M1 on 9 Nov night, M2 classification"
+    },
+    {
+      "code": "PBCST304",
+      "name": "Java Object Oriented Programming",
+      "examDateStatus": "Wed 2 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Catch-up M1 on 8 Nov & 10 Nov night"
+    },
+    {
+      "code": "PBCST504",
+      "name": "MC Microcontrollers",
+      "examDateStatus": "Fri 4 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Catch-up M1 on 8 Nov & 11 Nov, STM32 on 12 Nov"
+    },
+    {
+      "code": "GAEST305",
+      "name": "DELD Digital Electronics and Logic Design",
+      "examDateStatus": "Sat 5 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Learn M1 on 8 Nov, practice on 12 Nov"
+    },
+    {
+      "code": "PECST52N",
+      "name": "PE-2 Program Elective 2",
+      "examDateStatus": "Mon 7 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Confirm elective title, complete catch-up on 8 & 11 Nov"
+    },
+    {
+      "code": "GAMAT101",
+      "name": "Maths - 1 (Information Science)",
+      "examDateStatus": "Mon 14 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts after PE-2 exam on 8 Dec"
+    },
+    {
+      "code": "GAPHT121",
+      "name": "Physics for Information Science",
+      "examDateStatus": "Thu 17 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts after PE-2 exam on 8 Dec"
+    },
+    {
+      "code": "GMEST103",
+      "name": "Graphics Engineering Graphics & CAD",
+      "examDateStatus": "Tue 29 Dec (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts 8 Dec, model papers 18-21 Dec"
+    },
+    {
+      "code": "UCEST105",
+      "name": "Python Algorithmic Thinking",
+      "examDateStatus": "Tue 5 Jan (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts 9 Dec, practice papers Dec 20-27"
+    },
+    {
+      "code": "PECST411",
+      "name": "SW Software Engineering",
+      "examDateStatus": "TBD (Safe Target: 5 Jan)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts 8 Dec, model papers 20-27 Dec"
+    },
+    {
+      "code": "GXCYT122",
+      "name": "Chem Chemistry for Info Science",
+      "examDateStatus": "Tue 12 Jan (provisional)",
+      "modulesCovered": 0,
+      "papersDone": 0,
+      "confidence": "Low",
+      "nextAction": "Starts 10 Dec, final revision 11 Jan"
+    }
+  ]
 };

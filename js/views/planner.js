@@ -95,6 +95,21 @@ window.PlannerView = {
     const dateStr = this.currentPlanDate;
     const sessions = state.studySessions.filter(s => s.date === dateStr);
 
+    let bannerHtml = "";
+    if (dateStr === "2026-11-06" || dateStr === "2026-11-07") {
+      bannerHtml = `
+        <div class="p-3.5 rounded-lg border border-[var(--error)]/30 bg-[var(--error-container)]/10 text-xs text-[var(--on-surface)] flex items-start gap-2.5 mb-3">
+          <span class="material-symbols-outlined text-[20px] text-[var(--error)] mt-0.5">event_busy</span>
+          <div>
+            <strong class="text-[var(--error)] font-semibold block mb-0.5">SKIPPED / MISSED SESSIONS (Re-allocated)</strong>
+            <p class="text-[var(--on-surface-variant)] leading-relaxed">
+              These blocks were skipped. The work has been re-added as <strong>11 EXTRA catch-up blocks</strong> across <strong>Sun 8 Nov to Fri 13 Nov</strong> so no S5 subject or backlog is dropped.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
     let blocksHtml = "";
     if (sessions.length === 0) {
       blocksHtml = `
@@ -109,11 +124,20 @@ window.PlannerView = {
     } else {
       blocksHtml = sessions.map(sess => {
         const isDone = sess.status === "completed";
+        const isMissed = sess.status === "missed";
+        const isExtra = !!sess.isExtra;
         const sub = state.subjects.find(s => s.id === sess.subjectId);
         const subColor = sub ? sub.color : 'var(--primary)';
         const subBg = sub && sub.colorBg ? sub.colorBg : '#F5F3F5';
         const subBorder = sub && sub.colorBorder ? sub.colorBorder : '#E5E3DC';
         const subText = sub && sub.colorText ? sub.colorText : (sub ? sub.color : 'var(--on-surface)');
+
+        let statusBadge = `<span class="badge ${isDone ? 'badge-completed' : 'badge-neutral'} text-[9px] mt-1">${isDone ? 'Completed' : sess.plannedMinutes + 'm'}</span>`;
+        if (isMissed) {
+          statusBadge = `<span class="badge badge-overdue text-[9px] mt-1 font-mono">Missed</span>`;
+        } else if (isExtra) {
+          statusBadge = `<span class="badge badge-urgent text-[9px] mt-1 font-mono">⚡ Extra</span>`;
+        }
 
         return `
           <div class="layer-card p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:border-[var(--primary)] transition-all border-l-4" style="border-left-color: ${subColor}">
@@ -121,17 +145,18 @@ window.PlannerView = {
               <div class="flex flex-col items-center justify-center p-2 rounded w-24 text-center font-mono flex-shrink-0 border" style="background-color: ${subBg}; border-color: ${subBorder}; color: ${subText};">
                 <span class="text-xs font-bold">${sess.startTime}</span>
                 <span class="text-[10px] opacity-80">to ${sess.endTime}</span>
-                <span class="badge ${isDone ? 'badge-completed' : 'badge-neutral'} text-[9px] mt-1">${isDone ? 'Completed' : sess.plannedMinutes + 'm'}</span>
+                ${statusBadge}
               </div>
 
               <div class="flex flex-col min-w-0">
                 <div class="flex items-center gap-2 flex-wrap">
                   <span class="text-[10px] font-bold px-1.5 py-0.5 rounded border font-mono" style="background-color: ${subBg}; border-color: ${subBorder}; color: ${subText};">${sub ? sub.code : 'S5'}</span>
                   <span class="badge ${sess.activityType.includes('Practice') ? 'badge-pending' : 'badge-neutral'}">${sess.activityType}</span>
+                  ${isExtra ? `<span class="badge badge-urgent text-[9px] font-mono">⚡ EXTRA Catch-Up (missed 6-7 Nov)</span>` : ''}
                 </div>
                 <h3 class="text-sm font-semibold text-[var(--on-surface)] mt-1 ${isDone ? 'line-through opacity-70' : ''}">${sess.title}</h3>
                 <p class="text-xs text-[var(--on-surface-variant)] mt-0.5">${sess.topic}</p>
-                
+                ${sess.missedReason ? `<div class="text-[11px] text-[var(--error)] font-mono mt-1">${sess.missedReason}</div>` : ''}
                 ${sess.notes ? `<div class="text-[11px] text-[var(--primary)] font-mono mt-1">Logged notes: ${sess.notes}</div>` : ''}
               </div>
             </div>
@@ -139,13 +164,15 @@ window.PlannerView = {
             <div class="flex items-center gap-2 flex-shrink-0 self-end md:self-center">
               ${isDone ? `
                 <button class="btn-secondary h-8 px-2.5 text-xs font-mono" onclick="window.PlannerView.reopenSession('${sess.id}')">Re-open</button>
+              ` : (isMissed ? `
+                <span class="text-xs font-mono text-[var(--outline)] px-2 py-1 bg-[var(--surface-low)] rounded">Catch-up active on 8-13 Nov</span>
               ` : `
                 <button class="btn-secondary h-8 px-2.5 text-xs font-mono" onclick="window.App.openRescheduleModal('${sess.id}')">Reschedule</button>
                 <button class="btn-primary h-8 px-3 text-xs font-semibold" onclick="window.DashboardView.startFocusForSession('${sess.id}')">
                   <span class="material-symbols-outlined text-[16px]">play_arrow</span>
                   <span>Start Focus</span>
                 </button>
-              `}
+              `)}
             </div>
           </div>
         `;
@@ -155,6 +182,7 @@ window.PlannerView = {
     return `
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div class="lg:col-span-8 flex flex-col gap-3">
+          ${bannerHtml}
           <div class="flex items-center justify-between pb-2 border-b border-[var(--border-subtle)]">
             <h3 class="text-sm font-semibold text-[var(--on-surface)]">Schedule for ${dateStr}</h3>
             <span class="font-mono text-xs text-[var(--on-surface-variant)]">${sessions.length} Scheduled Blocks</span>
@@ -295,8 +323,8 @@ window.PlannerView = {
     const state = store.state;
 
     // Filter sessions with date earlier than today that were not completed
-    const todayStr = "2026-11-06";
-    const missed = state.studySessions.filter(s => s.date < todayStr && s.status !== "completed");
+    const todayStr = "2026-11-08";
+    const missed = state.studySessions.filter(s => s.status === "missed" || (s.date < todayStr && s.status !== "completed"));
 
     if (missed.length === 0) {
       return `
@@ -311,23 +339,32 @@ window.PlannerView = {
       <div class="layer-card p-4 flex flex-col gap-3">
         <div class="pb-2 border-b border-[var(--border-subtle)] flex items-center justify-between">
           <div>
-            <h3 class="text-sm font-semibold text-[var(--on-surface)]">Missed Study Blocks</h3>
-            <p class="text-xs text-[var(--on-surface-variant)]">Preserve history and allocate new slots without overwriting</p>
+            <h3 class="text-sm font-semibold text-[var(--on-surface)]">Missed / Skipped Study Blocks (6-7 Nov)</h3>
+            <p class="text-xs text-[var(--on-surface-variant)]">All missed work is re-scheduled as 11 EXTRA blocks across 8–13 Nov</p>
           </div>
           <span class="badge badge-urgent">${missed.length} Slipped</span>
+        </div>
+
+        <div class="p-3 rounded-lg border border-[var(--primary)]/30 bg-[var(--surface-low)] text-xs text-[var(--on-surface)] flex items-center gap-2 mb-1">
+          <span class="material-symbols-outlined text-[18px] text-[var(--primary)]">autorenew</span>
+          <span><strong>Automatic Recovery Active:</strong> All 9 blocks from Fri 6 & Sat 7 Nov have been inserted as EXTRA blocks on Sun 8 – Fri 13 Nov.</span>
         </div>
 
         <div class="flex flex-col gap-2">
           ${missed.map(sess => `
             <div class="p-3 rounded border border-[var(--error)]/30 bg-[var(--error-container)]/10 flex items-center justify-between gap-3">
               <div>
-                <span class="badge badge-urgent text-[10px]">Missed: ${sess.date}</span>
+                <div class="flex items-center gap-2">
+                  <span class="badge badge-urgent text-[10px]">Missed: ${sess.date}</span>
+                  <span class="text-[10px] text-[var(--on-surface-variant)] font-mono">${sess.timeSlot}</span>
+                </div>
                 <div class="text-xs font-semibold text-[var(--on-surface)] mt-1">${sess.title}</div>
                 <div class="text-[11px] text-[var(--on-surface-variant)] font-mono">${sess.plannedMinutes}m • ${sess.topic}</div>
+                ${sess.missedReason ? `<div class="text-[10px] text-[var(--error)] font-mono mt-0.5">${sess.missedReason}</div>` : ''}
               </div>
-              <button class="btn-primary h-8 px-3 text-xs font-mono" onclick="window.App.openRescheduleModal('${sess.id}')">
-                Reschedule Slot →
-              </button>
+              <span class="text-xs font-mono text-[var(--primary)] px-2.5 py-1 bg-white border border-[var(--border-subtle)] rounded shadow-xs shrink-0">
+                Catch-Up Allocated
+              </span>
             </div>
           `).join("")}
         </div>
@@ -337,8 +374,8 @@ window.PlannerView = {
 
   getMissedSessionsCount: function() {
     const store = window.academicStore;
-    const todayStr = "2026-11-06";
-    return store.state.studySessions.filter(s => s.date < todayStr && s.status !== "completed").length;
+    const todayStr = "2026-11-08";
+    return store.state.studySessions.filter(s => s.status === "missed" || (s.date < todayStr && s.status !== "completed")).length;
   },
 
   bindEvents: function(container) {

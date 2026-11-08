@@ -170,6 +170,99 @@ window.AnalyticsView = {
           </div>
         </div>
 
+        <!-- Page 22: Weekly Progress Tracker (Sunday Review) -->
+        <div class="layer-card p-4 flex flex-col gap-3">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-2 border-b border-[var(--border-subtle)]">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-completed text-[10px] font-mono">KTU Plan Page 22</span>
+                <span class="font-mono text-xs uppercase tracking-wider text-[var(--on-surface-variant)]">Sunday Review Matrix</span>
+              </div>
+              <h3 class="text-sm font-semibold text-[var(--on-surface)] mt-1">Weekly Progress Tracker — All 14 Subjects</h3>
+              <p class="text-xs text-[var(--on-surface-variant)]">Syllabus modules covered, solved question papers, confidence rating, and next scheduled action</p>
+            </div>
+
+            <!-- Quick summary badges -->
+            <div class="flex items-center gap-2 font-mono text-xs flex-wrap">
+              ${(() => {
+                const tracker = state.weeklyProgressTracker || [];
+                const highConf = tracker.filter(t => t.confidence === "High").length;
+                const medConf = tracker.filter(t => t.confidence === "Medium").length;
+                const lowConf = tracker.filter(t => t.confidence === "Low").length;
+                const totalPapers = tracker.reduce((acc, t) => acc + (t.papersDone || 0), 0);
+                return `
+                  <span class="badge badge-completed text-[10px]">High: ${highConf}</span>
+                  <span class="badge badge-pending text-[10px]">Medium: ${medConf}</span>
+                  <span class="badge badge-exam text-[10px]">Low: ${lowConf}</span>
+                  <span class="badge badge-neutral text-[10px]">Total Papers: ${totalPapers}</span>
+                `;
+              })()}
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-[var(--surface-low)] text-[var(--on-surface-variant)] font-mono text-[11px] border-b border-[var(--border-subtle)]">
+                  <th class="p-2.5">Subject</th>
+                  <th class="p-2.5">Exam Date Status</th>
+                  <th class="p-2.5 text-center">Modules (of 4)</th>
+                  <th class="p-2.5 text-center">Papers Done</th>
+                  <th class="p-2.5">Confidence</th>
+                  <th class="p-2.5 min-w-[240px]">Next Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--border-subtle)]">
+                ${(state.weeklyProgressTracker || []).map(item => {
+                  const sub = state.subjects.find(s => s.code === item.code);
+                  const subLink = sub ? `#/subjects/${sub.id}` : `#/subjects`;
+
+                  return `
+                    <tr class="hover:bg-[var(--surface-low)]/50 transition-colors">
+                      <td class="p-2.5 font-semibold text-[var(--on-surface)]">
+                        <a href="${subLink}" class="hover:text-[var(--primary)] hover:underline flex flex-col">
+                          <span class="font-bold">${item.name}</span>
+                          <span class="font-mono text-[10px] text-[var(--on-surface-variant)]">${item.code}</span>
+                        </a>
+                      </td>
+                      <td class="p-2.5 font-mono text-xs text-[var(--on-surface)]">
+                        <span class="badge badge-neutral text-[10px]">${item.examDateStatus}</span>
+                      </td>
+                      <td class="p-2.5 text-center">
+                        <select class="input-base text-xs font-mono py-1 px-1.5 h-7 text-center rounded border border-[var(--border-subtle)] bg-[var(--surface-lowest)]" 
+                                onchange="window.AnalyticsView.handleProgressChange('${item.code}', 'modulesCovered', this.value)">
+                          ${[0, 1, 2, 3, 4].map(num => `
+                            <option value="${num}" ${item.modulesCovered === num ? 'selected' : ''}>${num} / 4</option>
+                          `).join('')}
+                        </select>
+                      </td>
+                      <td class="p-2.5 text-center">
+                        <input type="number" min="0" max="20" value="${item.papersDone || 0}" 
+                               class="input-base text-xs font-mono py-1 px-1.5 h-7 w-16 text-center rounded border border-[var(--border-subtle)] bg-[var(--surface-lowest)]"
+                               onchange="window.AnalyticsView.handleProgressChange('${item.code}', 'papersDone', this.value)" />
+                      </td>
+                      <td class="p-2.5">
+                        <select class="input-base text-xs font-mono py-1 px-2 h-7 rounded border border-[var(--border-subtle)] bg-[var(--surface-lowest)]"
+                                onchange="window.AnalyticsView.handleProgressChange('${item.code}', 'confidence', this.value)">
+                          <option value="Low" ${item.confidence === "Low" ? 'selected' : ''}>🔴 Low</option>
+                          <option value="Medium" ${item.confidence === "Medium" ? 'selected' : ''}>🟡 Medium</option>
+                          <option value="High" ${item.confidence === "High" ? 'selected' : ''}>🟢 High</option>
+                        </select>
+                      </td>
+                      <td class="p-2.5">
+                        <input type="text" value="${(item.nextAction || '').replace(/"/g, '&quot;')}" 
+                               class="input-base text-xs py-1 px-2 h-7 w-full rounded border border-[var(--border-subtle)] bg-[var(--surface-lowest)] text-[var(--on-surface)]"
+                               placeholder="Scheduled action or catch-up task..."
+                               onchange="window.AnalyticsView.handleProgressChange('${item.code}', 'nextAction', this.value)" />
+                      </td>
+                    </tr>
+                  `;
+                }).join("")}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <!-- Subject Comparison Breakdown Table -->
         <div class="layer-card p-4 flex flex-col gap-3">
           <div class="flex items-center justify-between pb-2 border-b border-[var(--border-subtle)]">
@@ -314,6 +407,14 @@ window.AnalyticsView = {
     link.click();
     document.body.removeChild(link);
     window.App.showToast("Exported CSV progress report.");
+  },
+
+  handleProgressChange: function(code, field, value) {
+    const store = window.academicStore;
+    const ok = store.updateWeeklyProgress(code, field, value);
+    if (ok) {
+      window.App.showToast(`Updated ${field} for ${code}`);
+    }
   }
 };
 

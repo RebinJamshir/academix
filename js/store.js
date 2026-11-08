@@ -6,7 +6,7 @@
 
 class Store {
   constructor() {
-    this.STORAGE_KEY = "academix_academic_state_v3";
+    this.STORAGE_KEY = "academix_academic_state_v4";
     this.backendStatus = "checking";
     this.subscribers = [];
     this._initialSupabaseSynced = false;
@@ -768,6 +768,24 @@ class Store {
   clearNotification(id) {
     this.state.notifications = this.state.notifications.filter(n => n.id !== id);
     this.saveState();
+  }
+
+  /* ------------------- WEEKLY PROGRESS TRACKER (PDF Page 22) ------------------- */
+
+  updateWeeklyProgress(code, field, value) {
+    if (!this.state.weeklyProgressTracker) {
+      this.state.weeklyProgressTracker = [];
+    }
+    const item = this.state.weeklyProgressTracker.find(t => t.code === code);
+    if (!item) return false;
+    
+    if (field === "modulesCovered" || field === "papersDone") {
+      item[field] = Math.max(0, parseInt(value, 10) || 0);
+    } else {
+      item[field] = value;
+    }
+    this.saveState();
+    return true;
   }
 
   /* ------------------- EXPORT & IMPORT ------------------- */

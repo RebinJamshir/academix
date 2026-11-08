@@ -250,6 +250,15 @@ const server = http.createServer((req, res) => {
   // ==========================================
   // Static File Serving
   // ==========================================
+  if (pathname === '/favicon.ico' || pathname === '/favicon.svg') {
+    const logoSvg = path.join(PUBLIC_DIR, 'logo.svg');
+    if (fs.existsSync(logoSvg)) {
+      res.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+      fs.createReadStream(logoSvg).pipe(res);
+      return;
+    }
+  }
+
   let reqPath = decodeURI(pathname);
   if (reqPath === '/' || reqPath === '') {
     reqPath = '/index.html';
@@ -265,7 +274,15 @@ const server = http.createServer((req, res) => {
 
   fs.stat(safePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // Fallback to index.html for SPA routes
+      const ext = path.extname(safePath).toLowerCase();
+      // If it's an asset or data file, return true 404 so browsers don't try to parse HTML as images/CSS
+      if (['.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.css', '.js', '.json', '.woff', '.woff2'].includes(ext)) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+        return;
+      }
+
+      // Fallback to index.html for SPA page routes
       const indexPath = path.join(PUBLIC_DIR, 'index.html');
       fs.readFile(indexPath, (indexErr, indexData) => {
         if (indexErr) {

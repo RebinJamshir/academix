@@ -6,7 +6,7 @@
 
 (function () {
   const DEFAULT_URL = "https://lwacsamezwymumwbuteh.supabase.co";
-  const DEFAULT_DOC_ID = "rebin_academic_state_v3";
+  const DEFAULT_DOC_ID = "rebin_academic_state_v4";
   const STORAGE_KEY_URL = "academix_supabase_url";
   const STORAGE_KEY_ANON = "academix_supabase_anon_key";
   const STORAGE_KEY_AUTOSYNC = "academix_supabase_autosync";

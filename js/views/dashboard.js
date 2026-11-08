@@ -502,28 +502,43 @@ window.DashboardView = {
       sessions.forEach(sess => {
         const sub = state.subjects.find(s => s.id === sess.subjectId);
         const isDone = sess.status === "completed";
+        const isMissed = sess.status === "missed";
+        const isExtra = !!sess.isExtra;
         const subColor = sub ? sub.color : 'var(--primary)';
         const subBg = sub && sub.colorBg ? sub.colorBg : '#F5F3F5';
         const subBorder = sub && sub.colorBorder ? sub.colorBorder : '#E5E3DC';
         const subText = sub && sub.colorText ? sub.colorText : (sub ? sub.color : 'var(--on-surface)');
 
+        let statusBadge = `<span class="badge ${isDone ? 'badge-completed' : 'badge-pending'}">${isDone ? 'Done (' + sess.actualMinutes + 'm)' : sess.plannedMinutes + 'm plan'}</span>`;
+        if (isMissed) {
+          statusBadge = `<span class="badge badge-overdue text-[9px]">Missed</span>`;
+        } else if (isExtra) {
+          statusBadge = `<span class="badge badge-urgent text-[9px]">⚡ Catch-Up</span>`;
+        }
+
         itemsHtml += `
           <div class="p-2.5 rounded border border-[var(--border-subtle)] bg-white flex flex-col gap-1.5 transition-all hover:border-[var(--border-moderate)] border-l-4" style="border-left-color: ${subColor}">
             <div class="flex items-center justify-between gap-2">
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="text-[10px] font-bold px-1.5 py-0.5 rounded border font-mono" style="background-color: ${subBg}; border-color: ${subBorder}; color: ${subText};">${sub ? sub.code : 'S5'}</span>
                 <span class="font-mono text-[11px] text-[var(--on-surface-variant)]">${sess.startTime} - ${sess.endTime}</span>
+                ${isExtra ? `<span class="text-[9px] font-bold px-1 py-0.2 rounded bg-[var(--error-container)]/30 text-[var(--error)] font-mono">EXTRA</span>` : ''}
               </div>
-              <span class="badge ${isDone ? 'badge-completed' : 'badge-pending'}">${isDone ? 'Done (' + sess.actualMinutes + 'm)' : sess.plannedMinutes + 'm plan'}</span>
+              ${statusBadge}
             </div>
             <div class="text-xs font-medium text-[var(--on-surface)] leading-snug ${isDone ? 'line-through opacity-70' : ''}">
               ${sess.title}
             </div>
+            ${sess.missedReason ? `<div class="text-[10px] text-[var(--error)] font-mono">${sess.missedReason}</div>` : ''}
             <div class="flex items-center justify-between pt-1 border-t border-[var(--border-subtle)]/40 text-[11px]">
               <span class="text-[var(--on-surface-variant)] truncate">${sess.activityType}</span>
-              <button class="text-[var(--primary)] font-mono hover:underline font-semibold" onclick="window.DashboardView.startFocusForSession('${sess.id}')">
-                ${isDone ? 'Review' : 'Start Focus →'}
-              </button>
+              ${!isMissed ? `
+                <button class="text-[var(--primary)] font-mono hover:underline font-semibold" onclick="window.DashboardView.startFocusForSession('${sess.id}')">
+                  ${isDone ? 'Review' : 'Start Focus →'}
+                </button>
+              ` : `
+                <span class="text-[10px] text-[var(--outline)] font-mono">Rescheduled to 8-13 Nov</span>
+              `}
             </div>
           </div>
         `;
