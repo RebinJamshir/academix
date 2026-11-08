@@ -122,8 +122,77 @@
           n.cancelled = true;
         }
       });
+    },
+
+    /**
+     * Check active state and dispatch reminders for upcoming blocks, bedtime & backlog
+     */
+    checkAndScheduleReminders: function(state) {
+      if (!state) return;
+      const today = DateService.todayString();
+      const currentMin = DateService.timeToMinutes(DateService.currentTimeString());
+
+      // 1. Upcoming study sessions for today (within 15 minutes of start time)
+      const todaySessions = (state.studySessions || []).filter(s => s.date === today && s.status !== 'completed' && s.status !== 'missed');
+      todaySessions.forEach(sess => {
+        if (sess.startTime) {
+          const sessStart = DateService.timeToMinutes(sess.startTime);
+          const diff = sessStart - currentMin;
+          if (diff > 0 && diff <= this.DEFAULT_LEAD_TIME_MINUTES) {
+            this.dispatch(state, {
+              taskId: sess.id,
+              reminderType: 'study_session_upcoming',
+              scheduledOccurrence: `${today}_${sess.startTime}`,
+              title: `Upcoming Session in ${diff}m`,
+              message: `${sess.title} (${sess.timeSlot}) starts soon. Prepare your study workspace.`,
+              category: 'study'
+            });
+          }
+        }
+      });
+
+      // 2. Bedtime warning at 22:30 (1350 minutes)
+      if (currentMin >= 1350 && currentMin < 1365) {
+        this.dispatch(state, {
+          taskId: 'bedtime_alert',
+          reminderType: 'sleep_protection',
+          scheduledOccurrence: `${today}_bedtime`,
+          title: '🌙 Bedtime in 15 Minutes (22:45)',
+          message: 'Wind down your study session. Sleep schedule is strictly protected for memory consolidation.',
+          category: 'health',
+          priority: 'high'
+        });
+      }
+
+      // 3. Spaced Revisions due today
+      const dueRevs = (state.tasks || []).filter(t => t.isRevision && t.status !== 'completed' && (t.scheduledDate || t.dueDate) <= today);
+      if (dueRevs.length > 0) {
+        this.dispatch(state, {
+          taskId: 'revisions_due',
+          reminderType: 'revision_daily',
+          scheduledOccurrence: `${today}_revs`,
+          title: `🎯 ${dueRevs.length} Spaced Revisions Due Today`,
+          message: `Active recall reviews pending for ${dueRevs.map(r => r.topic || r.title).slice(0, 2).join(', ')}...`,
+          category: 'revision'
+        });
+      }
+
+      // 4. Overdue carry-forward backlog reminder
+      const overdueTasks = (state.tasks || []).filter(t => t.status === 'overdue');
+      if (overdueTasks.length > 0) {
+        this.dispatch(state, {
+          taskId: 'carry_forward_alert',
+          reminderType: 'carry_forward_daily',
+          scheduledOccurrence: `${today}_carryforward`,
+          title: `⚠️ ${overdueTasks.length} Carry-Forward Tasks Need Recovery`,
+          message: 'Review recovery proposals to schedule missed work into sleep-safe slots.',
+          category: 'recovery',
+          priority: 'high'
+        });
+      }
     }
   };
 
   return NotificationService;
 }));
+

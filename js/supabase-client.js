@@ -160,7 +160,7 @@
           id: DEFAULT_DOC_ID,
           user_id: (state.profile && state.profile.id) || "rebin",
           state: state,
-          version: "v3",
+          version: "v4",
           updated_at: new Date().toISOString()
         };
 

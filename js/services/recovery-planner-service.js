@@ -261,6 +261,11 @@
       const task = (state.tasks || []).find(t => t.id === proposal.taskId);
       if (!task) return { success: false, error: 'Task not found' };
 
+      // Ensure original scheduled date is permanently preserved
+      if (!task.originalScheduledDate) {
+        task.originalScheduledDate = task.scheduledDate || task.dueDate || proposal.originalDate;
+      }
+
       // Initialize history if missing
       if (!task.history) task.history = [];
       task.history.push({
@@ -311,3 +316,4 @@
 
   return RecoveryPlannerService;
 }));
+

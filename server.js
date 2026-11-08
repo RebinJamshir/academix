@@ -370,3 +370,23 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(` Database:    data/academix_db.json`);
   console.log(`====================================================`);
 });
+
+// Server-side Background Execution & Reminder Engine (Runs every 60s)
+setInterval(() => {
+  try {
+    if (fs.existsSync(DB_FILE)) {
+      const Engine = require('./js/services/index');
+      const state = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+      const initialCount = (state.notifications || []).length;
+      Engine.NotificationService.checkAndScheduleReminders(state);
+      const afterCount = (state.notifications || []).length;
+
+      if (afterCount !== initialCount) {
+        fs.writeFileSync(DB_FILE, JSON.stringify(state, null, 2), 'utf8');
+        console.log(`[Server Reminder Engine] Dispatched ${afterCount - initialCount} background reminders.`);
+      }
+    }
+  } catch (err) {
+    // Silently continue for resilience
+  }
+}, 60000);

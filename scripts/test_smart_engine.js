@@ -268,6 +268,67 @@ it('detects weekday college hour collision (09:00 - 17:00)', () => {
 });
 
 // ----------------------------------------------------
+// 8. EDGE CASE & RESILIENCE TESTS (Part 11)
+// ----------------------------------------------------
+console.log('\n[8. Edge Case & Resilience Tests]');
+
+it('handles multiple consecutive missed days with priority ranking', () => {
+  const tasks = [
+    { id: 'm1', dueDate: '2026-11-06', status: 'pending', priority: 'Medium', estimatedMinutes: 45 },
+    { id: 'm2', dueDate: '2026-11-07', status: 'pending', priority: 'Critical', estimatedMinutes: 60 }
+  ];
+  const queue = CarryForwardService.detectCarryForwardTasks(tasks, '2026-11-08');
+  assert.strictEqual(queue.length, 2);
+  // Nov 6 has 2 days overdue; Nov 7 has 1 day overdue. Higher days overdue ranks first
+  assert.strictEqual(queue[0].taskId, 'm1');
+  assert.strictEqual(queue[0].daysOverdue, 2);
+});
+
+it('handles repeatedly rescheduling the same task without losing original date', () => {
+  const mockState = {
+    tasks: [{ id: 'repeat-task', dueDate: '2026-11-06', scheduledDate: '2026-11-06', status: 'pending' }],
+    studySessions: []
+  };
+
+  const p1 = { taskId: 'repeat-task', proposedDate: '2026-11-09', proposedStartTime: '18:00', proposedEndTime: '19:00', allocatedMinutes: 60, priorityScore: 80 };
+  RecoveryPlannerService.applyApprovedProposal(p1, mockState);
+
+  assert.strictEqual(mockState.tasks[0].scheduledDate, '2026-11-09');
+  assert.strictEqual(mockState.tasks[0].originalScheduledDate, '2026-11-06');
+  assert.strictEqual(mockState.tasks[0].rescheduleCount, 1);
+
+  const p2 = { taskId: 'repeat-task', proposedDate: '2026-11-10', proposedStartTime: '19:00', proposedEndTime: '20:00', allocatedMinutes: 60, priorityScore: 85 };
+  RecoveryPlannerService.applyApprovedProposal(p2, mockState);
+
+  assert.strictEqual(mockState.tasks[0].scheduledDate, '2026-11-10');
+  assert.strictEqual(mockState.tasks[0].originalScheduledDate, '2026-11-06', 'Original date MUST be preserved across multiple reschedules');
+  assert.strictEqual(mockState.tasks[0].rescheduleCount, 2);
+  assert.strictEqual(mockState.tasks[0].history.length, 2);
+});
+
+it('verifies quiet hours policy (silenced between 23:00 and 06:00)', () => {
+  const dLate = new Date('2026-11-08T23:30:00');
+  assert.strictEqual(NotificationService.isQuietHours(dLate), true);
+
+  const dDay = new Date('2026-11-08T14:30:00');
+  assert.strictEqual(NotificationService.isQuietHours(dDay), false);
+});
+
+it('checkAndScheduleReminders executes safely and triggers deduplicated alerts', () => {
+  const mockState = {
+    notifications: [],
+    studySessions: [],
+    tasks: [{ id: 'overdue-1', status: 'overdue' }]
+  };
+  NotificationService.checkAndScheduleReminders(mockState);
+  assert(mockState.notifications.length > 0, 'Should dispatch carry-forward alert');
+  const count = mockState.notifications.length;
+  // Second run must be suppressed via dedup key
+  NotificationService.checkAndScheduleReminders(mockState);
+  assert.strictEqual(mockState.notifications.length, count, 'Dedup key must prevent duplicate reminders');
+});
+
+// ----------------------------------------------------
 // SUMMARY
 // ----------------------------------------------------
 console.log('\n====================================================');
@@ -277,3 +338,4 @@ console.log('====================================================\n');
 if (failedTests > 0) {
   process.exit(1);
 }
+

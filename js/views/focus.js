@@ -309,19 +309,42 @@ window.FocusView = {
     this.completedFocusSessionsCount++;
     this.totalFocusMinutes += loggedMinutes;
 
-    // Record study session into store
-    store.addSession({
-      date: new Date().toISOString().split("T")[0],
-      subjectId: this.selectedSubjectId,
-      moduleId: this.selectedModuleId,
-      title: `${subject ? subject.code : 'S5'} Focus: ${this.sessionGoal}`,
-      activityType: "Learning & Practice",
-      topic: this.sessionGoal,
-      plannedMinutes: loggedMinutes,
-      actualMinutes: loggedMinutes,
-      status: "completed",
-      notes: "Logged directly via Focus Timer session."
-    });
+    // Record study session into store & update linked task/session telemetry
+    if (this.linkedSessionId) {
+      const existingSess = store.state.studySessions.find(s => s.id === this.linkedSessionId);
+      if (existingSess) {
+        existingSess.actualMinutes = (existingSess.actualMinutes || 0) + loggedMinutes;
+        if (existingSess.actualMinutes >= (existingSess.plannedMinutes || 0)) {
+          existingSess.status = "completed";
+          existingSess.completedAt = new Date().toISOString();
+        }
+        if (existingSess.taskId) {
+          const linkedTask = store.state.tasks.find(t => t.id === existingSess.taskId);
+          if (linkedTask) {
+            linkedTask.actualMinutes = (linkedTask.actualMinutes || 0) + loggedMinutes;
+            if (linkedTask.actualMinutes >= (linkedTask.estimatedMinutes || 0)) {
+              linkedTask.status = "completed";
+              linkedTask.executionState = "completed";
+              linkedTask.completedAt = new Date().toISOString();
+            }
+          }
+        }
+        store.saveState();
+      }
+    } else {
+      store.addSession({
+        date: new Date().toISOString().split("T")[0],
+        subjectId: this.selectedSubjectId,
+        moduleId: this.selectedModuleId,
+        title: `${subject ? subject.code : 'S5'} Focus: ${this.sessionGoal}`,
+        activityType: "Learning & Practice",
+        topic: this.sessionGoal,
+        plannedMinutes: loggedMinutes,
+        actualMinutes: loggedMinutes,
+        status: "completed",
+        notes: "Logged directly via Focus Timer session."
+      });
+    }
 
     window.App.showToast(`Focus session logged! +${loggedMinutes}m added to study telemetry.`);
     this.remainingSeconds = this.targetMinutes * 60;

@@ -25,6 +25,52 @@ window.App = {
     if (savedCollapse === "true") {
       this.setSidebarCollapsed(true);
     }
+
+    // Smart Execution Engine: Reminder loop, Service Worker, and Multi-Tab Sync
+    this.startReminderEngine();
+    this.registerServiceWorker();
+    this.bindMultiTabSync();
+  },
+
+  startReminderEngine: function() {
+    const runChecks = () => {
+      if (window.AcademixNotificationService && window.academicStore) {
+        window.AcademixNotificationService.checkAndScheduleReminders(window.academicStore.state);
+        this.updateNotificationBadge();
+      }
+    };
+    runChecks();
+    this._reminderInterval = setInterval(runChecks, 60000);
+  },
+
+  registerServiceWorker: function() {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          console.log('[ServiceWorker] Registered with scope:', reg.scope);
+        }).catch(err => {
+          console.log('[ServiceWorker] Registration failed:', err);
+        });
+      });
+    }
+  },
+
+  bindMultiTabSync: function() {
+    window.addEventListener('storage', (e) => {
+      const store = window.academicStore;
+      if (store && e.key === store.STORAGE_KEY && e.newValue) {
+        try {
+          const freshState = JSON.parse(e.newValue);
+          console.log('[MultiTabSync] Detected state change from sibling tab, reconciling...');
+          store.state = freshState;
+          store.recalculateAll();
+          this.handleRoute();
+          this.updateNotificationBadge();
+        } catch (err) {
+          console.warn('[MultiTabSync] Parse error:', err);
+        }
+      }
+    });
   },
 
   handleRoute: function() {
@@ -994,6 +1040,14 @@ window.App = {
             <div class="ai-rendered-content leading-relaxed pt-1">
               ${formattedHtml}
             </div>
+            ${(text.toLowerCase().includes("recovery") || text.toLowerCase().includes("overdue") || text.toLowerCase().includes("backlog") || text.toLowerCase().includes("reschedule")) ? `
+              <div class="pt-2 border-t border-[var(--border-subtle)]/50 mt-1">
+                <button class="btn-primary h-7 px-3 text-xs font-mono flex items-center gap-1.5" onclick="window.TasksView.openRecoveryModal()">
+                  <span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+                  <span>Review & Approve Recovery Proposals</span>
+                </button>
+              </div>
+            ` : ''}
           `;
 
           // Bind copy button
