@@ -4,14 +4,24 @@
  */
 
 window.DashboardView = {
-  currentCalDate: new Date(2026, 10, 6), // November 6, 2026
-  selectedDateStr: "2026-11-06",
+  currentCalDate: new Date(2026, 10, 8), // Synced to today: November 8, 2026
+  selectedDateStr: "2026-11-08",
   calendarMode: "month", // "month" | "week" | "day"
+  _userSelectedDate: false,
+
+  getTodayDateStr: function() {
+    return window.AcademixDateService ? window.AcademixDateService.todayString() : "2026-11-08";
+  },
 
   render: function(container) {
     const store = window.academicStore;
     const state = store.state;
     const kpis = store.getOverallKPIs();
+
+    if (!this._userSelectedDate) {
+      this.selectedDateStr = this.getTodayDateStr();
+      this.currentCalDate = window.AcademixDateService ? window.AcademixDateService.parseDate(this.selectedDateStr) : new Date(2026, 10, 8);
+    }
 
     // Greeting based on current time
     const hour = new Date().getHours();
@@ -419,7 +429,7 @@ window.DashboardView = {
     for (let d = 1; d <= daysInMonth; d++) {
       const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
       const isSelected = dateStr === this.selectedDateStr;
-      const isToday = dateStr === this.formatDateIso(new Date());
+      const isToday = dateStr === this.getTodayDateStr();
 
       // Find sessions & exams on this date
       const sessions = state.studySessions.filter(s => s.date === dateStr);
@@ -469,6 +479,7 @@ window.DashboardView = {
   },
 
   onDateClicked: function(dateStr) {
+    this._userSelectedDate = true;
     this.selectedDateStr = dateStr;
     this.renderCalendarGrid();
     this.renderSelectedDateAgenda();
@@ -599,7 +610,7 @@ window.DashboardView = {
     if (!list) return;
 
     const store = window.academicStore;
-    const todayStr = "2026-11-06"; // Defaulting to first timetable plan date for rich view
+    const todayStr = this.getTodayDateStr();
     const sessions = store.state.studySessions.filter(s => s.date === todayStr);
 
     if (sessions.length === 0) {
@@ -658,16 +669,17 @@ window.DashboardView = {
     const box = document.getElementById("dash-weekly-chart-box");
     if (!box) return;
 
+    const todayStr = this.getTodayDateStr();
     // Days Mon-Sun study data for Week 1 (from PDF timetable)
     const weekData = [
       { day: "Mon", planned: 3.5, actual: 3.2, date: "2026-11-02" },
       { day: "Tue", planned: 3.5, actual: 3.5, date: "2026-11-03" },
       { day: "Wed", planned: 3.5, actual: 3.0, date: "2026-11-04" },
       { day: "Thu", planned: 3.5, actual: 2.8, date: "2026-11-05" },
-      { day: "Fri", planned: 3.5, actual: 3.6, date: "2026-11-06", active: true },
+      { day: "Fri", planned: 3.5, actual: 3.6, date: "2026-11-06" },
       { day: "Sat", planned: 6.5, actual: 6.5, date: "2026-11-07" },
       { day: "Sun", planned: 5.5, actual: 5.5, date: "2026-11-08" }
-    ];
+    ].map(item => ({ ...item, active: item.date === todayStr }));
 
     const maxHours = 7.0;
 

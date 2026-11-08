@@ -4,12 +4,21 @@
  */
 
 window.PlannerView = {
-  currentPlanDate: "2026-11-06",
+  currentPlanDate: "2026-11-08",
   activeTab: "daily", // "daily" | "weekly" | "templates" | "missed"
+  _userSelectedDate: false,
+
+  getTodayDateStr: function() {
+    return window.AcademixDateService ? window.AcademixDateService.todayString() : "2026-11-08";
+  },
 
   render: function(container) {
     const store = window.academicStore;
     const state = store.state;
+
+    if (!this._userSelectedDate) {
+      this.currentPlanDate = this.getTodayDateStr();
+    }
 
     container.innerHTML = `
       <div class="flex flex-col w-full gap-4 animate-fade-in">
@@ -233,16 +242,18 @@ window.PlannerView = {
     // Show 7 days starting from plan start date (6 Nov 2026)
     const dates = ["2026-11-06", "2026-11-07", "2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12"];
 
+    const todayStr = this.getTodayDateStr();
     let daysHtml = dates.map(dStr => {
       const dObj = new Date(dStr + "T00:00:00");
       const dayName = dObj.toLocaleDateString("en-US", { weekday: "short" });
       const daySessions = state.studySessions.filter(s => s.date === dStr);
+      const isToday = dStr === todayStr;
 
       return `
-        <div class="layer-card p-3 flex flex-col gap-2">
+        <div class="layer-card p-3 flex flex-col gap-2 ${isToday ? 'ring-1 ring-[var(--primary)] border-[var(--primary)] bg-[var(--surface-lowest)]' : ''}">
           <div class="flex items-center justify-between pb-1.5 border-b border-[var(--border-subtle)]">
-            <span class="font-mono text-xs font-bold text-[var(--on-surface)]">${dayName} • ${dStr.slice(5)}</span>
-            <span class="badge badge-neutral text-[10px]">${daySessions.length} blocks</span>
+            <span class="font-mono text-xs font-bold ${isToday ? 'text-[var(--primary)]' : 'text-[var(--on-surface)]'}">${dayName} • ${dStr.slice(5)}</span>
+            <span class="badge ${isToday ? 'badge-completed' : 'badge-neutral'} text-[10px]">${isToday ? 'Today • ' : ''}${daySessions.length} blocks</span>
           </div>
 
           <div class="flex flex-col gap-1.5">

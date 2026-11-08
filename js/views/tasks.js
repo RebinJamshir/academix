@@ -15,6 +15,8 @@ window.TasksView = {
   render: function(container) {
     const store = window.academicStore;
     const state = store.state;
+    const dateSvc = window.AcademixDateService;
+    const todayStr = dateSvc ? dateSvc.todayString() : "2026-11-08";
 
     // Filter tasks
     let filtered = state.tasks.filter(t => {
@@ -172,7 +174,7 @@ window.TasksView = {
         <div class="flex items-center gap-1 border-b border-[var(--border-subtle)] overflow-x-auto pb-0.5">
           ${[
             { id: "all", label: "All Tasks", count: totalCount },
-            { id: "today", label: "Today", count: state.tasks.filter(t => t.dueDate === "2026-11-06").length },
+            { id: "today", label: "Today", count: state.tasks.filter(t => (t.scheduledDate || t.dueDate) === todayStr && t.status !== "completed").length },
             { id: "upcoming", label: "Upcoming", count: state.tasks.filter(t => t.status !== "completed" && t.status !== "overdue").length },
             { id: "in-progress", label: "In Progress", count: inProgressCount },
             { id: "completed", label: "Completed", count: completedCount },

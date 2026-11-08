@@ -4,15 +4,25 @@
  */
 
 window.CalendarView = {
-  currentDate: new Date(2026, 10, 6), // November 6, 2026
-  selectedDateStr: "2026-11-06",
+  currentDate: new Date(2026, 10, 8), // Synced to today: November 8, 2026
+  selectedDateStr: "2026-11-08",
   viewMode: "month", // "month" | "week" | "day" | "agenda"
   filterCategory: "all",
   filterSubject: "all",
+  _userSelectedDate: false,
+
+  getTodayDateStr: function() {
+    return window.AcademixDateService ? window.AcademixDateService.todayString() : "2026-11-08";
+  },
 
   render: function(container) {
     const store = window.academicStore;
     const state = store.state;
+
+    if (!this._userSelectedDate) {
+      this.selectedDateStr = this.getTodayDateStr();
+      this.currentDate = window.AcademixDateService ? window.AcademixDateService.parseDate(this.selectedDateStr) : new Date(2026, 10, 8);
+    }
 
     container.innerHTML = `
       <div class="flex flex-col w-full gap-4 animate-fade-in">
@@ -130,8 +140,9 @@ window.CalendarView = {
 
     if (todayBtn) {
       todayBtn.addEventListener("click", () => {
-        self.currentDate = new Date();
-        self.selectedDateStr = self.formatDateIso(new Date());
+        self._userSelectedDate = false;
+        self.selectedDateStr = self.getTodayDateStr();
+        self.currentDate = window.AcademixDateService ? window.AcademixDateService.parseDate(self.selectedDateStr) : new Date(2026, 10, 8);
         self.render(container);
       });
     }
@@ -193,7 +204,7 @@ window.CalendarView = {
     for (let d = 1; d <= daysInMonth; d++) {
       const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
       const isSelected = dateStr === this.selectedDateStr;
-      const isToday = dateStr === this.formatDateIso(new Date());
+      const isToday = dateStr === this.getTodayDateStr();
 
       // Filter events
       let sessions = state.studySessions.filter(s => s.date === dateStr);
@@ -571,6 +582,7 @@ window.CalendarView = {
   },
 
   selectDate: function(dateStr) {
+    this._userSelectedDate = true;
     this.selectedDateStr = dateStr;
     this.renderCurrentView();
     this.renderInspector();

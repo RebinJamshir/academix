@@ -260,14 +260,13 @@ class Store {
     });
 
     // 2. Dynamic Exam Countdowns based on Current Local Time
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const dateSvc = window.AcademixDateService;
+    const todayStr = dateSvc ? dateSvc.todayString() : new Date().toISOString().slice(0, 10);
+    const today = new Date(todayStr + "T00:00:00");
 
     this.state.examinations.forEach(exam => {
       if (exam.examDate && exam.examDateStatus !== "tbd") {
-        const examDate = new Date(exam.examDate + "T00:00:00");
-        const diffMs = examDate - today;
-        const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+        const diffDays = dateSvc ? dateSvc.diffInDays(exam.examDate, todayStr) : Math.ceil((new Date(exam.examDate + "T00:00:00") - today) / (1000 * 60 * 60 * 24));
         exam.daysLeft = diffDays >= 0 ? diffDays : 0;
         exam.isPast = diffDays < 0;
       } else {
@@ -285,8 +284,6 @@ class Store {
 
     // 3. Dynamic Task Status using Smart Execution Engine (Decoupled execution & date states)
     const taskStatusSvc = window.AcademixTaskStatusService;
-    const dateSvc = window.AcademixDateService;
-    const todayStr = dateSvc ? dateSvc.todayString() : new Date().toISOString().slice(0, 10);
 
     this.state.tasks.forEach(task => {
       if (taskStatusSvc) {

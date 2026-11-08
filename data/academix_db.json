@@ -7871,6 +7871,22 @@
   ],
   "notes": [
     {
+      "id": "note-cpu-sched-01",
+      "title": "CPU Scheduling Algorithms (FCFS, SJF, RR) — KTU Notes",
+      "subjectId": "sub-sw",
+      "moduleId": "mod-os-2",
+      "topic": "CPU Scheduling Algorithms",
+      "tags": [
+        "OS",
+        "KTU-7-Mark",
+        "Gantt-Chart",
+        "Formulas"
+      ],
+      "pinned": true,
+      "createdAt": "2026-11-08T10:07:56.324Z",
+      "content": "# CPU Scheduling Algorithms — KTU Examination Notes\n\nKTU 7-Mark Model Answer & Numerical Reference\nOperating Systems — Module 2\n\n## 1. Core Scheduling Formulas\n- Turnaround Time: TAT = CT - AT\n- Waiting Time: WT = TAT - BT\n- Average Waiting Time: AWT = (Σ WT) / N\n- Average Turnaround Time: ATAT = (Σ TAT) / N\n\n## 2. Algorithm Summary & Trade-offs\n1. First Come First Serve (FCFS):\n   - Non-preemptive, FIFO.\n   - Suffers from Convoy Effect (short processes stuck behind long ones).\n2. Shortest Job First (SJF):\n   - Non-preemptive / Preemptive (SRTF).\n   - Minimizes AWT; risk of Starvation for long processes.\n3. Round Robin (RR):\n   - Preemptive, time-sliced using Time Quantum.\n   - Prevents starvation; performance sensitive to time quantum size.\n\n## 3. KTU Valuation Marks Scheme (7 Marks)\n1. Definitions & Objectives: 1 Mark\n2. Working Principle: 1 Mark\n3. Clear Gantt Chart: 2 Marks\n4. Numerical Table (CT, TAT, WT) & AWT / ATAT: 2 Marks\n5. Advantages, Disadvantages & Key Phenomena (Convoy/Starvation): 1 Mark"
+    },
+    {
       "id": "note-1",
       "title": "Master Theorem Reference & Edge Cases",
       "subjectId": "sub-daa",
