@@ -54,6 +54,25 @@ window.DashboardView = {
           </div>
         </div>
 
+        <!-- Carry-Forward Backlog Banner (if overdue tasks exist) -->
+        ${kpis.overdueTasksCount > 0 ? `
+          <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+            <div class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded bg-[var(--error)]/10 text-[var(--error)] flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[17px]">history_toggle_off</span>
+              </span>
+              <div>
+                <span class="font-semibold text-[var(--on-surface)]">Carry-Forward Backlog: ${kpis.overdueTasksCount} unfinished study tasks</span>
+                <span class="text-[11px] text-[var(--on-surface-variant)] block">Syllabus work preserved from earlier dates. Propose sleep-safe recovery slots.</span>
+              </div>
+            </div>
+            <a href="#/tasks?filter=overdue" class="btn-primary h-7 px-3 text-xs font-mono flex items-center gap-1 self-start sm:self-center">
+              <span>Review Recovery</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        ` : ''}
+
         <!-- Metric KPI Cards (4 Cards) -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <!-- Card 1: Overall Preparation -->

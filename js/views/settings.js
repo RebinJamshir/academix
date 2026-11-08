@@ -235,6 +235,57 @@ alter publication supabase_realtime add table public.academix_state;</pre>
           </div>
         </div>
 
+        <!-- Section: Smart Execution & Recovery Engine Preferences -->
+        <div class="layer-card p-4 flex flex-col gap-4">
+          <div class="pb-2 border-b border-[var(--border-subtle)] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xs">
+                <span class="material-symbols-outlined text-[16px]">tune</span>
+              </span>
+              <div>
+                <h3 class="text-sm font-semibold text-[var(--on-surface)]">Smart Execution Engine Preferences</h3>
+                <p class="text-xs text-[var(--on-surface-variant)]">Algorithm weights, quiet hours, and sleep protection rules</p>
+              </div>
+            </div>
+            <span class="badge badge-completed font-mono text-[10px]">Active</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 rounded bg-[var(--surface-low)] border border-[var(--border-subtle)] flex flex-col justify-between">
+              <div>
+                <span class="font-bold text-[var(--on-surface)]">Bedtime Protection Boundary</span>
+                <p class="text-[11px] text-[var(--on-surface-variant)] mt-1">Strict hard constraint: zero study sessions permitted past this time.</p>
+              </div>
+              <div class="mt-2 flex items-center justify-between font-mono">
+                <span class="badge badge-completed font-bold">22:45 IST</span>
+                <span class="text-[10px] text-[var(--outline)]">Protected</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded bg-[var(--surface-low)] border border-[var(--border-subtle)] flex flex-col justify-between">
+              <div>
+                <span class="font-bold text-[var(--on-surface)]">Quiet Hours Window</span>
+                <p class="text-[11px] text-[var(--on-surface-variant)] mt-1">Notifications and alerts are silenced automatically.</p>
+              </div>
+              <div class="mt-2 flex items-center justify-between font-mono">
+                <span class="badge badge-neutral">23:00 - 06:00</span>
+                <span class="text-[10px] text-[var(--outline)]">Sleep Safe</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded bg-[var(--surface-low)] border border-[var(--border-subtle)] flex flex-col justify-between">
+              <div>
+                <span class="font-bold text-[var(--on-surface)]">Spaced Revision Intervals</span>
+                <p class="text-[11px] text-[var(--on-surface-variant)] mt-1">Default review stages: R1, R2, R3, R4, and Final pre-exam.</p>
+              </div>
+              <div class="mt-2 flex items-center justify-between font-mono">
+                <span class="badge badge-neutral">D+1, D+3, D+7, D+14</span>
+                <span class="text-[10px] text-[var(--outline)]">Adaptive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Section 3: Local Node.js Disk Persistence -->
         <div class="layer-card p-4 flex flex-col gap-3">
           <div class="pb-2 border-b border-[var(--border-subtle)] flex items-center justify-between">

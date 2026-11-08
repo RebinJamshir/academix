@@ -200,6 +200,58 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // 4a. POST /api/execution/proposals - Generate recovery proposals for backlog
+  if (pathname === '/api/execution/proposals' && req.method === 'POST') {
+    try {
+      const Engine = require('./js/services/index');
+      if (!fs.existsSync(DB_FILE)) {
+        sendJSON(res, 400, { error: 'Database not initialized' });
+        return;
+      }
+      const state = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+      const plan = Engine.RecoveryPlannerService.generateProposals(state);
+      sendJSON(res, 200, { success: true, plan });
+    } catch (e) {
+      console.error('[API proposals error]', e);
+      sendJSON(res, 500, { error: e.message });
+    }
+    return;
+  }
+
+  // 4b. POST /api/execution/approve-proposal - Atomically apply approved recovery proposal
+  if (pathname === '/api/execution/approve-proposal' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const { proposal } = JSON.parse(body || '{}');
+        if (!proposal || !proposal.taskId) {
+          sendJSON(res, 400, { error: 'Invalid proposal payload' });
+          return;
+        }
+        const Engine = require('./js/services/index');
+        const state = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+        const applyRes = Engine.RecoveryPlannerService.applyApprovedProposal(proposal, state);
+
+        if (applyRes.success) {
+          if (fs.existsSync(DB_FILE)) {
+            try { fs.copyFileSync(DB_FILE, BACKUP_FILE); } catch (bErr) {}
+          }
+          const tmpFile = DB_FILE + '.tmp';
+          fs.writeFileSync(tmpFile, JSON.stringify(state, null, 2), 'utf8');
+          fs.renameSync(tmpFile, DB_FILE);
+          sendJSON(res, 200, { success: true, message: 'Recovery proposal approved and scheduled', result: applyRes });
+        } else {
+          sendJSON(res, 400, { success: false, error: applyRes.error });
+        }
+      } catch (e) {
+        console.error('[API approve proposal error]', e);
+        sendJSON(res, 500, { error: e.message });
+      }
+    });
+    return;
+  }
+
   // 5. POST /api/ai/generate - Server-side Gemini API proxy (robust, fast, avoids CORS/IPv6 issues)
   if (pathname === '/api/ai/generate' && req.method === 'POST') {
     let body = '';

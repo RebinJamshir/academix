@@ -395,8 +395,25 @@ window.SubjectsView = {
   },
 
   toggleTopicCheck: function(subjectId, moduleId, topicId, field, value) {
-    window.academicStore.updateTopicStatus(subjectId, moduleId, topicId, field, value);
-    window.App.showToast(`Updated topic ${field} status.`);
+    const store = window.academicStore;
+    store.updateTopicStatus(subjectId, moduleId, topicId, field, value);
+
+    if (field === 'learned' && value === true) {
+      const sub = store.state.subjects.find(s => s.id === subjectId);
+      const mod = store.state.modules.find(m => m.id === moduleId);
+      const top = mod ? (mod.topics || []).find(t => t.id === topicId) : null;
+      if (top && sub) {
+        const revRes = store.scheduleTopicRevision(top, sub, { stage: 1 });
+        if (revRes && revRes.created) {
+          window.App.showToast(`🎯 Learned! R1 Spaced Revision scheduled for ${revRes.scheduledDate}`);
+        } else {
+          window.App.showToast(`Updated topic ${field} status.`);
+        }
+      }
+    } else {
+      window.App.showToast(`Updated topic ${field} status.`);
+    }
+
     this.renderSubjectWorkspace(document.getElementById("main-content-view"), subjectId);
   },
 

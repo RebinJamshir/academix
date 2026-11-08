@@ -838,3 +838,4 @@ console.log('SUCCESS! Updated database and js/data.js.');
 console.log('Total study sessions:', db.studySessions.length);
 console.log('Missed sessions on Nov 6 & 7:', db.studySessions.filter(s => s.status === 'missed').length);
 console.log('Extra catch-up sessions on Nov 8-13:', db.studySessions.filter(s => s.isExtra).length);
+

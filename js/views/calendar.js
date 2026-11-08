@@ -401,6 +401,7 @@ window.CalendarView = {
                 <div class="flex items-center gap-1.5 flex-wrap">
                   <span class="text-[10px] font-bold px-1.5 py-0.5 rounded border font-mono" style="background-color: ${subBg}; border-color: ${subBorder}; color: ${subText};">${sub ? sub.code : 'S5'}</span>
                   <span class="badge ${isDone ? 'badge-completed' : 'badge-pending'}">${sess.activityType}</span>
+                  ${sess.isRecoveryBlock ? `<span class="badge badge-completed font-mono text-[10px]">⚡ Recovery Block</span>` : ''}
                   <span class="text-xs text-[var(--on-surface-variant)] font-mono">${sess.plannedMinutes} min</span>
                 </div>
                 <h4 class="text-sm font-semibold text-[var(--on-surface)] mt-1 ${isDone ? 'line-through opacity-70' : ''}">${sess.title}</h4>

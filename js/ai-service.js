@@ -55,12 +55,21 @@
       // Subject summary
       const subjSummary = subjects.map(s => `${s.code} (${s.name}): ${s.progress || 0}% covered`).join(", ");
 
+      // Carry-forward & execution metrics from Smart Execution Engine
+      const backlog = store.getCarryForwardSummary ? store.getCarryForwardSummary() : { totalCount: 0, totalRemainingHours: "0" };
+      const dueRevisions = store.getDueRevisions ? store.getDueRevisions() : [];
+      const overdueTasks = (store.state.tasks || []).filter(t => t.status === "overdue").map(t => t.title).slice(0, 3);
+
       return `
 STUDENT PROFILE & CONTEXT:
 - Name: ${p.name || 'Rebin'}
 - University: APJ Abdul Kalam Technological University (KTU), 2024 Scheme
 - Program: B.Tech Computer Science & Engineering (Semester 5 + 9 backlogs)
 - Bedtime Rule: Strict 22:45 bedtime. Never recommend studying past 22:45.
+- College Hours: Mon-Fri 09:00 - 17:00 (protected).
+- Smart Execution Backlog: ${backlog.totalCount} tasks carried forward (${backlog.totalRemainingHours}h remaining work).
+${overdueTasks.length > 0 ? `- Overdue Items: ${overdueTasks.join('; ')}` : ''}
+${dueRevisions.length > 0 ? `- Spaced Revisions Due Today: ${dueRevisions.length} topics` : ''}
 - Active Subjects: ${subjSummary}
 - Nearest Exams: ${upcomingExams.map(e => `${e.name} in ${e.days} days (${e.date})`).join("; ")}
 - Target: High-yield syllabus coverage, clear 2-mark & 10-mark KTU exam answers, active recall, diagrams, and formulas.

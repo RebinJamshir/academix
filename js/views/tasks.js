@@ -30,12 +30,16 @@ window.TasksView = {
       if (this.selectedSubject !== "all" && t.subjectId !== this.selectedSubject) return false;
       // Priority
       if (this.selectedPriority !== "all" && t.priority.toLowerCase() !== this.selectedPriority.toLowerCase()) return false;
-      // Tab
-      if (this.currentTab === "today") return t.dueDate === "2026-11-06";
-      if (this.currentTab === "in-progress") return t.status === "in-progress";
-      if (this.currentTab === "completed") return t.status === "completed";
+      // Tab filtering using Smart Execution Engine rules
+      const dateSvc = window.AcademixDateService;
+      const todayStr = dateSvc ? dateSvc.todayString() : "2026-11-08";
+      const taskDate = t.scheduledDate || t.dueDate || todayStr;
+
+      if (this.currentTab === "today") return taskDate === todayStr && t.status !== "completed";
+      if (this.currentTab === "in-progress") return t.status === "in-progress" || t.executionState === "in_progress";
+      if (this.currentTab === "completed") return t.status === "completed" || t.executionState === "completed";
       if (this.currentTab === "overdue") return t.status === "overdue";
-      if (this.currentTab === "upcoming") return t.status !== "completed" && t.status !== "overdue";
+      if (this.currentTab === "upcoming") return t.status === "upcoming" || (taskDate > todayStr && t.status !== "completed");
       return true;
     });
 
@@ -72,6 +76,12 @@ window.TasksView = {
           </div>
 
           <div class="flex items-center gap-2">
+            ${overdueCount > 0 ? `
+              <button id="task-recovery-btn" class="btn-secondary h-9 px-3 text-xs flex items-center gap-1.5" onclick="window.TasksView.openRecoveryModal()" title="Generate sleep-safe recovery slots for overdue work">
+                <span class="material-symbols-outlined text-[16px] text-[var(--primary)]">auto_fix_high</span>
+                <span>Smart Recovery (${overdueCount})</span>
+              </button>
+            ` : ''}
             <button id="task-add-btn" class="btn-primary h-9 px-3.5 text-xs">
               <span class="material-symbols-outlined text-[18px]">add_task</span>
               <span>New Task</span>
@@ -98,6 +108,25 @@ window.TasksView = {
             <span class="font-mono text-xl font-semibold text-[var(--error)] mt-1">${overdueCount}</span>
           </div>
         </div>
+
+        <!-- Carry-Forward Backlog Banner -->
+        ${overdueCount > 0 ? `
+          <div class="p-3.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-[var(--error)]/10 text-[var(--error)] flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+              </span>
+              <div>
+                <span class="font-semibold text-[var(--on-surface)]">Carry-Forward Backlog: ${overdueCount} unfinished tasks detected from earlier dates.</span>
+                <p class="text-[11px] text-[var(--on-surface-variant)] mt-0.5">Execution records preserved. Propose sleep-safe recovery slots (ending before 22:45 bedtime).</p>
+              </div>
+            </div>
+            <button class="btn-primary h-8 px-3 text-xs font-mono flex items-center gap-1.5 flex-shrink-0" onclick="window.TasksView.openRecoveryModal()">
+              <span class="material-symbols-outlined text-[16px]">play_circle</span>
+              <span>Generate Recovery Plan</span>
+            </button>
+          </div>
+        ` : ''}
 
         <!-- Filter Controls Row -->
         <div class="layer-card p-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
@@ -218,6 +247,9 @@ window.TasksView = {
                 <span class="badge ${priorityBadgeClass}">${task.priority}</span>
                 <span class="badge badge-neutral">${task.category}</span>
                 <span class="font-mono text-xs text-[var(--on-surface-variant)]">Due: ${task.dueDate}</span>
+                ${task.remainingMinutes !== undefined && task.remainingMinutes > 0 && task.actualMinutes > 0 ? `<span class="badge badge-pending font-mono text-[10px]">⏳ ${task.remainingMinutes}m rem</span>` : ''}
+                ${task.rescheduleCount > 0 ? `<span class="badge badge-neutral font-mono text-[10px]">⚡ Rescheduled (${task.rescheduleCount}x)</span>` : ''}
+                ${task.isRevision ? `<span class="badge badge-completed font-mono text-[10px]">🎯 R${task.revisionStage || 1} Revision</span>` : ''}
               </div>
               <h3 class="text-sm font-semibold text-[var(--on-surface)] mt-1 ${isDone ? 'line-through opacity-70' : ''}">
                 ${task.title}
@@ -321,6 +353,52 @@ window.TasksView = {
               </button>
             </div>
           </div>
+
+          <!-- Spaced Revision Active Recall Section -->
+          ${task.isRevision ? `
+            <div class="layer-card p-3.5 flex flex-col gap-2.5 border-l-4 border-l-[var(--primary)]">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-[var(--on-surface)] flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[16px] text-[var(--primary)]">psychology</span>
+                  Active Recall Feedback (R${task.revisionStage || 1})
+                </span>
+                <span class="badge badge-completed text-[10px]">Spaced Engine</span>
+              </div>
+              <p class="text-[11px] text-[var(--on-surface-variant)]">Rate your recall difficulty. Academix automatically adjusts your next spaced revision interval:</p>
+              <div class="grid grid-cols-3 gap-2 pt-1 font-mono text-xs">
+                <button class="p-2 rounded border border-[var(--border-subtle)] bg-[var(--surface-low)] hover:border-[var(--primary)] flex flex-col items-center gap-1" onclick="window.TasksView.handleRecall('${task.id}', 'easy')">
+                  <span>🟢 Easy</span>
+                  <span class="text-[9px] text-[var(--outline)]">+50% interval</span>
+                </button>
+                <button class="p-2 rounded border border-[var(--border-subtle)] bg-[var(--surface-low)] hover:border-[var(--tertiary)] flex flex-col items-center gap-1" onclick="window.TasksView.handleRecall('${task.id}', 'moderate')">
+                  <span>🟡 Moderate</span>
+                  <span class="text-[9px] text-[var(--outline)]">Standard interval</span>
+                </button>
+                <button class="p-2 rounded border border-[var(--border-subtle)] bg-[var(--surface-low)] hover:border-[var(--error)] flex flex-col items-center gap-1" onclick="window.TasksView.handleRecall('${task.id}', 'difficult')">
+                  <span>🔴 Difficult</span>
+                  <span class="text-[9px] text-[var(--outline)]">-50% + Practice</span>
+                </button>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Execution & Reschedule History Audit Trail -->
+          ${task.history && task.history.length > 0 ? `
+            <div class="layer-card p-3.5 flex flex-col gap-2">
+              <span class="text-xs font-semibold text-[var(--on-surface)]">Execution & Reschedule History</span>
+              <div class="flex flex-col gap-1.5 pt-1 divide-y divide-[var(--border-subtle)] text-[11px] font-mono">
+                ${task.history.map(h => `
+                  <div class="pt-1.5 flex flex-col">
+                    <div class="flex items-center justify-between text-[var(--on-surface)]">
+                      <span class="font-semibold text-[var(--primary)]">${h.action}</span>
+                      <span class="text-[10px] text-[var(--outline)]">${h.approvedAt ? new Date(h.approvedAt).toLocaleDateString() : ''}</span>
+                    </div>
+                    <span class="text-[var(--on-surface-variant)]">${h.fromScheduledDate} → ${h.toScheduledDate} (${h.toStartTime || 'Anytime'})</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
 
           <!-- Sub-tasks Checklist -->
           <div class="layer-card p-3.5 flex flex-col gap-2.5">
@@ -564,5 +642,129 @@ window.TasksView = {
       window.App.showToast("Task deleted.");
       this.render(document.getElementById("main-content-view"));
     }
+  },
+
+  /* ------------------- SMART RECOVERY & SPACED REVISION HANDLERS ------------------- */
+
+  handleRecall: function(taskId, rating) {
+    const res = window.academicStore.recordRevisionRecall(taskId, rating);
+    if (res) {
+      if (res.nextStageScheduled) {
+        window.App.showToast(`Active recall recorded (${rating}). R${res.nextTask.revisionStage} scheduled for ${res.nextDate}`);
+      } else {
+        window.App.showToast(`Revision complete! ${res.message}`);
+      }
+    }
+    this.render(document.getElementById("main-content-view"));
+  },
+
+  openRecoveryModal: function() {
+    const store = window.academicStore;
+    const plan = store.generateRecoveryProposals();
+    const modal = document.getElementById("plan-regen-modal");
+    if (!modal) return;
+
+    modal.innerHTML = `
+      <div class="layer-modal w-full max-w-2xl rounded-xl p-5 flex flex-col gap-4 animate-fade-in shadow-2xl max-h-[85vh] overflow-hidden" onclick="event.stopPropagation()">
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)]">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xs">
+              <span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-[var(--on-surface)]">Smart Recovery Proposals</h3>
+              <p class="text-[10px] text-[var(--on-surface-variant)] font-mono">Deterministic priority schedule • Sleep protected (<22:45 bedtime)</p>
+            </div>
+          </div>
+          <button class="w-8 h-8 rounded hover:bg-[var(--surface-low)] text-[var(--on-surface-variant)] flex items-center justify-center" onclick="window.TasksView.closeRecoveryModal()">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+
+        <!-- Proposals List -->
+        <div class="flex-1 overflow-y-auto pr-1 flex flex-col gap-3">
+          ${plan.proposals.length === 0 ? `
+            <div class="p-6 text-center text-xs text-[var(--on-surface-variant)]">
+              <span class="material-symbols-outlined text-[32px] text-[var(--primary)] mb-1">task_alt</span>
+              <p class="font-semibold text-[var(--on-surface)]">All clear! No carry-forward backlog tasks detected.</p>
+              <p class="text-[11px] mt-0.5">Your study schedule is fully on track.</p>
+            </div>
+          ` : plan.proposals.map(p => `
+            <div class="p-3.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col gap-2 hover:border-[var(--primary)] transition-colors">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="badge badge-urgent font-mono text-[10px]">P-${p.priorityScore}</span>
+                    <span class="badge badge-neutral font-mono text-[10px]">${p.subjectId}</span>
+                    <span class="text-[11px] text-[var(--outline)] font-mono">Original: ${p.originalDate}</span>
+                  </div>
+                  <h4 class="text-xs font-bold text-[var(--on-surface)] mt-1">${p.taskTitle}</h4>
+                </div>
+                <span class="badge badge-completed font-mono text-[10px] whitespace-nowrap">${p.allocatedMinutes}m slot</span>
+              </div>
+
+              <!-- Proposed Slot Details -->
+              <div class="p-2 rounded bg-[var(--surface-low)] border border-[var(--border-subtle)] text-xs font-mono flex items-center justify-between text-[var(--on-surface)]">
+                <span class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px] text-[var(--primary)]">event_available</span>
+                  <strong>${p.proposedDate}</strong> (${p.proposedStartTime} - ${p.proposedEndTime})
+                </span>
+                <span class="text-[10px] text-[var(--primary)] font-semibold">Sleep-safe (<22:45)</span>
+              </div>
+
+              <p class="text-[10px] text-[var(--on-surface-variant)]">${p.reason}</p>
+
+              <!-- Proposal Action Buttons -->
+              <div class="flex items-center justify-end gap-2 pt-1 border-t border-[var(--border-subtle)]/50">
+                <button class="btn-ghost h-7 px-2.5 text-xs text-[var(--on-surface-variant)]" onclick="window.TasksView.rejectProposal('${p.id}')">Dismiss</button>
+                <button class="btn-primary h-7 px-3 text-xs font-semibold flex items-center gap-1" onclick="window.TasksView.approveProposal('${p.id}')">
+                  <span class="material-symbols-outlined text-[14px]">check</span>
+                  <span>Approve & Schedule</span>
+                </button>
+              </div>
+            </div>
+          `).join('')}
+
+          ${plan.unscheduled.length > 0 ? `
+            <div class="p-3 rounded-lg bg-[var(--surface-container)] border border-[var(--border-subtle)] text-[11px] font-mono text-[var(--on-surface-variant)] flex flex-col gap-1">
+              <span class="font-bold text-[var(--on-surface)]">⚠️ ${plan.unscheduled.length} tasks remain in unscheduled backlog</span>
+              <p>No conflict-free slots found within 7 days without violating sleep (22:45) or college hours. Consider completing earlier sessions faster or adjusting daily workload limits.</p>
+            </div>
+          ` : ''}
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="flex items-center justify-between pt-2 border-t border-[var(--border-subtle)] text-xs">
+          <span class="font-mono text-[11px] text-[var(--outline)]">${plan.proposalsCount} proposals generated</span>
+          <button class="btn-secondary h-8 px-4 text-xs font-mono" onclick="window.TasksView.closeRecoveryModal()">Close</button>
+        </div>
+      </div>
+    `;
+
+    modal.classList.remove("hidden");
+  },
+
+  closeRecoveryModal: function() {
+    const modal = document.getElementById("plan-regen-modal");
+    if (modal) modal.classList.add("hidden");
+  },
+
+  approveProposal: function(proposalId) {
+    const res = window.academicStore.approveRecoveryProposal(proposalId);
+    if (res.success) {
+      window.App.showToast("Recovery proposal approved and scheduled into timetable.");
+      this.openRecoveryModal();
+      this.render(document.getElementById("main-content-view"));
+    } else {
+      window.App.showToast(`Error: ${res.error}`);
+    }
+  },
+
+  rejectProposal: function(proposalId) {
+    window.academicStore.rejectRecoveryProposal(proposalId);
+    window.App.showToast("Proposal dismissed.");
+    this.openRecoveryModal();
+    this.render(document.getElementById("main-content-view"));
   }
 };

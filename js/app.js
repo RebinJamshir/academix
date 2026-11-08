@@ -721,6 +721,20 @@ window.App = {
       const newS = document.getElementById("resched-start").value;
       const newE = document.getElementById("resched-end").value;
 
+      // Smart Execution Conflict Checking
+      if (store.checkSchedulingConflicts) {
+        const conflictCheck = store.checkSchedulingConflicts({
+          date: newD,
+          startTime: newS,
+          endTime: newE,
+          excludeSessionId: sessionId
+        });
+        if (conflictCheck.hasConflict) {
+          alert("Scheduling Constraint Violation:\n• " + conflictCheck.conflicts.join("\n• "));
+          return;
+        }
+      }
+
       store.rescheduleSession(sessionId, newD, newS, newE);
       window.App.closeAllModals();
       window.App.showToast(`Session moved to ${newD}.`);

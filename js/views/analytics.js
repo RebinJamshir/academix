@@ -13,9 +13,10 @@ window.AnalyticsView = {
     store.recalculateAll();
     const kpis = store.getOverallKPIs();
 
-    // Calculate actual study hours breakdown
-    const now = new Date();
-    const todayStr = "2026-11-06"; // Anchor date
+    // Calculate actual study hours breakdown using Smart Execution Engine
+    const dateSvc = window.AcademixDateService;
+    const todayStr = dateSvc ? dateSvc.todayString() : "2026-11-08";
+    const execMetrics = store.getExecutionMetrics ? store.getExecutionMetrics() : null;
 
     const allSessions = state.studySessions.filter(s => s.status === "completed" && s.actualMinutes > 0);
     const todayMinutes = allSessions.filter(s => s.date === todayStr).reduce((acc, s) => acc + s.actualMinutes, 0);
@@ -108,6 +109,47 @@ window.AnalyticsView = {
             </div>
           </div>
         </div>
+
+        <!-- Smart Execution & Spaced Telemetry Strip -->
+        ${execMetrics ? `
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+            <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col justify-between">
+              <span class="font-mono text-[10px] text-[var(--on-surface-variant)] uppercase">Today's Execution</span>
+              <div class="my-1 flex items-baseline gap-1">
+                <span class="text-xl font-bold font-mono text-[var(--primary)]">${execMetrics.todayCompletionRate}%</span>
+                <span class="text-[10px] text-[var(--outline)] font-mono">(${execMetrics.todayCompletedTasks}/${execMetrics.todayTotalTasks} tasks)</span>
+              </div>
+              <span class="text-[10px] text-[var(--on-surface-variant)]">Daily quota completion</span>
+            </div>
+
+            <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col justify-between">
+              <span class="font-mono text-[10px] text-[var(--on-surface-variant)] uppercase">Recovery Success</span>
+              <div class="my-1 flex items-baseline gap-1">
+                <span class="text-xl font-bold font-mono text-[var(--secondary)]">${execMetrics.recoverySuccessRate}%</span>
+                <span class="text-[10px] text-[var(--outline)] font-mono">(${execMetrics.completedRecoveryCount}/${execMetrics.recoverySessionsCount} blocks)</span>
+              </div>
+              <span class="text-[10px] text-[var(--on-surface-variant)]">Carry-forward cleared</span>
+            </div>
+
+            <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col justify-between">
+              <span class="font-mono text-[10px] text-[var(--on-surface-variant)] uppercase">Revision Velocity</span>
+              <div class="my-1 flex items-baseline gap-1">
+                <span class="text-xl font-bold font-mono text-[var(--tertiary)]">${execMetrics.revisionCompletionRate}%</span>
+                <span class="text-[10px] text-[var(--outline)] font-mono">(${execMetrics.completedRevisionsCount}/${execMetrics.totalRevisionsCount} reviews)</span>
+              </div>
+              <span class="text-[10px] text-[var(--on-surface-variant)]">Spaced active recall</span>
+            </div>
+
+            <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-lowest)] flex flex-col justify-between">
+              <span class="font-mono text-[10px] text-[var(--on-surface-variant)] uppercase">Pending Backlog</span>
+              <div class="my-1 flex items-baseline gap-1">
+                <span class="text-xl font-bold font-mono text-[var(--error)]">${execMetrics.carryForwardCount}</span>
+                <span class="text-[10px] text-[var(--outline)] font-mono">tasks (${execMetrics.carryForwardHours}h)</span>
+              </div>
+              <span class="text-[10px] text-[var(--on-surface-variant)]">Requires sleep-safe recovery</span>
+            </div>
+          </div>
+        ` : ''}
 
         <!-- Weekly Planned vs Actual Bar Chart -->
         <div class="layer-card p-4 flex flex-col gap-3">

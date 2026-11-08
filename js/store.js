@@ -283,12 +283,24 @@ class Store {
       }
     });
 
-    // 3. Dynamic Task Overdue Status
+    // 3. Dynamic Task Status using Smart Execution Engine (Decoupled execution & date states)
+    const taskStatusSvc = window.AcademixTaskStatusService;
+    const dateSvc = window.AcademixDateService;
+    const todayStr = dateSvc ? dateSvc.todayString() : new Date().toISOString().slice(0, 10);
+
     this.state.tasks.forEach(task => {
-      if (task.status !== "completed" && task.status !== "cancelled" && task.dueDate) {
-        const dueDate = new Date(task.dueDate + "T23:59:59");
-        if (dueDate < new Date()) {
-          task.status = "overdue";
+      if (taskStatusSvc) {
+        task.status = taskStatusSvc.getTaskStatus(task, todayStr);
+        task.remainingMinutes = taskStatusSvc.getRemainingDuration(task);
+        if (!task.originalScheduledDate) {
+          task.originalScheduledDate = task.scheduledDate || task.dueDate || todayStr;
+        }
+        if (!task.scheduledDate) {
+          task.scheduledDate = task.dueDate || todayStr;
+        }
+      } else {
+        if (task.status !== "completed" && task.status !== "cancelled" && task.dueDate) {
+          if (task.dueDate < todayStr) task.status = "overdue";
         }
       }
     });
@@ -786,6 +798,102 @@ class Store {
     }
     this.saveState();
     return true;
+  }
+
+  /* ------------------- SMART EXECUTION ENGINE INTEGRATION ------------------- */
+
+  getCarryForwardQueue() {
+    if (window.AcademixCarryForwardService) {
+      return window.AcademixCarryForwardService.detectCarryForwardTasks(this.state.tasks);
+    }
+    return [];
+  }
+
+  getCarryForwardSummary() {
+    if (window.AcademixCarryForwardService) {
+      return window.AcademixCarryForwardService.getBacklogSummary(this.state.tasks);
+    }
+    return { totalCount: 0, totalRemainingHours: "0.0", items: [] };
+  }
+
+  generateRecoveryProposals() {
+    if (window.AcademixRecoveryPlannerService) {
+      const plan = window.AcademixRecoveryPlannerService.generateProposals(this.state);
+      this.state.activeRecoveryProposals = plan.proposals || [];
+      this.saveState();
+      return plan;
+    }
+    return { proposals: [], unscheduled: [] };
+  }
+
+  approveRecoveryProposal(proposalId) {
+    if (!window.AcademixRecoveryPlannerService) return { success: false, error: 'Engine unavailable' };
+    const proposals = this.state.activeRecoveryProposals || [];
+    const proposal = proposals.find(p => p.id === proposalId);
+    if (!proposal) return { success: false, error: 'Proposal not found' };
+
+    const res = window.AcademixRecoveryPlannerService.applyApprovedProposal(proposal, this.state);
+    if (res.success) {
+      this.state.activeRecoveryProposals = proposals.filter(p => p.id !== proposalId);
+      this.saveState();
+      this.notifySubscribers("RECOVERY_APPROVED");
+    }
+    return res;
+  }
+
+  rejectRecoveryProposal(proposalId) {
+    if (this.state.activeRecoveryProposals) {
+      this.state.activeRecoveryProposals = this.state.activeRecoveryProposals.filter(p => p.id !== proposalId);
+      this.saveState();
+      this.notifySubscribers("RECOVERY_REJECTED");
+      return true;
+    }
+    return false;
+  }
+
+  scheduleTopicRevision(topic, subject, options = {}) {
+    if (window.AcademixRevisionSchedulerService) {
+      const res = window.AcademixRevisionSchedulerService.scheduleRevision(topic, subject, this.state, options);
+      if (res && res.created) {
+        this.saveState();
+        this.notifySubscribers("REVISION_SCHEDULED");
+      }
+      return res;
+    }
+    return null;
+  }
+
+  recordRevisionRecall(taskId, recallRating) {
+    if (window.AcademixRevisionSchedulerService) {
+      const res = window.AcademixRevisionSchedulerService.recordRecallFeedback(taskId, recallRating, this.state);
+      if (res) {
+        this.saveState();
+        this.notifySubscribers("REVISION_RECALL_RECORDED");
+      }
+      return res;
+    }
+    return null;
+  }
+
+  getDueRevisions() {
+    if (window.AcademixRevisionSchedulerService) {
+      return window.AcademixRevisionSchedulerService.getDueRevisions(this.state);
+    }
+    return [];
+  }
+
+  checkSchedulingConflicts(slot) {
+    if (window.AcademixSchedulingConflictService) {
+      return window.AcademixSchedulingConflictService.checkConflicts(slot, this.state);
+    }
+    return { hasConflict: false, conflicts: [] };
+  }
+
+  getExecutionMetrics() {
+    if (window.AcademixExecutionAnalyticsService) {
+      return window.AcademixExecutionAnalyticsService.getExecutionMetrics(this.state);
+    }
+    return null;
   }
 
   /* ------------------- EXPORT & IMPORT ------------------- */
