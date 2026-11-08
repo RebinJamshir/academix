@@ -339,7 +339,7 @@ window.SubjectsView = {
                 <div class="p-3 rounded-lg border border-[var(--border-subtle)] bg-white flex items-center justify-between gap-3 hover:border-[var(--border-moderate)] transition-colors">
                   <div class="min-w-0 flex-1 flex items-center gap-2">
                     <span class="text-xs font-medium text-[var(--on-surface)] leading-snug">${topic.title}</span>
-                    <button type="button" class="ai-topic-btn px-2 py-0.5 rounded hover:bg-[var(--primary-subtle)] text-[var(--primary)] text-xs flex items-center gap-1 transition-colors border border-[var(--primary)]/20" title="Ask Gemini AI for KTU Exam Answers, Quizzes & Flashcards" onclick="window.openAITopicAssistant('${sub.name.replace(/'/g, "\\'")}', '${topic.title.replace(/'/g, "\\'")}')">
+                    <button type="button" class="ai-topic-btn px-2 py-0.5 rounded hover:bg-[var(--primary-subtle)] text-[var(--primary)] text-xs flex items-center gap-1 transition-colors border border-[var(--primary)]/20" title="Ask Gemini AI for KTU Exam Answers, Quizzes & Flashcards" data-subject="${encodeURIComponent(sub.name)}" data-topic="${encodeURIComponent(topic.title)}">
                       <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
                       <span class="hidden sm:inline font-mono text-[10px] font-semibold">AI Tutor</span>
                     </button>
@@ -390,6 +390,18 @@ window.SubjectsView = {
       btn.addEventListener("click", () => {
         self.activeModuleNum = parseInt(btn.dataset.modnum);
         self.renderSubjectWorkspace(container, subjectId);
+      });
+    });
+
+    // AI Tutor button trigger
+    container.querySelectorAll(".ai-topic-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const subjectName = decodeURIComponent(btn.getAttribute("data-subject") || "");
+        const topicTitle = decodeURIComponent(btn.getAttribute("data-topic") || "");
+        if (window.openAITopicAssistant) {
+          window.openAITopicAssistant(subjectName, topicTitle);
+        }
       });
     });
   },

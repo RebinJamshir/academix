@@ -252,7 +252,18 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // 5. POST /api/ai/generate - Server-side Gemini API proxy (robust, fast, avoids CORS/IPv6 issues)
+  // 5. POST /api/ai/generate & GET /api/ai/status - Server-side Gemini API proxy
+  if (pathname === '/api/ai/status' && req.method === 'GET') {
+    const hasKey = !!process.env.GEMINI_API_KEY;
+    sendJSON(res, 200, {
+      online: true,
+      hasKey,
+      defaultModel: 'gemini-3.5-flash',
+      supportedModels: ['gemini-3.5-flash', 'gemini-flash-latest', 'gemini-3.6-flash', 'gemini-3.8-flash']
+    });
+    return;
+  }
+
   if (pathname === '/api/ai/generate' && req.method === 'POST') {
     let body = '';
     req.on('data', chunk => {
@@ -262,7 +273,7 @@ const server = http.createServer((req, res) => {
     req.on('end', async () => {
       try {
         const { prompt, systemInstruction, apiKey, model } = JSON.parse(body || '{}');
-        const key = apiKey || process.env.GEMINI_API_KEY || '';
+        const key = (apiKey && apiKey.trim()) || process.env.GEMINI_API_KEY || '';
         const targetModel = model || 'gemini-3.5-flash';
 
         const payload = {

@@ -185,8 +185,9 @@ alter publication supabase_realtime add table public.academix_state;</pre>
               <label class="font-medium text-[var(--on-surface)]">Selected AI Model</label>
               <select id="ai-model-select" class="input-base text-xs font-mono">
                 <option value="gemini-3.5-flash" selected>gemini-3.5-flash (Fast, accurate & responsive)</option>
-                <option value="gemini-3.6-flash">gemini-3.6-flash (Latest flash)</option>
-                <option value="gemini-flash-latest">gemini-flash-latest (Dynamic latest)</option>
+                <option value="gemini-flash-latest">gemini-flash-latest (Dynamic latest flash)</option>
+                <option value="gemini-3.6-flash">gemini-3.6-flash (KTU specialized)</option>
+                <option value="gemini-3.8-flash">gemini-3.8-flash (High intelligence)</option>
               </select>
             </div>
           </div>
@@ -517,12 +518,13 @@ alter publication supabase_realtime add table public.academix_state;`;
     const aiModelSelect = container.querySelector("#ai-model-select");
     if (aiTestBtn && window.AIService) {
       aiTestBtn.addEventListener("click", async () => {
-        const key = (aiKeyInput.value || "").trim();
+        const key = (aiKeyInput.value || "").trim() || (window.AIService && window.AIService.getKey()) || "";
         const model = aiModelSelect.value;
         if (!key) {
           alert("Please enter a Gemini API Key.");
           return;
         }
+        aiKeyInput.value = key;
 
         aiTestBtn.disabled = true;
         aiTestBtn.innerHTML = `<span class="material-symbols-outlined text-[15px] animate-spin">sync</span><span>Testing Gemini...</span>`;

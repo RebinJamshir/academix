@@ -7918,6 +7918,18 @@
   ],
   "notifications": [
     {
+      "id": "notif-mw7m9gbk-npl1",
+      "dedupKey": "sess-20261108-3_study_session_upcoming_2026-11-08_15:00",
+      "taskId": "sess-20261108-3",
+      "reminderType": "study_session_upcoming",
+      "title": "Upcoming Session in 15m",
+      "message": "DAA Learn M1 (cont.) + Practise M1 + Learn M2 (15:00 - 17:00) starts soon. Prepare your study workspace.",
+      "category": "study",
+      "priority": "normal",
+      "isRead": false,
+      "timestamp": "2026-11-08T09:15:00.705Z"
+    },
+    {
       "id": "notif-1",
       "type": "exam",
       "title": "Computer Networks Exam in 17 Days",

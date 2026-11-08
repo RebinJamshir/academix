@@ -1019,7 +1019,8 @@ window.App = {
 
         try {
           const res = await window.AIService.askCopilot(text, this.chatHistory);
-          const formattedHtml = window.AIService.renderMarkdown(res.text);
+          const responseText = (res && res.text) || "Sorry, I could not generate a response. Please check your connection and try again.";
+          const formattedHtml = window.AIService.renderMarkdown(responseText);
 
           aiBubble.innerHTML = `
             <div class="flex items-center justify-between pb-1.5 border-b border-[var(--border-subtle)]/60 text-[10px] font-mono text-[var(--on-surface-variant)]">
@@ -1054,7 +1055,7 @@ window.App = {
           const copyBtn = aiBubble.querySelector(".ai-copy-btn");
           if (copyBtn) {
             copyBtn.onclick = () => {
-              navigator.clipboard.writeText(res.text).then(() => window.App.showToast("Copied to clipboard!"));
+              navigator.clipboard.writeText(responseText).then(() => window.App.showToast("Copied to clipboard!"));
             };
           }
 
@@ -1065,8 +1066,8 @@ window.App = {
               window.academicStore.state.notes.unshift({
                 id: "note-ai-" + Date.now(),
                 title: "AI Study Note: " + text.slice(0, 30) + "...",
-                subjectId: "CS301",
-                content: res.text,
+                subjectId: "sub-cn",
+                content: responseText,
                 pinned: true,
                 updatedAt: new Date().toISOString()
               });
@@ -1076,7 +1077,7 @@ window.App = {
           }
 
           this.chatHistory.push({ role: "user", text });
-          this.chatHistory.push({ role: "model", text: res.text });
+          this.chatHistory.push({ role: "model", text: responseText });
         } catch (err) {
           aiBubble.innerHTML = `<span class="text-[var(--error)]">Error: ${err.message || 'Could not reach AI service.'}</span>`;
         } finally {
@@ -1147,9 +1148,9 @@ window.App = {
           res = await window.AIService.explainTopic(currentSubject, currentTopic, currentMode);
         }
 
-        lastGeneratedText = res.text;
-        container.innerHTML = window.AIService.renderMarkdown(res.text);
-        status.textContent = `Generated via ${res.source === 'offline-engine' ? 'Academic Engine' : 'Gemini 3.5 Flash'}`;
+        lastGeneratedText = (res && res.text) || "";
+        container.innerHTML = window.AIService.renderMarkdown(lastGeneratedText);
+        status.textContent = `Generated via ${res && res.source === 'offline-engine' ? 'Academic Engine' : 'Gemini 3.5 Flash'}`;
       } catch (e) {
         container.innerHTML = `<span class="text-[var(--error)]">Failed to generate: ${e.message}</span>`;
         status.textContent = "Error";
@@ -1175,10 +1176,15 @@ window.App = {
     if (saveNoteBtn) {
       saveNoteBtn.onclick = () => {
         if (!lastGeneratedText) return;
+        let targetSubId = "sub-cn";
+        const subjects = (window.academicStore && window.academicStore.state && window.academicStore.state.subjects) || [];
+        const matchSub = subjects.find(s => s.name === currentSubject || s.code === currentSubject);
+        if (matchSub) targetSubId = matchSub.id;
+
         window.academicStore.state.notes.unshift({
           id: "note-ai-" + Date.now(),
           title: `${currentSubject}: ${currentTopic}`,
-          subjectId: "CS301",
+          subjectId: targetSubId,
           content: lastGeneratedText,
           pinned: true,
           updatedAt: new Date().toISOString()
